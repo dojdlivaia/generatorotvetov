@@ -48,17 +48,37 @@
     if (!count) return { count: 0 };
     const places = games.map((g) => g.place);
     const wins = places.filter((p) => p <= 3).length;
+    const top6 = places.filter((p) => p <= 6).length;
     const best = Math.min(...places);
     const worst = Math.max(...places);
-    const avg = places.reduce((s, p) => s + p, 0) / count;
+    const sum = places.reduce((s, p) => s + p, 0);
+    const sorted = [...places].sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    const median = sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
     return {
       count,
       best,
       worst,
-      avg,
+      avg: sum / count,
+      median,
       wins,
-      winRate: (wins / count) * 100
+      top6,
+      winRate: (wins / count) * 100,
+      top6Rate: (top6 / count) * 100,
+      firstGold: places.filter((p) => p === 1).length,
+      silvers: places.filter((p) => p === 2).length,
+      bronzes: places.filter((p) => p === 3).length
     };
+  }
+
+  /** Лучшая безголевая/подиумная серия подряд (места 1–3) */
+  function bestWinStreak(ascGames) {
+    let best = 0, cur = 0;
+    ascGames.forEach((g) => {
+      if (g.place <= 3) { cur++; best = Math.max(best, cur); }
+      else cur = 0;
+    });
+    return best;
   }
 
   /* ---------- Последние результаты в hero ---------- */
@@ -79,19 +99,90 @@
   function renderOverallStats() {
     const s = computeStats(GAMES);
     const organizers = new Set(GAMES.map((g) => g.organizer)).size;
+    const venues = new Set(GAMES.map((g) => g.venue)).size;
     const cards = [
-      { value: s.count, label: "сыграно игр" },
-      { value: s.wins, label: "призовых мест (топ-3)" },
-      { value: `${Math.round(s.winRate)}%`, label: "доля призовых игр" },
+      { value: s.count, label: pluralize(s.count, "сыгранная игра", "сыгранные игры", "сыгранных игр") },
       { value: `№${s.best}`, label: "лучший результат" },
+      { value: `${s.wins} (${Math.round(s.winRate)}%)`, label: "призовых мест (топ-3)" },
+      { value: `🥇${s.firstGold} 🥈${s.silvers} 🥉${s.bronzes}`, label: "золото / серебро / бронза" },
       { value: s.avg.toFixed(1), label: "среднее место" },
-      { value: organizers, label: "организаторов" }
+      { value: s.median % 1 ? s.median.toFixed(1) : s.median, label: "медианное место" },
+      { value: `${s.top6} (${Math.round(s.top6Rate)}%)`, label: "попаданий в топ-6" },
+      { value: organizers, label: pluralize(organizers, "организатор", "организатора", "организаторов") },
+      { value: venues, label: pluralize(venues, "площадка", "площадки", "площадок") }
     ];
     document.getElementById("overallStats").innerHTML = cards.map((c) => `
       <div class="stat-card">
         <div class="stat-value">${c.value}</div>
         <div class="stat-label">${c.label}</div>
       </div>`).join("");
+  }
+
+  /* ---------- Достижения команды ---------- */
+  function renderAchievements() {
+    const el = document.getElementById("achievements");
+    if (!el) return;
+    const asc = [...GAMES].sort((a, b) => a.date.localeCompare(b.date));
+    const s = computeStats(GAMES);
+    const bestGame = gamesSorted.reduce((a, b) => (a.place <= b.place ? a : b));
+    const streakDesc = bestWinStreak([...gamesSorted]);
+    const streakAsc = bestWinStreak(asc);
+    const streak = Math.max(streakDesc, streakAsc);
+    // Самый результативный организатор — по среднему месту (минимум 2 игры)
+    const orgStats = [...new Set(GAMES.map((g) => g.organizer))]
+      .map((org) => ({ org, st: computeStats(GAMES.filter((g) => g.organizer === org)) }))
+      .filter((o) => o.st.count >= 2)
+      .sort((a, b) => a.st.avg - b.st.avg)[0];
+    const items = [];
+    if (s.firstGold > 0) {
+      items.push({ icon: "🏆", text: `Победа в игре ${bestGame.organizer} «${bestGame.title}» (${bestGame.venue}, ${formatDate(bestGame.date)})` });
+    }
+    if (streak >= 2) {
+      items.push({ icon: "🔥", text: `Лучшая серия: ${streak} ${pluralize(streak, "призовое место", "призовых места", "призовых мест")} подряд` });
+    }
+    if (orgStats) {
+      items.push({ icon: "⭐", text: `Стабильнее всего — у организатора ${orgStats.org}: среднее место ${orgStats.st.avg.toFixed(1)} за ${orgStats.st.count} ${pluralize(orgStats.st.count, "игру", "игры", "игр")}` });
+    }
+    items.push({ icon: "📈", text: `Команда играет с ${formatDate(asc[0].date)} — ${s.count} ${pluralize(s.count, "игра", "игры", "игр")} в активе` });
+    el.innerHTML = items.map((i) => `
+      <div class="achievement-card">
+        <span class="achievement-icon">${i.icon}</span>
+        <span>${i.text}</span>
+      </div>`).join("");
+  }
+
+  /* ---------- Динамика по месяцам ---------- */
+  const MONTH_SHORT = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+
+  function renderMonthTrend() {
+    const el = document.getElementById("monthTrend");
+    if (!el) return;
+    const asc = [...GAMES].sort((a, b) => a.date.localeCompare(b.date));
+    // Группируем игры по месяцу (ГГГГ-ММ), считаем среднее место
+    const months = [];
+    asc.forEach((g) => {
+      const key = g.date.slice(0, 7);
+      let m = months.find((x) => x.key === key);
+      if (!m) { m = { key, label: "", places: [] }; months.push(m); }
+      const d = new Date(g.date + "T00:00:00");
+      m.label = `${MONTH_SHORT[d.getMonth()]} ${String(d.getFullYear()).slice(2)}`;
+      m.places.push(g.place);
+    });
+    const maxAvg = Math.max(...months.map((m) => m.places.reduce((s, p) => s + p, 0) / m.places.length));
+    const chartH = 150;
+    el.innerHTML = months.map((m) => {
+      const avg = m.places.reduce((s, p) => s + p, 0) / m.places.length;
+      // Чем лучше среднее место — тем выше столбик
+      const h = Math.max(12, ((maxAvg - avg + 1) / maxAvg) * chartH);
+      const cls = avg <= 3 ? "place-win" : avg <= 6 ? "place-mid" : "place-low";
+      const tooltip = `${m.places.length} ${pluralize(m.places.length, "игра", "игры", "игр")}, места: ${m.places.join(", ")}`;
+      return `
+        <div class="bar-col" title="${m.label}: ${tooltip}">
+          <span class="bar-value">${avg.toFixed(1)}</span>
+          <div class="bar ${cls}" style="height:${h}px"></div>
+          <span class="bar-date">${m.label}</span>
+        </div>`;
+    }).join("");
   }
 
   /* ---------- График мест по играм ---------- */
@@ -172,19 +263,51 @@
       </tr>`).join("");
   }
 
-  /* ---------- Статистика по организаторам ---------- */
   function renderOrganizers() {
     const grid = document.getElementById("organizersGrid");
-    const orgNames = [...new Set(GAMES.map((g) => g.organizer))];
+    // Организаторы по числу игр (по убыванию)
+    const orgNames = [...new Set(GAMES.map((g) => g.organizer))]
+      .sort((a, b) => GAMES.filter((g) => g.organizer === b).length - GAMES.filter((g) => g.organizer === a).length);
+
+    // Сводная таблица по организаторам
+    const thead = document.getElementById("orgTableHead");
+    if (thead) {
+      thead.innerHTML = `<tr><th>Организатор</th>${orgNames.map((o) => `<th>${o}</th>`).join("")}</tr>`;
+    }
+    const tbody = document.getElementById("orgTableBody");
+    if (tbody) {
+      const rows = [
+        { label: "Игр сыграно", get: (st) => st.count },
+        { label: "Призовых (топ-3)", get: (st) => `🥇${st.firstGold} · 🥈${st.silvers} · 🥉${st.bronzes}` },
+        { label: "Доля подиума", get: (st) => `${Math.round(st.winRate)}%` },
+        { label: "Лучшее место", get: (st) => `№${st.best}` },
+        { label: "Среднее место", get: (st) => st.avg.toFixed(1) },
+        { label: "Медиана", get: (st) => (st.median % 1 ? st.median.toFixed(1) : st.median) }
+      ];
+      const perOrg = orgNames.map((org) => computeStats(GAMES.filter((g) => g.organizer === org)));
+      tbody.innerHTML = rows.map((r) => `
+        <tr>
+          <td class="org-row-label">${r.label}</td>
+          ${perOrg.map((st) => `<td>${r.get(st)}</td>`).join("")}
+        </tr>`).join("");
+    }
+
+    // Карточки организаторов
     grid.innerHTML = orgNames.map((org) => {
       const games = gamesSorted.filter((g) => g.organizer === org);
       const s = computeStats(games);
       const bestGame = games.reduce((a, b) => (a.place <= b.place ? a : b));
-      const rows = games.map((g) => `
+      const MAX_ROWS = 8;
+      const shown = games.slice(0, MAX_ROWS);
+      const hiddenCount = games.length - shown.length;
+      const rows = shown.map((g) => `
         <li>
           <span class="mini-place ${placeClass(g.place)}">${g.place}</span>
           <span class="mini-info">${g.title} · ${g.venue}<br><small>${formatDate(g.date)}</small></span>
-        </li>`).join("");
+        </li>`).join("") +
+        (hiddenCount > 0
+          ? `<li><span class="mini-place mini-more">…</span><span class="mini-info"><small>и ещё ${hiddenCount} ${pluralize(hiddenCount, "игра", "игры", "игр")} — см. таблицу выше</small></span></li>`
+          : "");
       return `
         <div class="organizer-card">
           <div class="organizer-head">
@@ -214,7 +337,8 @@
     const grid = document.getElementById("photosGrid");
     const withPhotos = gamesSorted.filter((g) => g.photoUrl);
     grid.innerHTML = withPhotos.map((g, i) => {
-      const host = new URL(g.photoUrl).hostname.replace("www.", "");
+      const host = g.host || "фотоальбом";
+      const medal = g.place <= 3 ? ` <span class="photo-place">${placeLabel(g.place)}</span>` : "";
       const cover = g.photoThumb
         ? `<div class="photo-cover cover-${i % 4} has-thumb">
              <img class="photo-thumb" src="${g.photoThumb}" alt="Превью фотоальбома: ${g.organizer} ${g.title}" loading="lazy">
@@ -228,7 +352,7 @@
         <a class="photo-card" href="${g.photoUrl}" target="_blank" rel="noopener">
           ${cover}
           <div class="photo-meta">
-            <h3>${g.organizer}: ${g.title}</h3>
+            <h3>${g.organizer}: ${g.title}${medal}</h3>
             <p>${g.venue} · ${formatDate(g.date)}</p>
             <span class="photo-btn">Открыть фотоальбом →</span>
           </div>
@@ -266,6 +390,8 @@
     document.getElementById("year").textContent = new Date().getFullYear();
     renderHeroResults();
     renderOverallStats();
+    renderAchievements();
+    renderMonthTrend();
     renderPlacesChart();
     renderResultBars();
     renderFilterButtons();
