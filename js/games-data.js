@@ -12,7 +12,7 @@ const GAMES = [
     venue: "Золберг", place: 1, photoUrl: "", photoThumb: ""
   },
   {
-    date: "2026-10-19", organizer: "Squiz", title: "#451 (онлайн)",
+    date: "2026-09-19", organizer: "Squiz", title: "#451 (онлайн)",
     venue: "Савеловская (Online)", place: 34, photoUrl: "", photoThumb: ""
   },
   {
@@ -60,7 +60,7 @@ const GAMES = [
     photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/f31ee4f4-2019-4485-b080-bb0038d559ca/3488f224-0346-4c46-b00a-923484a95255_thumb.jpg"
   },
   {
-    date: "2026-08-22", organizer: "GOИКвиз", title: "Назад в СССР (повтор от 12.08)",
+    date: "2026-08-22", organizer: "GO!Квиз", title: "Назад в СССР (повтор от 12.08)",
     venue: "Пражка", place: 3,
     photoUrl: "https://findquiz.ru/event/go-quiz/photo/341498-nazad-v-sssr-povtor-ot-12-08",
     photoThumb: "https://sun9-83.userapi.com/s/v1/ig2/g0qXCGfGH_zeXza8Mlt-_vMTRnl4L5dr6iba1ipdkqkC5BF6V1DxJxX3JReHwXE0hFXKAGVEWjSfWhUhcLOm_6gE.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x854,1440x960,2402x1602&from=bu&cs=640x0"
@@ -106,7 +106,7 @@ const GAMES = [
     photoThumb: ""
   },
   {
-    date: "2026-05-16", organizer: "GOИКвиз", title: "Классика_353.1",
+    date: "2026-05-16", organizer: "GO!Квиз", title: "Классика_353.1",
     venue: "Пражка", place: 3,
     photoUrl: "https://findquiz.ru/event/go-quiz/photo/326584-klassika-353-1",
     photoThumb: ""
@@ -217,7 +217,7 @@ const GAMES = [
   /* ================= 2025 (сентябрь) ================= */
   // Примечание: фотографий с этой игры нет
   {
-    date: "2025-09-20", organizer: "GOIКвиз", title: "329.2",
+    date: "2025-09-20", organizer: "GO!Квиз", title: "329.2",
     venue: "Пражка", place: 3, photoUrl: "", photoThumb: ""
   },
   {
@@ -243,6 +243,11 @@ const GAMES = [
   {
     date: "2025-07-26", organizer: "Squiz", title: "Лига новичков. Игра 177.2",
     venue: "Liberty", place: 7, photoUrl: "", photoThumb: ""
+  },
+  /* ================= 2025 (июнь) ================= */
+  {
+    date: "2025-06-28", organizer: "Squiz", title: "Лига новичков #173.2",
+    venue: "Савеловская (Online)", place: 4, photoUrl: "", photoThumb: ""
   },
   {
     date: "2025-07-05", organizer: "Мозгва", title: "Новички 493 День 2",
