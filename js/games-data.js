@@ -43,7 +43,7 @@ const GAMES = [
     date: "2026-09-20", organizer: "Эйнштейн Party", title: "Классика №541_1",
     venue: "OldSchool Pub Маяковская", place: 8,
     photoUrl: "https://findquiz.ru/event/einstein-party/photo/344258-klassika-541-1",
-    photoThumb: ""
+    photoThumb: "https://sun9-65.userapi.com/s/v1/ig2/2LY8Yp1VAwZiwokRxVohfoEyjXUBp_MW8g75CXsYUt3Z2OWq4ULmoI11t6wfLVeF3VW6_-eU5sM4SniSepalDBPW.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0"
   },
 
   /* ================= 2026 (август) ================= */
@@ -51,7 +51,7 @@ const GAMES = [
     date: "2026-08-27", organizer: "Квизиум", title: "Азартный #50",
     venue: "O'Donoghue's Pub", place: 3,
     photoUrl: "https://findquiz.ru/event/quizium/photo/343222-azartnyy-50",
-    photoThumb: ""
+    photoThumb: "https://sun9-46.userapi.com/s/v1/ig2/IlrlW-RouGKI2buAIwzBgXV6KnPvK8UEZxQqkIH5AFCoev_DqOPW9dgCbTEV6oDc07lInPXcnRYQlkHWsizQFCtX.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2402x1802&from=bu&cs=640x0"
   },
   {
     date: "2026-08-22", organizer: "Squiz", title: "Игра 1004.1",
@@ -63,7 +63,7 @@ const GAMES = [
     date: "2026-08-22", organizer: "GO!Квиз", title: "Назад в СССР (повтор от 12.08)",
     venue: "Пражка", place: 3,
     photoUrl: "https://findquiz.ru/event/go-quiz/photo/341498-nazad-v-sssr-povtor-ot-12-08",
-    photoThumb: "https://sun9-83.userapi.com/s/v1/ig2/g0qXCGfGH_zeXza8Mlt-_vMTRnl4L5dr6iba1ipdkqkC5BF6V1DxJxX3JReHwXE0hFXKAGVEWjSfWhUhcLOm_6gE.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x854,1440x960,2402x1602&from=bu&cs=640x0"
+    photoThumb: "https://sun9-6.userapi.com/s/v1/ig2/H9BHevjkFcjl1eDW3AminBS_sDx7IsfuwipcmIYBpxLYm3MOMbn-FE0v-W1fOLwy8z2RwFsJVcJ5kqUxqT13rwZF.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0"
   },
 
   /* ================= 2026 (июль) ================= */
@@ -247,7 +247,9 @@ const GAMES = [
   /* ================= 2025 (июнь) ================= */
   {
     date: "2025-06-28", organizer: "Squiz", title: "Лига новичков #173.2",
-    venue: "Савеловская (Online)", place: 4, photoUrl: "", photoThumb: ""
+    venue: "Metafora Bar", place: 4,
+    photoUrl: "https://vk.ru/album-140791428_307696618",
+    photoThumb: "https://sun9-54.vkuserphoto.ru/s/v1/ig2/KLbjuJnX7mHP_dl-d07yQ9g3bKHPpmAXPyDT-z98ndKraS06hhfimgGYJBNPH_dKpqXy2fOMVUw6nKmjGhpEH23W.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1920x1280&from=bu&cs=1920x0"
   },
   {
     date: "2025-07-05", organizer: "Мозгва", title: "Новички 493 День 2",
