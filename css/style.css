@@ -222,11 +222,31 @@ a { color: var(--accent); text-decoration: none; }
 .stat-value { font-size: 34px; font-weight: 900; color: var(--accent); }
 .stat-label { color: var(--muted); font-size: 13px; margin-top: 4px; }
 
+/* ---------- Достижения ---------- */
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 44px;
+}
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, .12), rgba(124, 92, 255, .03));
+  border: 1px solid rgba(124, 92, 255, .25);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  font-size: 14px;
+}
+.achievement-icon { font-size: 26px; }
+
 .stats-charts {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
   gap: 24px;
 }
+.chart-wide { grid-column: 1 / -1; }
 .chart-block {
   background: var(--card);
   border: 1px solid rgba(255, 255, 255, .07);
@@ -242,6 +262,15 @@ a { color: var(--accent); text-decoration: none; }
   gap: 12px;
   height: 220px;
 }
+/* Горизонтальный скролл для длинных серий (много игр) */
+.bar-chart-scroll {
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.bar-chart-scroll .bar-col { flex: 0 0 auto; min-width: 44px; }
+.bar-chart-scroll::-webkit-scrollbar { height: 8px; }
+.bar-chart-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 4px; }
 .bar-col {
   display: flex; flex-direction: column;
   align-items: center; justify-content: flex-end;
@@ -384,6 +413,12 @@ a { color: var(--accent); text-decoration: none; }
   border-radius: 8px;
   font-weight: 900; font-size: 14px;
 }
+.mini-more { background: rgba(255,255,255,.06); color: var(--muted); }
+
+/* Сводная таблица по организаторам */
+.org-summary-wrap { margin-bottom: 32px; }
+.org-summary-table th:first-child, .org-summary-table td:first-child { text-align: left; }
+.org-row-label { font-weight: 700; color: var(--muted); white-space: nowrap; }
 
 /* ---------- Фото ---------- */
 .photos-grid {
@@ -435,6 +470,15 @@ a { color: var(--accent); text-decoration: none; }
 }
 .photo-meta { padding: 16px 18px 18px; }
 .photo-meta h3 { font-size: 15px; margin-bottom: 4px; }
+.photo-place {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 200, 60, .15);
+  color: #ffd76a;
+  vertical-align: middle;
+}
 .photo-meta p { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
 .photo-btn { font-size: 13px; font-weight: 700; color: var(--accent); }
 
