@@ -95,21 +95,17 @@
     el.innerHTML = items;
   }
 
-  /* ---------- Общая статистика ---------- */
+  /* ---------- Общая статистика (краткая сводка) ---------- */
   function renderOverallStats() {
     const s = computeStats(GAMES);
     const organizers = new Set(GAMES.map((g) => g.organizer)).size;
-    const venues = new Set(GAMES.map((g) => g.venue)).size;
+    const medianLabel = s.median % 1 ? s.median.toFixed(1) : s.median;
     const cards = [
       { value: s.count, label: pluralize(s.count, "сыгранная игра", "сыгранные игры", "сыгранных игр") },
-      { value: `№${s.best}`, label: "лучший результат" },
-      { value: `${s.wins} (${Math.round(s.winRate)}%)`, label: "призовых мест (топ-3)" },
-      { value: `🥇${s.firstGold} 🥈${s.silvers} 🥉${s.bronzes}`, label: "золото / серебро / бронза" },
-      { value: s.avg.toFixed(1), label: "среднее место" },
-      { value: s.median % 1 ? s.median.toFixed(1) : s.median, label: "медианное место" },
-      { value: `${s.top6} (${Math.round(s.top6Rate)}%)`, label: "попаданий в топ-6" },
-      { value: organizers, label: pluralize(organizers, "организатор", "организатора", "организаторов") },
-      { value: venues, label: pluralize(venues, "площадка", "площадки", "площадок") }
+      { value: s.wins, label: pluralize(s.wins, "призовое место", "призовых места", "призовых мест") },
+      { value: `${Math.round(s.winRate)}%`, label: "доля призовых" },
+      { value: medianLabel, label: "медианное место" },
+      { value: organizers, label: pluralize(organizers, "организатор", "организатора", "организаторов") }
     ];
     document.getElementById("overallStats").innerHTML = cards.map((c) => `
       <div class="stat-card">
@@ -225,6 +221,8 @@
 
   /* ---------- Таблица игр + фильтр по организаторам ---------- */
   let currentFilter = "all";
+  let gamesExpanded = false;
+  const GAMES_INITIAL = 10;   // сколько последних игр видно сразу
 
   function renderFilterButtons() {
     const bar = document.getElementById("filterBar");
@@ -240,15 +238,14 @@
       const btn = e.target.closest(".filter-btn");
       if (!btn) return;
       currentFilter = btn.dataset.filter;
+      gamesExpanded = false;
       bar.querySelectorAll(".filter-btn").forEach((b) => b.classList.toggle("active", b === btn));
       renderGamesTable();
     });
   }
 
-  function renderGamesTable() {
-    const tbody = document.getElementById("gamesTableBody");
-    const list = gamesSorted.filter((g) => currentFilter === "all" || g.organizer === currentFilter);
-    tbody.innerHTML = list.map((g) => `
+  function gameRow(g) {
+    return `
       <tr>
         <td data-th="Дата">${formatDate(g.date)}</td>
         <td data-th="Организатор"><span class="org-badge">${g.organizer}</span></td>
@@ -260,7 +257,30 @@
             ? `<a class="photo-link" href="${g.photoUrl}" target="_blank" rel="noopener">📷 Альбом</a>`
             : `<span class="no-photo">—</span>`
         }</td>
-      </tr>`).join("");
+      </tr>`;
+  }
+
+  function renderGamesTable() {
+    const tbody = document.getElementById("gamesTableBody");
+    const wrap = tbody.closest(".games-table-wrap");
+    const list = gamesSorted.filter((g) => currentFilter === "all" || g.organizer === currentFilter);
+    const shown = gamesExpanded ? list : list.slice(0, GAMES_INITIAL);
+    tbody.innerHTML = shown.map(gameRow).join("");
+
+    // Кнопка «показать ещё»
+    let moreBtn = wrap.parentElement.querySelector(".show-more-btn");
+    const hiddenCount = list.length - shown.length;
+    if (hiddenCount > 0) {
+      if (!moreBtn) {
+        moreBtn = document.createElement("button");
+        moreBtn.className = "show-more-btn";
+        wrap.insertAdjacentElement("afterend", moreBtn);
+      }
+      moreBtn.textContent = `Показать ещё ${hiddenCount} ${pluralize(hiddenCount, "игру", "игры", "игр")} ↓`;
+      moreBtn.onclick = () => { gamesExpanded = true; renderGamesTable(); };
+    } else if (moreBtn) {
+      moreBtn.remove();
+    }
   }
 
   function renderOrganizers() {
@@ -292,24 +312,21 @@
         </tr>`).join("");
     }
 
-    // Карточки организаторов
+    // Карточки организаторов (по 3 последние игры, остальные — по кнопке)
+    const ORG_INITIAL = 3;
     grid.innerHTML = orgNames.map((org) => {
       const games = gamesSorted.filter((g) => g.organizer === org);
       const s = computeStats(games);
       const bestGame = games.reduce((a, b) => (a.place <= b.place ? a : b));
-      const MAX_ROWS = 8;
-      const shown = games.slice(0, MAX_ROWS);
+      const shown = games.slice(0, ORG_INITIAL);
       const hiddenCount = games.length - shown.length;
       const rows = shown.map((g) => `
         <li>
           <span class="mini-place ${placeClass(g.place)}">${g.place}</span>
           <span class="mini-info">${g.title} · ${g.venue}<br><small>${formatDate(g.date)}</small></span>
-        </li>`).join("") +
-        (hiddenCount > 0
-          ? `<li><span class="mini-place mini-more">…</span><span class="mini-info"><small>и ещё ${hiddenCount} ${pluralize(hiddenCount, "игра", "игры", "игр")} — см. таблицу выше</small></span></li>`
-          : "");
+        </li>`).join("");
       return `
-        <div class="organizer-card">
+        <div class="organizer-card" data-games="${encodeURIComponent(JSON.stringify(games))}">
           <div class="organizer-head">
             <h3>${org}</h3>
             <span class="organizer-count">${s.count} ${pluralize(s.count, "игра", "игры", "игр")}</span>
@@ -321,8 +338,26 @@
           </div>
           <p class="organizer-best">Лучший результат: ${bestGame.title} (${bestGame.venue}, ${formatDate(bestGame.date)})</p>
           <ul class="organizer-games">${rows}</ul>
+          ${hiddenCount > 0
+            ? `<button class="show-more-btn show-more-small" data-hidden="${hiddenCount}">Показать ещё ${hiddenCount} ${pluralize(hiddenCount, "игру", "игры", "игр")} ↓</button>`
+            : ""}
         </div>`;
     }).join("");
+
+    // Раскрытие скрытых игр в карточках организаторов
+    grid.querySelectorAll(".show-more-small").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".organizer-card");
+        const all = JSON.parse(decodeURIComponent(card.dataset.games));
+        const list = card.querySelector(".organizer-games");
+        list.innerHTML = all.map((g) => `
+          <li>
+            <span class="mini-place ${placeClass(g.place)}">${g.place}</span>
+            <span class="mini-info">${g.title} · ${g.venue}<br><small>${formatDate(g.date)}</small></span>
+          </li>`).join("");
+        btn.remove();
+      });
+    });
   }
 
   function pluralize(n, one, few, many) {
@@ -332,32 +367,53 @@
     return many;
   }
 
-  /* ---------- Фотоальбомы ---------- */
+  /* ---------- Фотоальбомы (8 последних, остальные — по кнопке) ---------- */
+  const PHOTOS_INITIAL = 8;
+  let photosExpanded = false;
+
+  function photoCard(g, i) {
+    const host = g.host || "фотоальбом";
+    const medal = g.place <= 3 ? ` <span class="photo-place">${placeLabel(g.place)}</span>` : "";
+    const cover = g.photoThumb
+      ? `<div class="photo-cover cover-${i % 4} has-thumb">
+           <img class="photo-thumb" src="${g.photoThumb}" alt="Превью фотоальбома: ${g.organizer} ${g.title}" loading="lazy">
+           <span class="photo-host">${host}</span>
+         </div>`
+      : `<div class="photo-cover cover-${i % 4}">
+           <span class="photo-camera">📷</span>
+           <span class="photo-host">${host}</span>
+         </div>`;
+    return `
+      <a class="photo-card" href="${g.photoUrl}" target="_blank" rel="noopener">
+        ${cover}
+        <div class="photo-meta">
+          <h3>${g.organizer}: ${g.title}${medal}</h3>
+          <p>${g.venue} · ${formatDate(g.date)}</p>
+          <span class="photo-btn">Открыть фотоальбом →</span>
+        </div>
+      </a>`;
+  }
+
   function renderPhotos() {
+    const section = document.getElementById("photos").querySelector(".container");
     const grid = document.getElementById("photosGrid");
     const withPhotos = gamesSorted.filter((g) => g.photoUrl);
-    grid.innerHTML = withPhotos.map((g, i) => {
-      const host = g.host || "фотоальбом";
-      const medal = g.place <= 3 ? ` <span class="photo-place">${placeLabel(g.place)}</span>` : "";
-      const cover = g.photoThumb
-        ? `<div class="photo-cover cover-${i % 4} has-thumb">
-             <img class="photo-thumb" src="${g.photoThumb}" alt="Превью фотоальбома: ${g.organizer} ${g.title}" loading="lazy">
-             <span class="photo-host">${host}</span>
-           </div>`
-        : `<div class="photo-cover cover-${i % 4}">
-             <span class="photo-camera">📷</span>
-             <span class="photo-host">${host}</span>
-           </div>`;
-      return `
-        <a class="photo-card" href="${g.photoUrl}" target="_blank" rel="noopener">
-          ${cover}
-          <div class="photo-meta">
-            <h3>${g.organizer}: ${g.title}${medal}</h3>
-            <p>${g.venue} · ${formatDate(g.date)}</p>
-            <span class="photo-btn">Открыть фотоальбом →</span>
-          </div>
-        </a>`;
-    }).join("");
+    const shown = photosExpanded ? withPhotos : withPhotos.slice(0, PHOTOS_INITIAL);
+    grid.innerHTML = shown.map(photoCard).join("");
+
+    let moreBtn = section.querySelector("#photosGrid + .show-more-btn");
+    const hiddenCount = withPhotos.length - shown.length;
+    if (hiddenCount > 0) {
+      if (!moreBtn) {
+        moreBtn = document.createElement("button");
+        moreBtn.className = "show-more-btn";
+        grid.insertAdjacentElement("afterend", moreBtn);
+      }
+      moreBtn.textContent = `Показать ещё ${hiddenCount} ${pluralize(hiddenCount, "альбом", "альбома", "альбомов")} ↓`;
+      moreBtn.onclick = () => { photosExpanded = true; renderPhotos(); };
+    } else if (moreBtn) {
+      moreBtn.remove();
+    }
   }
 
   /* ---------- Навигация: активный пункт и мобильное меню ---------- */

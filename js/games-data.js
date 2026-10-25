@@ -121,7 +121,9 @@ const GAMES = [
   /* ================= 2026 (апрель) ================= */
   {
     date: "2026-04-30", organizer: "Эйнштейн Party", title: "FUN #359_2",
-    venue: "Lions Head Pub", place: 13, photoUrl: "", photoThumb: ""
+    venue: "Lions Head Pub", place: 13,
+    photoUrl: "https://findquiz.ru/event/einstein-party/photo/320190-fun-359-2",
+    photoThumb: "https://sun9-84.userapi.com/s/v1/ig2/PhJ-CAgJpLLUvRtkCpC_eflADByktQpB4y-ZcPKz81PlkxqVqcWOrhj2YoB9Y4URnrGaxcfOr7HpFt8PqF5rBms9.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920&from=bu&cs=640x0"
   },
   {
     date: "2026-04-18", organizer: "Квизиум", title: "«Обо всём» #863",

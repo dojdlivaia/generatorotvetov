@@ -79,18 +79,20 @@
         <h2 class="section-title">Статистика команды</h2>
         <p class="section-subtitle">Общая статистика по всем сыгранным играм</p>
 
-        <div class="stats-grid" id="overallStats"><!-- карточки статистики --></div>
+        <div class="stats-grid stats-grid-compact" id="overallStats"><!-- карточки статистики --></div>
 
         <div class="achievements" id="achievements"><!-- достижения команды --></div>
 
         <div class="stats-charts">
-          <div class="chart-block chart-wide">
-            <h3>Динамика по месяцам (среднее место)</h3>
-            <div class="bar-chart bar-chart-scroll" id="monthTrend"></div>
-          </div>
-          <div class="chart-block chart-wide">
-            <h3>Места по играм</h3>
-            <div class="bar-chart bar-chart-scroll" id="placesChart"></div>
+          <div class="charts-row">
+            <div class="chart-block">
+              <h3>Динамика по месяцам (среднее место)</h3>
+              <div class="bar-chart bar-chart-scroll" id="monthTrend"></div>
+            </div>
+            <div class="chart-block">
+              <h3>Места по играм</h3>
+              <div class="bar-chart bar-chart-scroll" id="placesChart"></div>
+            </div>
           </div>
           <div class="chart-block">
             <h3>Распределение результатов</h3>
