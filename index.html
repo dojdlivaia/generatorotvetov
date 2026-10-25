@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Сайт квизовой команды «Генератор неслучайных ответов» (Москва). Статистика игр, результаты по организаторам, фотоальбомы.">
+  <title>Генератор неслучайных ответов — сайт квизовой команды</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Шапка ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home">
+        <span class="logo-dice">🎲</span>
+        <span class="logo-text">
+          <strong>Генератор неслучайных ответов</strong>
+          <small>квизовая команда · Москва</small>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" class="nav-link active">Главная</a>
+        <a href="#stats" class="nav-link">Статистика</a>
+        <a href="#games" class="nav-link">Игры</a>
+        <a href="#organizers" class="nav-link">Организаторы</a>
+        <a href="#photos" class="nav-link">Фото</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+      </nav>
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Главная ===== -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-tag">Квизовая команда из Москвы</p>
+          <h1>Генератор<br><span class="accent">неслучайных</span> ответов</h1>
+          <p class="hero-desc">
+            Мы играем в интеллектуальные квизы («Что? Где? Когда?» форматы) от разных московских
+            организаторов: Squiz, Квизиум, Эйнштейн Party. Каждый наш ответ — не случайность,
+            а результат логики, эрудиции и командной работы.
+          </p>
+          <div class="hero-actions">
+            <a href="#games" class="btn btn-primary">Наши игры</a>
+            <a href="#stats" class="btn btn-ghost">Статистика</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <span class="pulse-dot"></span> Последние результаты
+          </div>
+          <ul class="hero-results" id="heroResults"><!-- заполняется из js/games-data.js --></ul>
+          <a class="hero-card-link" href="#games">Все игры →</a>
+        </div>
+      </div>
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Squiz</span><span>•</span><span>Квизиум</span><span>•</span><span>Эйнштейн Party</span><span>•</span>
+          <span>Москва</span><span>•</span><span>Золберг</span><span>•</span><span>Summer Punch</span><span>•</span>
+          <span>Lions Head Pub</span><span>•</span><span>The Tipsy Pub</span><span>•</span><span>OldSchool Pub Маяковская</span><span>•</span>
+          <span>Squiz</span><span>•</span><span>Квизиум</span><span>•</span><span>Эйнштейн Party</span><span>•</span>
+          <span>Москва</span><span>•</span><span>Золберг</span><span>•</span><span>Summer Punch</span><span>•</span>
+          <span>Lions Head Pub</span><span>•</span><span>The Tipsy Pub</span><span>•</span><span>OldSchool Pub Маяковская</span><span>•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Статистика ===== -->
+    <section id="stats" class="section">
+      <div class="container">
+        <h2 class="section-title">Статистика команды</h2>
+        <p class="section-subtitle">Общая статистика по всем сыгранным играм</p>
+
+        <div class="stats-grid" id="overallStats"><!-- карточки статистики --></div>
+
+        <div class="stats-charts">
+          <div class="chart-block">
+            <h3>Места по играм</h3>
+            <div class="bar-chart" id="placesChart"></div>
+          </div>
+          <div class="chart-block">
+            <h3>Распределение результатов</h3>
+            <ul class="result-bars" id="resultBars"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Игры ===== -->
+    <section id="games" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Наши игры</h2>
+        <p class="section-subtitle">История выступлений команды</p>
+
+        <div class="filter-bar" id="filterBar">
+          <button class="filter-btn active" data-filter="all">Все</button>
+          <!-- кнопки фильтров генерируются из данных -->
+        </div>
+
+        <div class="games-table-wrap">
+          <table class="games-table">
+            <thead>
+              <tr>
+                <th>Дата</th>
+                <th>Организатор</th>
+                <th>Игра / пакет</th>
+                <th>Площадка</th>
+                <th>Место</th>
+                <th>Фото</th>
+              </tr>
+            </thead>
+            <tbody id="gamesTableBody"><!-- строки таблицы --></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Организаторы ===== -->
+    <section id="organizers" class="section">
+      <div class="container">
+        <h2 class="section-title">Статистика по организаторам</h2>
+        <p class="section-subtitle">Как мы играем у разных организаторов</p>
+        <div class="organizers-grid" id="organizersGrid"><!-- карточки организаторов --></div>
+      </div>
+    </section>
+
+    <!-- ===== Фото ===== -->
+    <section id="photos" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Фото</h2>
+        <p class="section-subtitle">Фотоальбомы с наших игр — кликайте, чтобы открыть альбом</p>
+        <div class="photos-grid" id="photosGrid"><!-- карточки фотоальбомов --></div>
+      </div>
+    </section>
+
+    <!-- ===== Контакты ===== -->
+    <section id="contacts" class="section">
+      <div class="container contacts-inner">
+        <h2 class="section-title">Контакты</h2>
+        <p class="section-subtitle">Приглашаем на совместные тренировки и турниры!</p>
+        <div class="contacts-grid">
+          <div class="contact-card">
+            <span class="contact-icon">📍</span>
+            <h3>Город</h3>
+            <p>Москва</p>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">✉️</span>
+            <h3>Почта</h3>
+            <p><a href="mailto:gnotv.team@example.com">gnotv.team@example.com</a></p>
+          </div>
+          <div class="contact-card">
+            <span class="contact-icon">💬</span>
+            <h3>Telegram</h3>
+            <p><a href="https://t.me/gnotv_team" target="_blank" rel="noopener">@gnotv_team</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Квизовая команда «Генератор неслучайных ответов», Москва.</p>
+      <p class="footer-note">Наша статистика обновляется после каждой игры.</p>
+    </div>
+  </footer>
+
+  <script src="js/games-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
