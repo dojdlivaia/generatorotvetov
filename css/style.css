@@ -296,14 +296,22 @@ a { color: var(--accent); text-decoration: none; }
    min-width:0 обязателен — иначе flex-элемент растягивается на всю ширину
    содержимого и скролл не появляется. */
 .bar-chart-scroll {
+  display: flex;            /* явно: без flex-раскладки столбики не фиксируются по ширине */
   justify-content: flex-start;
+  align-items: flex-end;
+  gap: 12px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 6px;
   min-width: 0;
+  width: 100%;
   max-width: 100%;
+  overscroll-behavior-x: contain;
   scrollbar-width: thin;
   scrollbar-color: rgba(255,255,255,.25) transparent;
 }
+/* Блок-контейнер графика тоже должен уметь сжиматься внутри grid */
+.stats-charts, .charts-row { min-width: 0; }
 .charts-row > .chart-block { min-width: 0; }
 .bar-chart-scroll .bar-col { flex: 0 0 48px; width: 48px; min-width: 48px; }
 .bar-chart-scroll::-webkit-scrollbar { height: 8px; }
@@ -553,6 +561,7 @@ a { color: var(--accent); text-decoration: none; }
   .hero-inner { grid-template-columns: 1fr; }
   .stats-charts { grid-template-columns: 1fr; }
   .charts-row { grid-template-columns: 1fr; }
+  .bar-chart-scroll { -webkit-overflow-scrolling: touch; }
 }
 
 @media (max-width: 760px) {

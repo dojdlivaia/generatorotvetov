@@ -50,6 +50,7 @@
     if (!count) return { count: 0 };
     // В расчёт рейтинговых метрик берутся только игры с указанным местом
     const places = games.map((g) => g.place).filter((p) => p != null);
+    if (!places.length) return { count, best: null, worst: null, avg: 0, median: null, wins: 0, top6: 0, winRate: 0, rankCount: 0, top6Rate: 0, firstGold: 0, silvers: 0, bronzes: 0 };
     const wins = places.filter((p) => p <= 3).length;
     const top6 = places.filter((p) => p <= 6).length;
     const best = Math.min(...places);
@@ -62,7 +63,7 @@
       count,
       best,
       worst,
-      avg: sum / count,
+      avg: places.length ? sum / places.length : 0,
       median,
       wins,
       top6,
@@ -130,9 +131,9 @@
     const streakAsc = bestWinStreak(asc);
     const streak = Math.max(streakDesc, streakAsc);
     // Самый результативный организатор — по среднему месту (минимум 2 игры)
-    const orgStats = [...new Set(GAMES.map((g) => g.organizer))]
-      .map((org) => ({ org, st: computeStats(GAMES.filter((g) => g.organizer === org)) }))
-      .filter((o) => o.st.count >= 2)
+    const orgStats = [...new Set(ranked.map((g) => g.organizer))]
+      .map((org) => ({ org, st: computeStats(ranked.filter((g) => g.organizer === org)) }))
+      .filter((o) => o.st.rankCount >= 2)
       .sort((a, b) => a.st.avg - b.st.avg)[0];
     const items = [];
     if (s.firstGold > 0) {
@@ -142,7 +143,7 @@
       items.push({ icon: "🔥", text: `Лучшая серия: ${streak} ${pluralize(streak, "призовое место", "призовых места", "призовых мест")} подряд` });
     }
     if (orgStats) {
-      items.push({ icon: "⭐", text: `Стабильнее всего — у организатора ${orgStats.org}: среднее место ${orgStats.st.avg.toFixed(1)} за ${orgStats.st.count} ${pluralize(orgStats.st.count, "игру", "игры", "игр")}` });
+      items.push({ icon: "⭐", text: `Стабильнее всего — у организатора ${orgStats.org}: среднее место ${orgStats.st.avg.toFixed(1)} за ${orgStats.st.rankCount} ${pluralize(orgStats.st.rankCount, "игру", "игры", "игр")}` });
     }
     items.push({ icon: "📈", text: `Команда играет с ${formatDate(asc[0].date)} — ${s.count} ${pluralize(s.count, "игра", "игры", "игр")} в активе` });
     el.innerHTML = items.map((i) => `
@@ -195,6 +196,7 @@
           <span class="bar-date">${m.label}</span>
         </div>`;
     }).join("");
+    el.scrollLeft = el.scrollWidth; // ползунок справа — видны последние месяцы
   }
 
   /* ---------- График мест по играм ---------- */
@@ -217,6 +219,7 @@
           <span class="bar-date">${shortDate(g.date)}</span>
         </div>`;
     }).join("");
+    chart.scrollLeft = chart.scrollWidth; // ползунок справа — видны последние игры
   }
 
   /* ---------- Распределение результатов ---------- */
@@ -321,9 +324,9 @@
         { label: "Игр сыграно", get: (st) => st.count },
         { label: "Призовых (топ-3)", get: (st) => `🥇${st.firstGold} · 🥈${st.silvers} · 🥉${st.bronzes}` },
         { label: "Доля подиума", get: (st) => `${Math.round(st.winRate)}%` },
-        { label: "Лучшее место", get: (st) => `№${st.best}` },
+        { label: "Лучшее место", get: (st) => st.best == null ? "—" : `№${st.best}` },
         { label: "Среднее место", get: (st) => st.avg.toFixed(1) },
-        { label: "Медиана", get: (st) => (st.median % 1 ? st.median.toFixed(1) : st.median) },
+        { label: "Медиана", get: (st) => st.median == null ? "—" : (st.median % 1 ? st.median.toFixed(1) : st.median) },
         { label: "Без места", get: (st) => st.count - st.rankCount || "—" }
       ];
       const perOrg = orgNames.map((org) => computeStats(GAMES.filter((g) => g.organizer === org)));
@@ -340,7 +343,7 @@
       const games = gamesSorted.filter((g) => g.organizer === org);
       const s = computeStats(games);
       const rankedGames = games.filter((g) => g.place != null);
-      const bestGame = rankedGames.reduce((a, b) => (a.place <= b.place ? a : b));
+      const bestGame = rankedGames.length ? rankedGames.reduce((a, b) => (a.place <= b.place ? a : b)) : null;
       const shown = games.slice(0, ORG_INITIAL);
       const hiddenCount = games.length - shown.length;
       const miniPlace = (g) => `<span class="mini-place ${placeClass(g.place)}">${g.place == null ? "—" : g.place}</span>`;
@@ -356,11 +359,11 @@
             <span class="organizer-count">${s.count} ${pluralize(s.count, "игра", "игры", "игр")}</span>
           </div>
           <div class="organizer-stats">
-            <div><strong>№${s.best}</strong><span>лучшее место</span></div>
+            <div><strong>${s.best == null ? "—" : "№" + s.best}</strong><span>лучшее место</span></div>
             <div><strong>${s.avg.toFixed(1)}</strong><span>среднее место</span></div>
             <div><strong>${s.wins}</strong><span>подиумов</span></div>
           </div>
-          <p class="organizer-best">Лучший результат: ${bestGame.title} (${bestGame.venue}, ${formatDate(bestGame.date)})</p>
+          ${bestGame ? `<p class="organizer-best">Лучший результат: ${bestGame.title} (${bestGame.venue}, ${formatDate(bestGame.date)})</p>` : `<p class="organizer-best">Места в играх не указаны</p>`}
           <ul class="organizer-games">${rows}</ul>
           ${hiddenCount > 0
             ? `<button class="show-more-btn show-more-small" data-hidden="${hiddenCount}">Показать ещё ${hiddenCount} ${pluralize(hiddenCount, "игру", "игры", "игр")} ↓</button>`
