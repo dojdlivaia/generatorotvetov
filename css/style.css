@@ -179,6 +179,8 @@ a { color: var(--accent); text-decoration: none; }
 .place-win { background: var(--accent); color: #141414; }
 .place-mid  { background: rgba(124, 92, 255, .25); color: #cfc4ff; }
 .place-low  { background: rgba(255, 255, 255, .08); color: var(--muted); }
+.place-none { background: rgba(255, 255, 255, .05); color: var(--muted); border: 1px dashed rgba(255,255,255,.25); }
+.bar.place-none { background: rgba(255,255,255,.12); border-radius: 4px; opacity: .6; }
 
 /* Бегущая строка */
 .hero-marquee {
@@ -290,13 +292,20 @@ a { color: var(--accent); text-decoration: none; }
   gap: 12px;
   height: 220px;
 }
-/* Горизонтальный скролл для длинных серий (много игр) */
+/* Горизонтальный скролл для длинных серий (много игр).
+   min-width:0 обязателен — иначе flex-элемент растягивается на всю ширину
+   содержимого и скролл не появляется. */
 .bar-chart-scroll {
   justify-content: flex-start;
   overflow-x: auto;
   padding-bottom: 6px;
+  min-width: 0;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.25) transparent;
 }
-.bar-chart-scroll .bar-col { flex: 0 0 auto; min-width: 44px; }
+.charts-row > .chart-block { min-width: 0; }
+.bar-chart-scroll .bar-col { flex: 0 0 48px; width: 48px; min-width: 48px; }
 .bar-chart-scroll::-webkit-scrollbar { height: 8px; }
 .bar-chart-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 4px; }
 .bar-col {
@@ -326,6 +335,7 @@ a { color: var(--accent); text-decoration: none; }
 }
 .progress-fill { height: 100%; border-radius: 999px; transition: width .6s ease; }
 .progress-fill.place-win { background: linear-gradient(90deg, #ffd166, #ffb703); }
+.progress-fill.place-none { background: repeating-linear-gradient(45deg, rgba(255,255,255,.18), rgba(255,255,255,.18) 6px, rgba(255,255,255,.08) 6px, rgba(255,255,255,.08) 12px); }
 .progress-fill.place-mid { background: linear-gradient(90deg, #7c5cff, #a68cff); }
 .progress-fill.place-low { background: linear-gradient(90deg, #555d8a, #767fae); }
 

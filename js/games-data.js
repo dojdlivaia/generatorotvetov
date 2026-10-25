@@ -192,5 +192,62 @@ const GAMES = [
   {
     date: "2025-11-30", organizer: "Squiz", title: "#930.3",
     venue: "Москва", place: 4, photoUrl: "", photoThumb: ""
+  },
+
+  /* ================= 2025 (ноябрь, далее) ================= */
+  {
+    date: "2025-11-21", organizer: "Квизиум", title: "«Обо всем» [Новички] #819",
+    venue: "Ibis Kitchen", place: null, photoUrl: "", photoThumb: ""
+  },
+
+  /* ================= 2025 (октябрь) ================= */
+  {
+    date: "2025-10-29", organizer: "Эйнштейн Party", title: "Классика №494_3",
+    venue: "Metafora Bar", place: 15, photoUrl: "", photoThumb: ""
+  },
+  {
+    date: "2025-10-25", organizer: "Квизиум", title: "«Обо всём» #811",
+    venue: "The Tipsy Pub", place: null, photoUrl: "", photoThumb: ""
+  },
+  {
+    date: "2025-10-25", organizer: "BUBO-КВИЗ", title: "Искусство и культура",
+    venue: "Travel Рестобар", place: null, photoUrl: "", photoThumb: ""
+  },
+
+  /* ================= 2025 (сентябрь) ================= */
+  // Примечание: фотографий с этой игры нет
+  {
+    date: "2025-09-20", organizer: "GOIКвиз", title: "329.2",
+    venue: "Пражка", place: 3, photoUrl: "", photoThumb: ""
+  },
+  {
+    date: "2025-09-20", organizer: "Squiz", title: "Игра 910.2",
+    venue: "Coin hall", place: 7, photoUrl: "", photoThumb: ""
+  },
+  {
+    date: "2025-09-13", organizer: "Эйнштейн Party", title: "FUN #324_4",
+    venue: "Nebar Moscow", place: 7, photoUrl: "", photoThumb: ""
+  },
+
+  /* ================= 2025 (август) ================= */
+  {
+    date: "2025-08-23", organizer: "Мозгва", title: "Зачетная 909",
+    venue: "Коктейль Холл", place: 3, photoUrl: "", photoThumb: ""
+  },
+  {
+    date: "2025-08-02", organizer: "Эйнштейн Party", title: "Классика №481_5",
+    venue: "Metafora Bar", place: null, photoUrl: "", photoThumb: ""
+  },
+
+  /* ================= 2025 (июль) ================= */
+  {
+    date: "2025-07-26", organizer: "Squiz", title: "Лига новичков. Игра 177.2",
+    venue: "Liberty", place: 7, photoUrl: "", photoThumb: ""
+  },
+  {
+    date: "2025-07-05", organizer: "Мозгва", title: "Новички 493 День 2",
+    venue: "Коктейль Холл", place: null,
+    photoUrl: "https://findquiz.ru/event/mozgva/photo/282712-novichki-493-den-2",
+    photoThumb: "https://sun9-51.userapi.com/s/v1/ig2/Lm7jRjatsUKFTLOp5vqCwalyusPEd-nhzVDWeNUtwrcZ9aJu3SBFzQk3TXnUImcM_UoMBsE8L0JaWQ9wq5S079M-.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2000x1333&from=bu&cs=640x0"
   }
 ];

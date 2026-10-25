@@ -28,8 +28,9 @@
   /** Игры, отсортированные по убыванию даты */
   const gamesSorted = [...GAMES].sort((a, b) => b.date.localeCompare(a.date));
 
-  /** Медали и подсветка призовых мест */
+  /** Медали и подсветка призовых мест; place === null — место не указано */
   function placeLabel(place) {
+    if (place == null) return "—";
     if (place === 1) return "🥇 1 место";
     if (place === 2) return "🥈 2 место";
     if (place === 3) return "🥉 3 место";
@@ -37,6 +38,7 @@
   }
 
   function placeClass(place) {
+    if (place == null) return "place-none";
     if (place <= 3) return "place-win";
     if (place <= 6) return "place-mid";
     return "place-low";
@@ -46,7 +48,8 @@
   function computeStats(games) {
     const count = games.length;
     if (!count) return { count: 0 };
-    const places = games.map((g) => g.place);
+    // В расчёт рейтинговых метрик берутся только игры с указанным местом
+    const places = games.map((g) => g.place).filter((p) => p != null);
     const wins = places.filter((p) => p <= 3).length;
     const top6 = places.filter((p) => p <= 6).length;
     const best = Math.min(...places);
@@ -63,8 +66,9 @@
       median,
       wins,
       top6,
-      winRate: (wins / count) * 100,
-      top6Rate: (top6 / count) * 100,
+      winRate: places.length ? (wins / places.length) * 100 : 0,
+      rankCount: places.length,
+      top6Rate: places.length ? (top6 / places.length) * 100 : 0,
       firstGold: places.filter((p) => p === 1).length,
       silvers: places.filter((p) => p === 2).length,
       bronzes: places.filter((p) => p === 3).length
@@ -75,7 +79,7 @@
   function bestWinStreak(ascGames) {
     let best = 0, cur = 0;
     ascGames.forEach((g) => {
-      if (g.place <= 3) { cur++; best = Math.max(best, cur); }
+      if (g.place != null && g.place <= 3) { cur++; best = Math.max(best, cur); }
       else cur = 0;
     });
     return best;
@@ -86,7 +90,7 @@
     const el = document.getElementById("heroResults");
     const items = gamesSorted.slice(0, 4).map((g) => `
       <li>
-        <span class="hero-res-place ${placeClass(g.place)}">${g.place}</span>
+        <span class="hero-res-place ${placeClass(g.place)}">${g.place == null ? "—" : g.place}</span>
         <span class="hero-res-info">
           <strong>${g.organizer}</strong> · ${g.title}
           <small>${formatDate(g.date)}</small>
@@ -102,8 +106,8 @@
     const medianLabel = s.median % 1 ? s.median.toFixed(1) : s.median;
     const cards = [
       { value: s.count, label: pluralize(s.count, "сыгранная игра", "сыгранные игры", "сыгранных игр") },
-      { value: s.wins, label: pluralize(s.wins, "призовое место", "призовых места", "призовых мест") },
-      { value: `${Math.round(s.winRate)}%`, label: "доля призовых" },
+      { value: s.wins, label: "призовых мест (топ-3)" },
+      { value: `${Math.round(s.winRate)}%`, label: "доля призовых мест (топ-3)" },
       { value: medianLabel, label: "медианное место" },
       { value: organizers, label: pluralize(organizers, "организатор", "организатора", "организаторов") }
     ];
@@ -120,7 +124,8 @@
     if (!el) return;
     const asc = [...GAMES].sort((a, b) => a.date.localeCompare(b.date));
     const s = computeStats(GAMES);
-    const bestGame = gamesSorted.reduce((a, b) => (a.place <= b.place ? a : b));
+    const ranked = gamesSorted.filter((g) => g.place != null);
+    const bestGame = ranked.reduce((a, b) => (a.place <= b.place ? a : b));
     const streakDesc = bestWinStreak([...gamesSorted]);
     const streakAsc = bestWinStreak(asc);
     const streak = Math.max(streakDesc, streakAsc);
@@ -154,24 +159,35 @@
     const el = document.getElementById("monthTrend");
     if (!el) return;
     const asc = [...GAMES].sort((a, b) => a.date.localeCompare(b.date));
-    // Группируем игры по месяцу (ГГГГ-ММ), считаем среднее место
+    // Группируем игры по месяцу (ГГГГ-ММ), считаем среднее место (только с указанным местом)
     const months = [];
     asc.forEach((g) => {
       const key = g.date.slice(0, 7);
       let m = months.find((x) => x.key === key);
-      if (!m) { m = { key, label: "", places: [] }; months.push(m); }
+      if (!m) { m = { key, label: "", places: [], noPlace: 0 }; months.push(m); }
       const d = new Date(g.date + "T00:00:00");
       m.label = `${MONTH_SHORT[d.getMonth()]} ${String(d.getFullYear()).slice(2)}`;
-      m.places.push(g.place);
+      if (g.place == null) m.noPlace++; else m.places.push(g.place);
     });
-    const maxAvg = Math.max(...months.map((m) => m.places.reduce((s, p) => s + p, 0) / m.places.length));
+    const avgOf = (m) => m.places.reduce((s, p) => s + p, 0) / m.places.length;
+    const withAvg = months.filter((m) => m.places.length > 0);
+    const maxAvg = Math.max(...withAvg.map(avgOf));
     const chartH = 150;
     el.innerHTML = months.map((m) => {
-      const avg = m.places.reduce((s, p) => s + p, 0) / m.places.length;
+      if (!m.places.length) {
+        // Месяц без указанных мест — пустой столбик
+        return `
+        <div class="bar-col" title="${m.label}: ${m.noPlace} ${pluralize(m.noPlace, "игра", "игры", "игр")}, места не указаны">
+          <span class="bar-value">—</span>
+          <div class="bar place-none" style="height:8px"></div>
+          <span class="bar-date">${m.label}</span>
+        </div>`;
+      }
+      const avg = avgOf(m);
       // Чем лучше среднее место — тем выше столбик
       const h = Math.max(12, ((maxAvg - avg + 1) / maxAvg) * chartH);
       const cls = avg <= 3 ? "place-win" : avg <= 6 ? "place-mid" : "place-low";
-      const tooltip = `${m.places.length} ${pluralize(m.places.length, "игра", "игры", "игр")}, места: ${m.places.join(", ")}`;
+      const tooltip = `${m.places.length} ${pluralize(m.places.length, "игра", "игры", "игр")}, места: ${m.places.join(", ")}${m.noPlace ? `, без места: ${m.noPlace}` : ""}`;
       return `
         <div class="bar-col" title="${m.label}: ${tooltip}">
           <span class="bar-value">${avg.toFixed(1)}</span>
@@ -185,14 +201,18 @@
   function renderPlacesChart() {
     const chart = document.getElementById("placesChart");
     const asc = [...GAMES].sort((a, b) => a.date.localeCompare(b.date));
-    const maxPlace = Math.max(...asc.map((g) => g.place));
+    const maxPlace = Math.max(...asc.map((g) => g.place).filter((p) => p != null));
     const barH = 150; // px шкалы
     chart.innerHTML = asc.map((g) => {
-      // Чем лучше место — тем выше столбик
-      const h = Math.max(12, ((maxPlace - g.place + 1) / maxPlace) * barH);
+      const noPlace = g.place == null;
+      // Чем лучше место — тем выше столбик; для игр без места — пустой столбик
+      const h = noPlace ? 8 : Math.max(12, ((maxPlace - g.place + 1) / maxPlace) * barH);
+      const tip = noPlace
+        ? `${formatDate(g.date)} — место не указано (${g.organizer})`
+        : `${formatDate(g.date)} — ${g.place} место (${g.organizer})`;
       return `
-        <div class="bar-col" title="${formatDate(g.date)} — ${g.place} место (${g.organizer})">
-          <span class="bar-value">${g.place}</span>
+        <div class="bar-col" title="${tip}">
+          <span class="bar-value">${noPlace ? "—" : g.place}</span>
           <div class="bar ${placeClass(g.place)}" style="height:${h}px"></div>
           <span class="bar-date">${shortDate(g.date)}</span>
         </div>`;
@@ -203,9 +223,10 @@
   function renderResultBars() {
     const s = computeStats(GAMES);
     const categories = [
-      { label: "Призовые места (1–3)", n: GAMES.filter((g) => g.place <= 3).length, cls: "place-win" },
-      { label: "Верхняя часть таблицы (4–6)", n: GAMES.filter((g) => g.place >= 4 && g.place <= 6).length, cls: "place-mid" },
-      { label: "Нижняя часть таблицы (7+)", n: GAMES.filter((g) => g.place >= 7).length, cls: "place-low" }
+      { label: "Призовые места (1–3)", n: GAMES.filter((g) => g.place != null && g.place <= 3).length, cls: "place-win" },
+      { label: "Верхняя часть таблицы (4–6)", n: GAMES.filter((g) => g.place != null && g.place >= 4 && g.place <= 6).length, cls: "place-mid" },
+      { label: "Нижняя часть таблицы (7+)", n: GAMES.filter((g) => g.place != null && g.place >= 7).length, cls: "place-low" },
+      { label: "Место не указано", n: GAMES.filter((g) => g.place == null).length, cls: "place-none" }
     ];
     document.getElementById("resultBars").innerHTML = categories.map((c) => {
       const pct = s.count ? Math.round((c.n / s.count) * 100) : 0;
@@ -302,7 +323,8 @@
         { label: "Доля подиума", get: (st) => `${Math.round(st.winRate)}%` },
         { label: "Лучшее место", get: (st) => `№${st.best}` },
         { label: "Среднее место", get: (st) => st.avg.toFixed(1) },
-        { label: "Медиана", get: (st) => (st.median % 1 ? st.median.toFixed(1) : st.median) }
+        { label: "Медиана", get: (st) => (st.median % 1 ? st.median.toFixed(1) : st.median) },
+        { label: "Без места", get: (st) => st.count - st.rankCount || "—" }
       ];
       const perOrg = orgNames.map((org) => computeStats(GAMES.filter((g) => g.organizer === org)));
       tbody.innerHTML = rows.map((r) => `
@@ -317,12 +339,14 @@
     grid.innerHTML = orgNames.map((org) => {
       const games = gamesSorted.filter((g) => g.organizer === org);
       const s = computeStats(games);
-      const bestGame = games.reduce((a, b) => (a.place <= b.place ? a : b));
+      const rankedGames = games.filter((g) => g.place != null);
+      const bestGame = rankedGames.reduce((a, b) => (a.place <= b.place ? a : b));
       const shown = games.slice(0, ORG_INITIAL);
       const hiddenCount = games.length - shown.length;
+      const miniPlace = (g) => `<span class="mini-place ${placeClass(g.place)}">${g.place == null ? "—" : g.place}</span>`;
       const rows = shown.map((g) => `
         <li>
-          <span class="mini-place ${placeClass(g.place)}">${g.place}</span>
+          ${miniPlace(g)}
           <span class="mini-info">${g.title} · ${g.venue}<br><small>${formatDate(g.date)}</small></span>
         </li>`).join("");
       return `
@@ -373,7 +397,7 @@
 
   function photoCard(g, i) {
     const host = g.host || "фотоальбом";
-    const medal = g.place <= 3 ? ` <span class="photo-place">${placeLabel(g.place)}</span>` : "";
+    const medal = g.place != null && g.place <= 3 ? ` <span class="photo-place">${placeLabel(g.place)}</span>` : "";
     const cover = g.photoThumb
       ? `<div class="photo-cover cover-${i % 4} has-thumb">
            <img class="photo-thumb" src="${g.photoThumb}" alt="Превью фотоальбома: ${g.organizer} ${g.title}" loading="lazy">
