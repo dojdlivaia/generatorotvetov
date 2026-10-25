@@ -92,7 +92,8 @@ const GAMES = [
     title: "Игра 1004.1",
     venue: "Liberty",
     place: 6,
-    photoUrl: "https://findquiz.ru/event/squiz/photo/339351-igra-1004-1"
+    photoUrl: "https://findquiz.ru/event/squiz/photo/339351-igra-1004-1",
+    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/f31ee4f4-2019-4485-b080-bb0038d559ca/3488f224-0346-4c46-b00a-923484a95255_thumb.jpg"
   },
   {
     date: "2026-07-23",
@@ -148,7 +149,7 @@ const GAMES = [
     title: "Классика_353.1",
     venue: "Пражка",
     place: 3,
-    photoUrl: ""
+    photoUrl: "https://findquiz.ru/event/go-quiz/photo/326584-klassika-353-1"
   },
   {
     date: "2026-05-01",
