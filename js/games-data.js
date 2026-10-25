@@ -75,7 +75,7 @@ const GAMES = [
     date: "2026-07-18", organizer: "Квизиум", title: "«Обо всём» #889",
     venue: "Lions Head Pub", place: 5,
     photoUrl: "https://findquiz.ru/event/quizium/photo/337161-obo-vsem-889",
-    photoThumb: ""
+    photoThumb: "https://sun9-49.userapi.com/s/v1/ig2/0PZ4MTux_453HSGhe6vbnUJpJifjF-kfU0NF24CA9ctHxLGpWaKH9Q8_yffzV0Trne3YgP8V_u8tJYaCids1g2-5.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920,1440x2160,1707x2560&from=bu&cs=640x0"
   },
 
   /* ================= 2026 (июнь) ================= */
