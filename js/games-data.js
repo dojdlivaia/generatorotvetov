@@ -131,13 +131,13 @@ const GAMES = [
   },
   {
     date: "2026-04-12", organizer: "Квизиум", title: "«Обо всём» #861",
-    venue: "Lions Head Pub", place: 3, photoUrl: "", photoThumb: ""
+    venue: "Lions Head Pub", place: null, photoUrl: "", photoThumb: ""
   },
 
   /* ================= 2026 (март) ================= */
   {
     date: "2026-03-26", organizer: "ИГРА", title: "ИГРА #45",
-    venue: "Temple Bar", place: 8, photoUrl: "", photoThumb: ""
+    venue: "Temple Bar", place: null, photoUrl: "", photoThumb: ""
   },
   {
     date: "2026-03-14", organizer: "Квизиум", title: "Азартный [Новички] #46",
@@ -171,7 +171,7 @@ const GAMES = [
   },
   {
     date: "2025-12-18", organizer: "Квизиум", title: "«Обо всём» #828",
-    venue: "The Tipsy Pub", place: 4,
+    venue: "The Tipsy Pub", place: null,
     photoUrl: "https://findquiz.ru/event/quizium/photo/305260-obo-vsem-828",
     photoThumb: ""
   },
@@ -181,7 +181,7 @@ const GAMES = [
   },
   {
     date: "2025-12-11", organizer: "BelkinQuiz", title: "БелкинКвиз #401",
-    venue: "Пражка", place: 13, photoUrl: "", photoThumb: ""
+    venue: "Пражка", place: null, photoUrl: "", photoThumb: ""
   },
 
   /* ================= 2025 (ноябрь) ================= */
