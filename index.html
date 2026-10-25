@@ -45,8 +45,8 @@
           <h1>Генератор<br><span class="accent">неслучайных</span> ответов</h1>
           <p class="hero-desc">
             Мы играем в интеллектуальные квизы («Что? Где? Когда?» форматы) от разных московских
-            организаторов: Squiz, Квизиум, Эйнштейн Party, GOИКвиз. Каждый наш ответ — не случайность,
-            а результат логики, эрудиции и командной работы.
+            организаторов: Квизиум, Squiz, Эйнштейн Party, GOИКвиз, ИГРА, Мозгва, BelkinQuiz.
+            Каждый наш ответ — не случайность, а результат логики, эрудиции и командной работы.
           </p>
           <div class="hero-actions">
             <a href="#games" class="btn btn-primary">Наши игры</a>
@@ -63,14 +63,12 @@
       </div>
       <div class="hero-marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>Squiz</span><span>•</span><span>Квизиум</span><span>•</span><span>Эйнштейн Party</span><span>•</span><span>GOИКвиз</span><span>•</span>
-          <span>Москва</span><span>•</span><span>Золберг</span><span>•</span><span>Summer Punch</span><span>•</span>
-          <span>Lions Head Pub</span><span>•</span><span>The Tipsy Pub</span><span>•</span><span>OldSchool Pub Маяковская</span><span>•</span>
-          <span>O'Donoghue's Pub</span><span>•</span><span>Liberty</span><span>•</span><span>Пражка</span><span>•</span>
-          <span>Squiz</span><span>•</span><span>Квизиум</span><span>•</span><span>Эйнштейн Party</span><span>•</span><span>GOИКвиз</span><span>•</span>
-          <span>Москва</span><span>•</span><span>Золберг</span><span>•</span><span>Summer Punch</span><span>•</span>
-          <span>Lions Head Pub</span><span>•</span><span>The Tipsy Pub</span><span>•</span><span>OldSchool Pub Маяковская</span><span>•</span>
-          <span>O'Donoghue's Pub</span><span>•</span><span>Liberty</span><span>•</span><span>Пражка</span><span>•</span>
+          <span>Квизиум</span><span>•</span><span>Squiz</span><span>•</span><span>Эйнштейн Party</span><span>•</span><span>GOИКвиз</span><span>•</span><span>ИГРА</span><span>•</span><span>Мозгва</span><span>•</span><span>BelkinQuiz</span><span>•</span>
+          <span>Москва</span><span>•</span><span>Lions Head Pub</span><span>•</span><span>The Tipsy Pub</span><span>•</span><span>Золберг</span><span>•</span><span>Summer Punch</span><span>•</span><span>Пражка</span><span>•</span>
+          <span>OldSchool Pub Маяковская</span><span>•</span><span>O'Donoghue's Pub</span><span>•</span><span>Liberty</span><span>•</span><span>Temple Bar</span><span>•</span><span>Жажда</span><span>•</span><span>Metafora Bar</span><span>•</span><span>Коктейль Холл</span><span>•</span>
+          <span>Квизиум</span><span>•</span><span>Squiz</span><span>•</span><span>Эйнштейн Party</span><span>•</span><span>GOИКвиз</span><span>•</span><span>ИГРА</span><span>•</span><span>Мозгва</span><span>•</span><span>BelkinQuiz</span><span>•</span>
+          <span>Москва</span><span>•</span><span>Lions Head Pub</span><span>•</span><span>The Tipsy Pub</span><span>•</span><span>Золберг</span><span>•</span><span>Summer Punch</span><span>•</span><span>Пражка</span><span>•</span>
+          <span>OldSchool Pub Маяковская</span><span>•</span><span>O'Donoghue's Pub</span><span>•</span><span>Liberty</span><span>•</span><span>Temple Bar</span><span>•</span><span>Жажда</span><span>•</span><span>Metafora Bar</span><span>•</span><span>Коктейль Холл</span><span>•</span>
         </div>
       </div>
     </section>
@@ -83,10 +81,16 @@
 
         <div class="stats-grid" id="overallStats"><!-- карточки статистики --></div>
 
+        <div class="achievements" id="achievements"><!-- достижения команды --></div>
+
         <div class="stats-charts">
-          <div class="chart-block">
+          <div class="chart-block chart-wide">
+            <h3>Динамика по месяцам (среднее место)</h3>
+            <div class="bar-chart bar-chart-scroll" id="monthTrend"></div>
+          </div>
+          <div class="chart-block chart-wide">
             <h3>Места по играм</h3>
-            <div class="bar-chart" id="placesChart"></div>
+            <div class="bar-chart bar-chart-scroll" id="placesChart"></div>
           </div>
           <div class="chart-block">
             <h3>Распределение результатов</h3>
@@ -130,6 +134,14 @@
       <div class="container">
         <h2 class="section-title">Статистика по организаторам</h2>
         <p class="section-subtitle">Как мы играем у разных организаторов</p>
+
+        <div class="games-table-wrap org-summary-wrap">
+          <table class="games-table org-summary-table">
+            <thead id="orgTableHead"><!-- генерируется из данных --></thead>
+            <tbody id="orgTableBody"><!-- генерируется из данных --></tbody>
+          </table>
+        </div>
+
         <div class="organizers-grid" id="organizersGrid"><!-- карточки организаторов --></div>
       </div>
     </section>
