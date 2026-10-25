@@ -417,6 +417,22 @@ a { color: var(--accent); text-decoration: none; }
   background: rgba(0, 0, 0, .3);
   padding: 3px 10px; border-radius: 999px;
 }
+/* Обложка с реальным превью альбома */
+.photo-cover.has-thumb { display: block; height: 170px; }
+.photo-thumb {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+.photo-card:hover .photo-thumb { transform: scale(1.05); }
+.photo-cover.has-thumb .photo-host {
+  position: absolute;
+  right: 10px; bottom: 10px;
+  color: #fff;
+  background: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(4px);
+}
 .photo-meta { padding: 16px 18px 18px; }
 .photo-meta h3 { font-size: 15px; margin-bottom: 4px; }
 .photo-meta p { font-size: 13px; color: var(--muted); margin-bottom: 10px; }

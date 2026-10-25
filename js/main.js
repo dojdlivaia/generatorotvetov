@@ -215,12 +215,18 @@
     const withPhotos = gamesSorted.filter((g) => g.photoUrl);
     grid.innerHTML = withPhotos.map((g, i) => {
       const host = new URL(g.photoUrl).hostname.replace("www.", "");
+      const cover = g.photoThumb
+        ? `<div class="photo-cover cover-${i % 4} has-thumb">
+             <img class="photo-thumb" src="${g.photoThumb}" alt="Превью фотоальбома: ${g.organizer} ${g.title}" loading="lazy">
+             <span class="photo-host">${host}</span>
+           </div>`
+        : `<div class="photo-cover cover-${i % 4}">
+             <span class="photo-camera">📷</span>
+             <span class="photo-host">${host}</span>
+           </div>`;
       return `
         <a class="photo-card" href="${g.photoUrl}" target="_blank" rel="noopener">
-          <div class="photo-cover cover-${i % 4}">
-            <span class="photo-camera">📷</span>
-            <span class="photo-host">${host}</span>
-          </div>
+          ${cover}
           <div class="photo-meta">
             <h3>${g.organizer}: ${g.title}</h3>
             <p>${g.venue} · ${formatDate(g.date)}</p>
