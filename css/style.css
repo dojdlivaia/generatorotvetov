@@ -600,3 +600,46 @@ a { color: var(--accent); text-decoration: none; }
   }
   .section { padding: 56px 0; }
 }
+
+/* ===== Подробные результаты по турам (аккордеон в таблице игр) ===== */
+.games-table tr.has-results { cursor: pointer; }
+.games-table tr.has-results:hover td { background: rgba(124, 92, 255, .06); }
+.expand-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 6px;
+  color: var(--accent, #7c5cff); background: rgba(124, 92, 255, .12);
+  font-size: 12px; transition: transform .2s ease;
+}
+tr.game-row.expanded .expand-icon { transform: rotate(90deg); }
+.results-row > td { padding: 0 !important; border-bottom: 1px solid rgba(255,255,255,.08); }
+.results-panel {
+  padding: 16px clamp(12px, 3vw, 22px) 20px;
+  background: rgba(124, 92, 255, .05);
+}
+.results-note { margin: 0 0 10px; font-size: 13px; color: var(--muted, #9aa3b2); }
+.results-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.results-table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 13.5px; }
+.results-table th, .results-table td {
+  padding: 7px 10px; text-align: center; white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.results-table thead th {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .8px;
+  color: var(--muted, #9aa3b2); border-bottom-color: rgba(255,255,255,.15);
+}
+.results-table td.results-team, .results-table th:nth-child(2) { text-align: left; }
+.results-table .round-col { width: 42px; }
+.results-table .round-empty::after { content: "·"; color: var(--muted, #9aa3b2); }
+.results-table .results-total { font-weight: 700; }
+.results-table tr.results-us td {
+  background: rgba(124, 92, 255, .16);
+  font-weight: 700; color: #fff;
+}
+.results-table tr.results-us td:first-child { border-left: 3px solid var(--accent, #7c5cff); }
+
+@media (max-width: 720px) {
+  /* на мобильных строка-результат — не сетка карточек, а широкая панель */
+  .games-table tr.results-row { display: block; padding: 0; }
+  .games-table tr.results-row > td { display: block; }
+  .games-table tr.results-row > td::before { display: none; }
+}

@@ -268,9 +268,53 @@
     });
   }
 
-  function gameRow(g) {
+  function fmtScore(v) {
+    if (v == null || v === "") return "";
+    return String(v).replace(".", ",");
+  }
+
+  // Аккордеон с подробными результатами по турам (если у игры есть поле results)
+  function resultsRow(g, idx) {
+    const res = g.results;
+    if (!res || !Array.isArray(res.standings) || res.standings.length === 0) return "";
+    const roundCount = res.roundCount || Math.max(...res.standings.map((s) => s.rounds.length));
+    const roundHeads = Array.from({ length: roundCount }, (_, i) => `<th class="round-col">${i + 1}</th>`).join("");
+    const bodyRows = res.standings.map((s) => {
+      const isUs = s.team === res.team || (g.place != null && s.place === g.place);
+      const cells = Array.from({ length: roundCount }, (_, i) => {
+        const v = s.rounds[i];
+        return `<td class="round-col${v == null ? " round-empty" : ""}">${fmtScore(v)}</td>`;
+      }).join("");
+      return `
+        <tr class="${isUs ? "results-us" : ""}">
+          <td>${s.place}</td>
+          <td class="results-team">${s.team}${isUs ? " 🎲" : ""}</td>
+          ${cells}
+          <td class="results-total">${fmtScore(s.total) || "—"}</td>
+        </tr>`;
+    }).join("");
     return `
-      <tr>
+      <tr class="results-row" id="results-${idx}" hidden>
+        <td colspan="7">
+          <div class="results-panel">
+            ${res.note ? `<p class="results-note">${res.note}</p>` : ""}
+            <div class="results-scroll">
+              <table class="results-table">
+                <thead>
+                  <tr><th>Место</th><th>Команда</th>${roundHeads}<th>Итого</th></tr>
+                </thead>
+                <tbody>${bodyRows}</tbody>
+              </table>
+            </div>
+          </div>
+        </td>
+      </tr>`;
+  }
+
+  function gameRow(g, idx) {
+    const hasResults = g.results && Array.isArray(g.results.standings) && g.results.standings.length > 0;
+    return `
+      <tr class="game-row${hasResults ? " has-results" : ""}"${hasResults ? ` data-results-target="results-${idx}" title="Показать результаты по турам"` : ""}>
         <td data-th="Дата">${formatDate(g.date)}</td>
         <td data-th="Организатор"><span class="org-badge">${g.organizer}</span></td>
         <td data-th="Игра">${g.title}</td>
@@ -281,7 +325,23 @@
             ? `<a class="photo-link" href="${g.photoUrl}" target="_blank" rel="noopener">📷 Альбом</a>`
             : `<span class="no-photo">—</span>`
         }</td>
-      </tr>`;
+        <td data-th="">${hasResults ? `<span class="expand-icon">▸</span>` : ""}</td>
+      </tr>
+      ${resultsRow(g, idx)}`;
+  }
+
+  function bindGamesAccordion(tbody) {
+    tbody.querySelectorAll("tr.has-results").forEach((row) => {
+      row.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return; // клик по ссылке альбома не сворачивает аккордеон
+        const panel = tbody.querySelector(`#${row.dataset.resultsTarget}`);
+        if (!panel) return;
+        const isOpen = !panel.hidden;
+        panel.hidden = isOpen;
+        row.classList.toggle("expanded", !isOpen);
+        try { window.goatcounter && window.goatcounter.count({ path: location.pathname + "#game-results", noReferrer: true }); } catch (_) {}
+      });
+    });
   }
 
   function renderGamesTable() {
@@ -289,7 +349,8 @@
     const wrap = tbody.closest(".games-table-wrap");
     const list = gamesSorted.filter((g) => currentFilter === "all" || g.organizer === currentFilter);
     const shown = gamesExpanded ? list : list.slice(0, GAMES_INITIAL);
-    tbody.innerHTML = shown.map(gameRow).join("");
+    tbody.innerHTML = shown.map((g, i) => gameRow(g, `${currentFilter}-${i}`)).join("");
+    bindGamesAccordion(tbody);
 
     // Кнопка «показать ещё»
     let moreBtn = wrap.parentElement.querySelector(".show-more-btn");
