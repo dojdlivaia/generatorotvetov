@@ -37,7 +37,34 @@ const GAMES = [
     date: "2026-10-18", organizer: "Квизиум", title: "«Обо всём» #915",
     venue: "Lions Head Pub", place: 7,
     photoUrl: "https://findquiz.ru/event/quizium/photo/352210-obo-vsem-915",
-    photoThumb: "https://sun9-71.userapi.com/s/v1/ig2/L79hcsnQIDPmYbnmHBzgJEmjzTc343DoWHZQv2ekm8iN4ujAT550w5eOTqJDFAUORiAr1IeuVx3Wv2ocgqmR3SoN.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0"
+    photoThumb: "https://sun9-71.userapi.com/s/v1/ig2/L79hcsnQIDPmYbnmHBzgJEmjzTc343DoWHZQv2ekm8iN4ujAT550w5eOTqJDFAUORiAr1IeuVx3Wv2ocgqmR3SoN.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
+    results: {
+      note: "18 октября 2026, воскресенье • Lion's Head Pub • КВИЗИУМ #915.3",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "А мы думали сова",                rounds: [6, 5, 7, 4, 5, 9, 6, 15],     total: 57 },
+        { place: 2,  team: "Прости, Ярослав",                 rounds: [5, 2, 8, 6, 4, 8, 6, 17],     total: 56 },
+        { place: 3,  team: "Эффект Гибсона-Макконахи",        rounds: [5, 4, 7, 5, 4.5, 7, 6, 17],   total: 55.5 },
+        { place: 4,  team: "Брызги интеллекта",               rounds: [3, 6, 7, 6, 3, 8, 6, 15],     total: 54 },
+        { place: 5,  team: "В ожидании бордо",                rounds: [4, 4, 7, 4, 4.5, 6, 6, 18],   total: 53.5 },
+        { place: 6,  team: "Сущности в виде гномиков",        rounds: [4, 3, 9, 3, 4.5, 8, 4, 16],   total: 51.5 },
+        { place: 7,  team: "Генератор неслучайных ответов",   rounds: [3, 5, 7, 5, 4, 6, 4, 17],     total: 51 },
+        { place: 8,  team: "Грибочки",                        rounds: [5, 4, 7, 3, 4, 7, 4, 16],     total: 50 },
+        { place: 9,  team: "Пока звучит регби",               rounds: [4, 5, 7, 3, 5, 8, 4, 14],     total: 50 },
+        { place: 10, team: "Не за ту пили",                   rounds: [5, 3, 5, 5, 3.5, 8, 6, 14],   total: 49.5 },
+        { place: 11, team: "Мокрые усы",                       rounds: [4, 2, 7, 4, 5, 9, 4, 14],    total: 49 },
+        { place: 12, team: "Эчпочмак пряничный",              rounds: [3, 3, 8, 5, 4.5, 6, 6, 11],   total: 46.5 },
+        { place: 13, team: "Пунктумофобия.",                  rounds: [3, 4, 6, 1, 3, 8, 4, 11],     total: 40 },
+        { place: 14, team: "Носохвост",                       rounds: [1, 3, 6, 5, 3, 2, 6, 12],     total: 38 },
+        { place: 15, team: "Не придумали",                    rounds: [0, 1, 6, 5, 3.5, 8, 4, 9],    total: 36.5 },
+        { place: 16, team: "Команда",                         rounds: [3, 2, 5, 2, 3.5, 5, 4, 9],    total: 33.5 },
+        { place: 17, team: "Дети ошибаются, родители платят.", rounds: [2, 3, 7, 1, 1, 5, 4, 7],     total: 30 },
+        { place: 18, team: "ПРОФиТРОЛИ",                      rounds: [2, 3, 2, 4, 3.5, 4, 4, 6],    total: 28.5 },
+        { place: 19, team: "Пара",                            rounds: [0, 2, 1, 3, 3, 4, 0, 9],      total: 22 },
+        { place: 20, team: "Туфелька и Каблучок",             rounds: [0, 1, 2, 0, 1, 0, 2, 7],      total: 13 }
+      ]
+    }
   },
   {
     date: "2026-10-12", organizer: "Squiz", title: "#448 (онлайн)",
@@ -145,7 +172,35 @@ const GAMES = [
   },
   {
     date: "2026-04-18", organizer: "Квизиум", title: "«Обо всём» #863",
-    venue: "Lions Head Pub", place: 4, photoUrl: "", photoThumb: ""
+    venue: "Lions Head Pub", place: 4,
+    photoUrl: "https://findquiz.ru/event/quizium/photo/324118-obo-vsem-863",
+    photoThumb: "https://sun9-2.userapi.com/s/v1/ig2/HIYFhMCO2VOxeuKkEW11NnC32gXOyY8pyyiRbdeJZmK0XhtI528HO7VpKXy0IvHk_wkDysR-lwiHRl3jqggj42GU.jpg?quality=95&as=32x40,48x60,72x90,108x135,160x200,240x300,360x450,480x600,540x675,640x800,720x900,1080x1350,1280x1600,1440x1800,1592x1990&from=bu&cs=640x0",
+    results: {
+      note: "18 апреля 2026, суббота • Lion's Head Pub • КВИЗИУМ #863.2",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Badminton",                       rounds: [5, 6, 6, 6, 4, 8, 6, 16],     total: 57 },
+        { place: 2,  team: "Каферейсеры",                     rounds: [5, 5, 1, 5, 5, 11, 6, 12],    total: 50 },
+        { place: 3,  team: "Немолодые ветра",                 rounds: [6, 6, 6, 3, 3, 3, 4, 14],     total: 45 },
+        { place: 4,  team: "Генератор неслучайных ответов",   rounds: [4, 5, 1, 4, 4, 6, 6, 13],     total: 43 },
+        { place: 5,  team: "Геронтофилы",                     rounds: [3, 5, 3, 1, 3.5, 7, 4, 15],   total: 41.5 },
+        { place: 6,  team: "Молью Поязанные",                 rounds: [6, 6, 3, 4, 3, 6, 0, 11],     total: 39 },
+        { place: 7,  team: "СерокСюшеСветоНастеЭмилеАндрей",  rounds: [5, 5, 2, 4, 3.5, 7, 0, 11],   total: 37.5 },
+        { place: 8,  team: "Пришли за пивом, а тут вопросы.", rounds: [3, 6, 3, 3, 3, 8, 0, 9],      total: 35 },
+        { place: 9,  team: "Невыразимый космический ужас",    rounds: [5, 4, 2, 2, 3.5, 6, 2, 10],   total: 34.5 },
+        { place: 10, team: "Кукушка в панике",                rounds: [4, 4, 2, 5, 4, 5, 4, 5],      total: 33 },
+        { place: 11, team: "Широкая на широкую",              rounds: [4, 4, 3, 4, 3.5, 6, 0, 8],    total: 32.5 },
+        { place: 12, team: "Шумелка мышь",                    rounds: [4, 5, 6, 3, 3, 4, 4, 1],      total: 30 },
+        { place: 13, team: "Меаniеs",                         rounds: [4, 5, 2, 0, 2.5, 2, 4, 9],    total: 28.5 },
+        { place: 14, team: "Ленивцы+",                        rounds: [4, 4, 2, 3, 3, 3, 0, 9],      total: 28 },
+        { place: 15, team: "Homo Scutiens",                   rounds: [5, 4, 1, 3, 2.5, 3, 0, 7],    total: 25.5 },
+        { place: 16, team: "Не корову проигрываем",           rounds: [5, 2, 4, 3, 2.5, 2, 0, 7],    total: 25.5 },
+        { place: 17, team: "Блестящие",                       rounds: [4, 3, 2, 3, 2, 5, 0, 6],      total: 25 },
+        { place: 18, team: "Уральские пельмени",              rounds: [4, 1, 0, 2, 2.5, 0, 2, 2],    total: 13.5 },
+        { place: 19, team: "Маркис де Коте",                  rounds: [4, 2, 1, 1, 1.5, 3, 0, 1],    total: 13.5 }
+      ]
+    }
   },
   {
     date: "2026-04-12", organizer: "Квизиум", title: "«Обо всём» #861",
