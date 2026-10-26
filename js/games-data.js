@@ -480,14 +480,48 @@ const GAMES = [
 
   /* ================= 2025 (август) ================= */
   {
+    date: "2025-08-20", organizer: "Squiz", title: "Сезон 27. Полуфинал #1",
+    venue: "Москва", place: 23, photoUrl: "", photoThumb: "",
+    results: {
+      note: "20 августа 2025, среда • Москва • Squiz Сезон 27. Полуфинал #1",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Завтрак у Кролика", rounds: [4, 10, 4, 3.5, 9, 6.5, 15], total: 52 },
+        { place: 2, team: "Здесь - это вам не тут", rounds: [2, 7, 3, 3, 9, 8, 15], total: 47 },
+        { place: 3, team: "Анаграмма искусства", rounds: [3, 10, 2, 3, 7.5, 4.5, 15], total: 45 },
+        { place: 4, team: "Шампанский обряд", rounds: [1, 7, 3, 1, 9, 6, 15], total: 42 },
+        { place: 5, team: "Тоттенхэм", rounds: [2, 6, 1, 1, 9, 6, 15], total: 40 },
+        { place: 6, team: "Q&J", rounds: [1, 8, 4, 2, 4.5, 7, 12], total: 38.5 },
+        { place: 7, team: "The Wassermans", rounds: [3, 5, 1, 2.5, 6, 5.5, 13], total: 36 },
+        { place: 7, team: "Сустапитация", rounds: [1, 8, 1, 2, 7.5, 3.5, 13], total: 36 },
+        { place: 9, team: "Иван-не-дурак", rounds: [2, 6, 3, 1, 1.5, 7.5, 12], total: 33 },
+        { place: 10, team: "Кешмар на улице квизов", rounds: [2, 7, 1, 2, 4.5, 5, 10], total: 31.5 },
+        { place: 11, team: "Джем из топинамбура", rounds: [5, 4, 4, 0.5, 1.5, 8, 7], total: 30 },
+        { place: 12, team: "Атомный паяльник", rounds: [1, 6, 2, 2, 1.5, 7, 10], total: 29.5 },
+        { place: 13, team: "Злобные Хомяки", rounds: [1, 8, 2, 2, 3, 4.5, 7], total: 27.5 },
+        { place: 14, team: "Atomic Fart", rounds: [1, 6, 2, 1.5, 1.5, 6.5, 6], total: 24.5 },
+        { place: 15, team: "Беседка", rounds: [3, 5, 4, 2.5, 1.5, 4, 4], total: 24 },
+        { place: 16, team: "Мохеровый пипидастр", rounds: [3, 7, 1, 1.5, 0, 5, 6], total: 23.5 },
+        { place: 17, team: "Маги Региона", rounds: [2, 6, 2, 2, 1.5, 5, 4], total: 22.5 },
+        { place: 18, team: "Свинсоны", rounds: [1, 8, 2, 1.5, 0, 4.5, 5], total: 22 },
+        { place: 19, team: "IPAтерапия", rounds: [1, 5, 1, 0.5, 0, 6.5, 7], total: 21 },
+        { place: 20, team: "Отдых грибника", rounds: [1, 5, 2, 0, 0, 3, 9], total: 20 },
+        { place: 21, team: "Imaginary friends", rounds: [1, 6, 0, 2, 0, 5.5, 5], total: 19.5 },
+        { place: 22, team: "Ретроградный и Юрий", rounds: [0, 8, 2, 1.5, 0, 5, 1], total: 17.5 },
+        { place: 23, team: "Генератор неслучайных ответов", rounds: [1, 6, 0, 0, 4.5, 3.5, 2], total: 17 },
+        { place: 24, team: "Мама Анархия", rounds: [0, 2, 2, 1, 1.5, 9, 1], total: 16.5 },
+        { place: 24, team: "Багажник", rounds: [1, 1, 1, 2, 1.5, 7, 3], total: 16.5 },
+        { place: 26, team: "Сознание ясное", rounds: [3, 4, 1, 2, 1.5, 5.5, -2], total: 15 },
+        { place: 27, team: "Кокоджамба", rounds: [3, 3, 2, 0, 0, 3.5, 0], total: 11.5 },
+        { place: 28, team: "Дети Анархии", rounds: [0, 2, 0, 1, 0, 6, -5], total: 4 }
+      ]
+    }
+  },
+  {
     date: "2025-08-23", organizer: "Мозгва", title: "Зачетная 909",
     venue: "Коктейль Холл", place: 3, photoUrl: "", photoThumb: ""
   },
-  {
-    date: "2025-08-02", organizer: "Эйнштейн Party", title: "Классика №481_5",
-    venue: "Metafora Bar", place: null, photoUrl: "", photoThumb: ""
-  },
-
   /* ================= 2025 (июль) ================= */
   {
     date: "2025-07-25", organizer: "Squiz", title: "Игра #894.1",
