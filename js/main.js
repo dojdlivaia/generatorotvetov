@@ -87,17 +87,51 @@
   }
 
   /* ---------- Последние результаты в hero ---------- */
+  function hasRoundResults(g) {
+    return !!(g.results && Array.isArray(g.results.standings) && g.results.standings.length > 0);
+  }
+
   function renderHeroResults() {
     const el = document.getElementById("heroResults");
-    const items = gamesSorted.slice(0, 4).map((g) => `
-      <li>
+    const items = gamesSorted.slice(0, 4).map((g, i) => `
+      <li class="hero-res-item" data-hero-game="${i}" role="link" tabindex="0"
+          title="${hasRoundResults(g) ? "Показать результаты по турам →" : "Показать игру в таблице «Наши игры» →"}">
         <span class="hero-res-place ${placeClass(g.place)}">${g.place == null ? "—" : g.place}</span>
         <span class="hero-res-info">
           <strong>${g.organizer}</strong> · ${g.title}
           <small>${formatDate(g.date)}</small>
         </span>
+        <span class="hero-res-hint">${hasRoundResults(g) ? "Туры →" : "Игра →"}</span>
       </li>`).join("");
     el.innerHTML = items;
+
+    // Клик / Enter по карточке — переход к строке игры в «Наших играх» и раскрытие аккордеона
+    el.querySelectorAll(".hero-res-item").forEach((item) => {
+      const handler = () => jumpToGameRow(gamesSorted[Number(item.dataset.heroGame)]);
+      item.addEventListener("click", handler);
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handler(); }
+      });
+    });
+  }
+
+  function jumpToGameRow(game) {
+    if (!game) return;
+    currentFilter = "all";           // чтобы игра гарантированно была в таблице
+    renderGamesTable();
+    const idx = gamesSorted.indexOf(game);
+    const row = document.querySelector(`tr.game-row[data-results-target="all-${idx}"]`)
+      || [...document.querySelectorAll("#gamesTableBody tr.game-row")][idx];
+    if (!row) return;
+    // раскрываем аккордеон с результатами, если он есть и ещё закрыт
+    const targetId = row.dataset.resultsTarget;
+    if (targetId) {
+      const panel = document.getElementById(targetId);
+      if (panel && panel.hidden) row.click();
+    }
+    row.scrollIntoView({ behavior: "smooth", block: "center" });
+    row.classList.add("row-flash");
+    setTimeout(() => row.classList.remove("row-flash"), 1600);
   }
 
   /* ---------- Общая статистика (краткая сводка) ---------- */
