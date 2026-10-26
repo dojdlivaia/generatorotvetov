@@ -579,6 +579,46 @@ const GAMES = [
     venue: "Жажда", place: 3, photoUrl: "", photoThumb: ""
   },
 
+  /* ================= 2026 (июнь) — Суперигра ================= */
+  {
+    date: "2026-06-30", organizer: "Квизиум", title: "Супер игра",
+    venue: "The Tipsy Pub & O'Donoghue's", place: 23,
+    photoUrl: "https://vk.ru/album-147697500_311381147",
+    photoThumb: "https://sun9-6.vkuserphoto.ru/s/v1/ig2/XV8PnfVuP6n_XFhGasW9Agb-Gs03N-Zsus_zW85rXzvNFSuV8ykYQ0gcKvaPSxJ8riJiLea_r2eX5fPsNdYbV0y7.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
+    results: {
+      note: "30 июня 2026, вторник • The Tipsy Pub & O'Donoghue's • КВИЗИУМ • СУПЕР ИГРА",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Завтрак у Кролика",                rounds: [4, 5, 7.5, 5, 4, 10, 6, 17],   total: 58.5 },
+        { place: 2,  team: "Вот, во мху енот",                 rounds: [5, 6, 7.5, 5, 4.5, 10, 6, 14], total: 58 },
+        { place: 3,  team: "Новая кассета Малежика",           rounds: [5, 6, 6, 4, 4, 7, 8, 17],      total: 57 },
+        { place: 4,  team: "Badminton",                        rounds: [4, 5, 6, 4, 3.5, 9, 6, 18],    total: 55.5 },
+        { place: 5,  team: "Волшебный пендельтюр",             rounds: [4, 5, 6, 4, 3.5, 10, 6, 13],   total: 51.5 },
+        { place: 6,  team: "Запись дубля",                     rounds: [4, 6, 2.5, 5, 3.5, 11, 2, 13], total: 47 },
+        { place: 7,  team: "Ползком к победе",                 rounds: [2, 4, 2.5, 4, 4.5, 7, 4, 18],  total: 46 },
+        { place: 8,  team: "Возвращение Жирослава",            rounds: [4, 3, 6, 3, 4, 8, 4, 14],      total: 46 },
+        { place: 9,  team: "Булочки в животе",                 rounds: [2, 4, 7.5, 5, 3, 10, 2, 12],   total: 45.5 },
+        { place: 10, team: "Летом в баре Светофор",            rounds: [1, 4, 6, 5, 3.5, 10, 4, 10],   total: 43.5 },
+        { place: 11, team: "Тупайи",                           rounds: [4, 3, 1.5, 4, 3.5, 9, 4, 13],  total: 42 },
+        { place: 12, team: "На боЛИДЕ Рысь",                   rounds: [2, 2, 2, 4, 2.5, 9, 4, 13],    total: 38.5 },
+        { place: 13, team: "Наутилус",                         rounds: [3, 4, 1.5, 3, 3, 6, 4, 12],    total: 36.5 },
+        { place: 14, team: "Быка за рога",                     rounds: [3, 2, 1.5, 3, 3, 9, 4, 11],    total: 36.5 },
+        { place: 15, team: "Повелители Шаров",                 rounds: [1, 3, 6, 4, 2.5, 7, 2, 10],    total: 35.5 },
+        { place: 16, team: "1С:Рагнарёк",                      rounds: [3, 3, 2, 3, 5, 8, 2, 9],       total: 35 },
+        { place: 17, team: "Котики",                           rounds: [4, 3, 1.5, 4, 2, 8, 0, 12],    total: 34.5 },
+        { place: 18, team: "Запасной состав Вягры",            rounds: [0, 3, 1.5, 4, 3, 8, 4, 11],    total: 34.5 },
+        { place: 19, team: "Ковчег",                           rounds: [2, 3, 1, 4, 3, 8, 2, 11],      total: 34 },
+        { place: 20, team: "Мои друзья и другие звери",        rounds: [4, 3, 1, 4, 3, 9, 2, 8],       total: 34 },
+        { place: 21, team: "ПальцемВНебо",                     rounds: [3, 3, 2, 4, 4, 8, 4, 5],       total: 33 },
+        { place: 22, team: "Низкий IQ",                        rounds: [2, 3, 6, 1, 2.5, 3, 6, 9],     total: 32.5 },
+        { place: 23, team: "Генератор неслучайных ответов",    rounds: [4, 4, 2, 4, 2.5, 3, 2, 9],     total: 30.5 },
+        { place: 24, team: "Пёс да Лис",                       rounds: [5, 1, 1, 3, 4, 6, 2, 6],       total: 28 },
+        { place: 25, team: "Стивен сигнал, прыгал, ногу поломал", rounds: [2, 1, 3, 4, 2, 6, 2, 4],    total: 24 }
+      ]
+    }
+  },
+
   /* ================= 2025 (декабрь) ================= */
   {
     date: "2025-12-30", organizer: "Эйнштейн Party", title: "Классика №503_3",
@@ -586,9 +626,30 @@ const GAMES = [
   },
   {
     date: "2025-12-18", organizer: "Квизиум", title: "«Обо всём» #828",
-    venue: "The Tipsy Pub", place: null,
+    venue: "The Tipsy Pub", place: 9,
     photoUrl: "https://findquiz.ru/event/quizium/photo/305260-obo-vsem-828",
-    photoThumb: ""
+    photoThumb: "",
+    results: {
+      note: "18 декабря 2025, четверг • The Tipsy Pub • КВИЗИУМ #828",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Завтрак у Кролика",          rounds: [5, 5, 6, 6, 4, 12, 6, 19],  total: 63 },
+        { place: 2,  team: "Не айтишники",               rounds: [6, 4, 6, 5, 3, 10, 6, 17],  total: 57 },
+        { place: 3,  team: "А нам всё равно",            rounds: [6, 5, 6, 3, 2.5, 9, 6, 13], total: 50.5 },
+        { place: 4,  team: "Работнички",                 rounds: [6, 5, 2, 4, 2.5, 8, 2, 17], total: 46.5 },
+        { place: 5,  team: "Тупик Развития",             rounds: [5, 4, 6, 4, 2.5, 7, 6, 12], total: 46.5 },
+        { place: 6,  team: "Непостоянная переменная",    rounds: [6, 4, 6, 3, 3, 9, 4, 11],   total: 46 },
+        { place: 7,  team: "Всей жизни",                 rounds: [6, 4, 6, 3, 3.5, 7, 4, 12], total: 45.5 },
+        { place: 8,  team: "TopModel",                   rounds: [6, 3, 6, 3, 3, 4, 6, 14],   total: 45 },
+        { place: 9,  team: "Генератор неслучайных ответов", rounds: [6, 6, 2, 1, 2.5, 10, 4, 13], total: 44.5 },
+        { place: 10, team: "WinRAR",                     rounds: [6, 3, 4, 1, 2, 3, 2, 15],   total: 36 },
+        { place: 11, team: "Без Б",                      rounds: [5, 3, 2, 1, 1.5, 9, 2, 12], total: 35.5 },
+        { place: 12, team: "Колени Газманова",           rounds: [6, 2, 0, 5, 3.5, 2, 2, 13], total: 33.5 },
+        { place: 13, team: "Не 18 мне уже)",             rounds: [6, 0, 0, 4, 1.5, 2, 0, 9],  total: 22.5 },
+        { place: 14, team: "Be Sirius",                  rounds: [4, 1, 4, 5, 1, 2, 2, 11],   total: 30 }
+      ]
+    }
   },
   {
     date: "2025-12-13", organizer: "Мозгва", title: "Зачетная 931 День 2",
