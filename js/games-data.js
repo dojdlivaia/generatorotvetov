@@ -162,7 +162,7 @@ const GAMES = [
     }
   },
   {
-    date: "2026-10-12", organizer: "Squiz", title: "#448 (онлайн)",
+    date: "2026-09-12", organizer: "Squiz", title: "#448 (онлайн)",
     venue: "Савеловская (Online)", place: 56, photoUrl: "", photoThumb: ""
   },
   {
@@ -490,15 +490,104 @@ const GAMES = [
 
   /* ================= 2025 (июль) ================= */
   {
+    date: "2025-07-25", organizer: "Squiz", title: "Игра #894.1",
+    venue: "Москва", place: 9, photoUrl: "", photoThumb: "",
+    results: {
+      note: "25 июля 2025, пятница • Москва • Squiz #894.1 (показаны топ-20 и наша команда)",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Шампанский обряд", rounds: [6, 12, 6, 4.5, 9, 9, 18], total: 64.5 },
+        { place: 2, team: "Я поймал снитч", rounds: [6, 10, 7, 4.5, 9, 9, 18], total: 63.5 },
+        { place: 3, team: "Ближневосточный гектар", rounds: [6, 10, 7, 5.5, 9, 6, 18], total: 61.5 },
+        { place: 4, team: "Меньше думаем", rounds: [5, 10, 6, 6, 9, 6, 18], total: 60 },
+        { place: 5, team: "Ретроградный и Юрий", rounds: [7, 10, 5, 3.5, 9, 5, 18], total: 57.5 },
+        { place: 6, team: "Маги Региона", rounds: [6, 10, 5, 4.5, 9, 4, 18], total: 56.5 },
+        { place: 7, team: "Невинные Инвесторы", rounds: [4, 10, 6, 5, 7.5, 3, 18], total: 53.5 },
+        { place: 8, team: "Цыганские ученые", rounds: [6, 8, 5, 5.5, 9, 5, 15], total: 53.5 },
+        { place: 9, team: "Генератор неслучайных ответов", rounds: [3, 8, 5, 4, 9, 8, 15], total: 52 },
+        { place: 10, team: "Доллар по 30", rounds: [6, 6, 5, 5, 9, 4, 15], total: 50 },
+        { place: 11, team: "ББББЕЕЕЕБББСССС ВАТИКЮЮЮЮ", rounds: [5, 8, 6, 4.5, 9, 6, 10], total: 48.5 },
+        { place: 12, team: "Театр Мимики и Жести", rounds: [6, 6, 7, 4.5, 9, 5, 9], total: 46.5 },
+        { place: 13, team: "Ахринектурный отдел", rounds: [5, 8, 4, 5, 9, 7, 7], total: 45 },
+        { place: 14, team: "Worms", rounds: [4, 5, 5, 2.5, 9, 6, 13], total: 44.5 },
+        { place: 15, team: "Парижские шпроты", rounds: [4, 5, 6, 5, 7.5, 6, 10], total: 43.5 },
+        { place: 16, team: "Цыпочки поставок", rounds: [4, 8, 3, 3, 7.5, 7, 10], total: 42.5 },
+        { place: 17, team: "Поклонники Вагина", rounds: [5, 7, 5, 4.5, 7.5, 5, 7], total: 41 },
+        { place: 18, team: "Юморыстки", rounds: [7, 7, 6, 5.5, 6, 3, 6], total: 40.5 },
+        { place: 19, team: "18 голов Уилсона", rounds: [5, 5, 5, 5.5, 7.5, 4, 8], total: 40 },
+        { place: 20, team: "DataStorm", rounds: [3, 6, 3, 3.5, 9, 4, 11], total: 39.5 }
+      ]
+    }
+  },
+  {
     date: "2025-07-26", organizer: "Squiz", title: "Лига новичков. Игра 177.2",
-    venue: "Liberty", place: 7, photoUrl: "", photoThumb: ""
+    venue: "Liberty", place: 7, photoUrl: "", photoThumb: "",
+    results: {
+      note: "26 июля 2025, суббота • Liberty • Squiz Лига новичков #177.2",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Филиное куре", rounds: [5, 10, 7, 5.5, 9, 8, 18], total: 62.5 },
+        { place: 2, team: "Чертяги Разума", rounds: [6, 7, 7, 5.5, 9, 9, 14], total: 57.5 },
+        { place: 3, team: "SQUIZанутые", rounds: [5, 7, 5, 5, 9, 8, 18], total: 57 },
+        { place: 4, team: "Кешмар на улице квизов", rounds: [6, 8, 7, 4, 9, 10, 12], total: 56 },
+        { place: 5, team: "Отчаянные дачники", rounds: [5, 5, 6, 4.5, 9, 10, 15], total: 54.5 },
+        { place: 6, team: "Правый и Левый", rounds: [5, 8, 7, 6, 9, 8, 9], total: 52 },
+        { place: 7, team: "Генератор неслучайных ответов", rounds: [4, 7, 5, 4, 9, 9, 12], total: 50 },
+        { place: 8, team: "Тайная ложа Восхождения", rounds: [6, 5, 7, 5.5, 9, 8, 9], total: 49.5 },
+        { place: 9, team: "Сидите, мы откроем", rounds: [4, 5, 7, 5.5, 9, 8, 10], total: 48.5 },
+        { place: 10, team: "3ума", rounds: [4, 8, 5, 4, 9, 6, 9], total: 45 },
+        { place: 11, team: "Анатомия ежа", rounds: [5, 8, 5, 4.5, 4.5, 7, 10], total: 44 },
+        { place: 12, team: "Клан Серых Псов", rounds: [4, 5, 4, 5.5, 9, 6, 9], total: 42.5 },
+        { place: 13, team: "Шабаш на выезде", rounds: [5, 7, 6, 4.5, 9, 7, 4], total: 42.5 },
+        { place: 14, team: "LAAMAA", rounds: [4, 8, 6, 5, 9, 6, 4], total: 42 },
+        { place: 15, team: "FAMale", rounds: [6, 3, 5, 5.5, 7.5, 5, 6], total: 38 },
+        { place: 16, team: "Триумвират", rounds: [6, 3, 4, 5, 7.5, 9, 3], total: 37.5 },
+        { place: 17, team: "Продам гараж", rounds: [6, 4, 5, 4.5, 9, 8, 1], total: 37.5 },
+        { place: 18, team: "Хромой Джонни", rounds: [5, 5, 5, 3, 9, 4, 3], total: 34 },
+        { place: 19, team: "Близнецы и скорпионы", rounds: [7, 4, 4, 3.5, 7.5, 6, 0], total: 32 },
+        { place: 20, team: "Прожорливый кролик", rounds: [5, 4, 4, 3, 6, 6, 3], total: 31 },
+        { place: 21, team: "Больше, чем три казака", rounds: [4, 6, 4, 4.5, 7.5, 7, -4], total: 29 }
+      ]
+    }
   },
   /* ================= 2025 (июнь) ================= */
   {
     date: "2025-06-28", organizer: "Squiz", title: "Лига новичков #173.2",
     venue: "Metafora Bar", place: 4,
     photoUrl: "https://vk.ru/album-140791428_307696618",
-    photoThumb: "https://sun9-54.vkuserphoto.ru/s/v1/ig2/KLbjuJnX7mHP_dl-d07yQ9g3bKHPpmAXPyDT-z98ndKraS06hhfimgGYJBNPH_dKpqXy2fOMVUw6nKmjGhpEH23W.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1920x1280&from=bu&cs=1920x0"
+    photoThumb: "https://sun9-54.vkuserphoto.ru/s/v1/ig2/KLbjuJnX7mHP_dl-d07yQ9g3bKHPpmAXPyDT-z98ndKraS06hhfimgGYJBNPH_dKpqXy2fOMVUw6nKmjGhpEH23W.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1920x1280&from=bu&cs=1920x0",
+    results: {
+      note: "28 июня 2025, суббота • Metafora Bar • Squiz Лига новичков #173.2",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Черешни", rounds: [6, 10, 5, 6, 7.5, 9, 18], total: 61.5 },
+        { place: 2, team: "Krakenwagen", rounds: [7, 10, 4, 5, 7.5, 9, 16], total: 58.5 },
+        { place: 3, team: "Alien brain", rounds: [6, 10, 5, 4, 9, 8, 16], total: 58 },
+        { place: 4, team: "Генератор неслучайных ответов", rounds: [7, 12, 4, 4, 6, 9, 15], total: 57 },
+        { place: 5, team: "Чат всратых мемасиков", rounds: [6, 9, 4, 4, 7.5, 9, 11], total: 50.5 },
+        { place: 6, team: "7яЛетоМолодцы", rounds: [6, 4, 4, 5, 6, 9, 15], total: 49 },
+        { place: 7, team: "Шкодники", rounds: [5, 6, 5, 4.5, 7.5, 8, 12], total: 48 },
+        { place: 8, team: "Страшные сказки", rounds: [6, 10, 4, 4.5, 3, 10, 9], total: 46.5 },
+        { place: 9, team: "Без макияжа", rounds: [6, 8, 4, 5, 6, 8, 9], total: 46 },
+        { place: 10, team: "69 корочек от пиццы", rounds: [7, 10, 2, 4, 6, 7, 6], total: 42 },
+        { place: 11, team: "Не факт, но уверены", rounds: [6, 8, 3, 4.5, 4.5, 8, 4], total: 38 },
+        { place: 12, team: "Свиноногий бандикут", rounds: [5, 5, 4, 3.5, 4.5, 9, 6], total: 37 },
+        { place: 13, team: "Домовые", rounds: [5, 7, 1, 4.5, 6, 6, 7], total: 36.5 },
+        { place: 14, team: "Батрахоспермы", rounds: [5, 5, 3, 3.5, 3, 10, 6], total: 35.5 },
+        { place: 15, team: "Щука под шубой", rounds: [4, 5, 4, 4.5, 4.5, 6, 7], total: 35 },
+        { place: 16, team: "Ничего не знаем, но угадаем", rounds: [7, 9, 5, 2.5, 6, 7, -2], total: 34.5 },
+        { place: 17, team: "FAMale", rounds: [3, 7, 4, 3, 1.5, 7, 4], total: 29.5 },
+        { place: 18, team: "Случайно занесло", rounds: [4, 3, 4, 2.5, 0, 8, 5], total: 26.5 },
+        { place: 19, team: "Огонь НЕ знаний", rounds: [5, 4, 4, 3.5, 4.5, 9, -4], total: 26 },
+        { place: 20, team: "Подкидыши", rounds: [6, 4, 4, 4, 3, 6, -4], total: 23 },
+        { place: 21, team: "Team Beer", rounds: [6, 2, 4, 3.5, 3, 4, 0], total: 22.5 },
+        { place: 22, team: "Гуси-пофигуси", rounds: [3, 1, 5, 3.5, 4.5, 6, -1], total: 22 },
+        { place: 23, team: "Сомнительно, но окэй", rounds: [3, 4, 2, 2.5, 0, 6, 1], total: 18.5 }
+      ]
+    }
   },
   {
     date: "2025-07-05", organizer: "Мозгва", title: "Новички 493 День 2",
