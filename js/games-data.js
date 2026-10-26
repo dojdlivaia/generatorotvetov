@@ -74,7 +74,26 @@ const GAMES = [
     date: "2026-10-11", organizer: "Квизиум", title: "«Обо всём» #913",
     venue: "The Tipsy Pub", place: 8,
     photoUrl: "https://findquiz.ru/event/quizium/photo/351058-obo-vsem-913",
-    photoThumb: "https://sun9-54.userapi.com/s/v1/ig2/XEOcWYEk3oRwi_x_-C6UH_MbN9kDI8oYU7SXayFTzE4aL7aEw3-q1gw7Vh2GUjG7sTTFKcBuefkpQw_vrUEr8anT.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x854,1440x961,2400x1601&from=bu&cs=640x0"
+    photoThumb: "https://sun9-54.userapi.com/s/v1/ig2/XEOcWYEk3oRwi_x_-C6UH_MbN9kDI8oYU7SXayFTzE4aL7aEw3-q1gw7Vh2GUjG7sTTFKcBuefkpQw_vrUEr8anT.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x854,1440x961,2400x1601&from=bu&cs=640x0",
+    results: {
+      note: "11 октября 2026, воскресенье • The Tipsy Pub • КВИЗИУМ #913.3",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Кот Шрёдингера",               rounds: [5, 6, 6, 3, 5, 8, 8, 16],     total: 57 },
+        { place: 2,  team: "Беседка",                       rounds: [4, 6, 6, 3, 4, 9, 8, 15],    total: 55 },
+        { place: 3,  team: "Шумелка мышь",                  rounds: [4, 6, 6, 3, 4.5, 7, 8, 16],  total: 54.5 },
+        { place: 4,  team: "Наутилус",                      rounds: [3, 5, 5, 4, 4, 9, 6, 16],    total: 52 },
+        { place: 5,  team: "Злопастный Брандашмыг",         rounds: [5, 6, 6, 3, 3.5, 6, 4, 17],  total: 50.5 },
+        { place: 6,  team: "Партия будет доиграна",         rounds: [4, 5, 6, 5, 3.5, 5, 6, 13],  total: 47.5 },
+        { place: 7,  team: "Носохвост",                     rounds: [5, 6, 5, 3, 2, 4, 8, 14],    total: 47 },
+        { place: 8,  team: "Генератор неслучайных ответов", rounds: [5, 5, 6, 2, 2.5, 5, 8, 13],  total: 46.5 },
+        { place: 9,  team: "Чикен Макнаггетс",              rounds: [4, 3, 4, 4, 3.5, 9, 6, 5],   total: 38.5 },
+        { place: 10, team: "ШишкИ",                         rounds: [3, 2, 4, 2, 1.5, -1, 2, 12], total: 25.5 },
+        { place: 11, team: "Нананасти",                     rounds: [2, 2, 4, 4, 2, -1, 2, 7],    total: 22 },
+        { place: 12, team: "Отдел по содействию коррупциим",rounds: [1, 0, 1, 3, 0.5, 0, 0, 0],   total: 5.5 }
+      ]
+    }
   },
 
   /* ================= 2026 (сентябрь) ================= */
@@ -82,7 +101,28 @@ const GAMES = [
     date: "2026-09-23", organizer: "Squiz", title: "#1010.3",
     venue: "Summer Punch", place: 2,
     photoUrl: "https://squiz.ru/photos/260923-rxf",
-    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/113818e3-c08e-46c2-ac73-5efe7bc1abe9/0e9bcdd5-edb0-46e9-8578-1b6c20f5efa4_thumb.jpg"
+    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/113818e3-c08e-46c2-ac73-5efe7bc1abe9/0e9bcdd5-edb0-46e9-8578-1b6c20f5efa4_thumb.jpg",
+    results: {
+      note: "23 сентября 2026, среда • Москва • Squiz #1010.3",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Prosecco lovers social club",     rounds: [5, 12, 3, 5.5, 9, 7, 7],     total: 48.5 },
+        { place: 2,  team: "Генератор неслучайных ответов",   rounds: [7, 12, 4, 5.5, 7.5, 7, 2],   total: 45 },
+        { place: 3,  team: "СИЛА В ПЛАВКАХ",                  rounds: [6, 10, 6, 5, 6, 5, 5],       total: 43 },
+        { place: 4,  team: "Общество безответственности",     rounds: [7, 10, 4, 5.5, 3, 5, 7],     total: 41.5 },
+        { place: 5,  team: "Отдел закадр",                    rounds: [7, 6, 5, 6, 7.5, 8, 0],      total: 39.5 },
+        { place: 6,  team: "Последняя извилина",              rounds: [7, 10, 4, 5.5, 7.5, 9, -6],  total: 37 },
+        { place: 7,  team: "Снова 17",                        rounds: [5, 7, 3, 6, 4.5, 5, 3],      total: 33.5 },
+        { place: 8,  team: "Агамемношная",                    rounds: [7, 8, 5, 6, 1.5, 7, -1],     total: 33.5 },
+        { place: 9,  team: "Легенды Птахи",                   rounds: [7, 10, 6, 5, 0, 7, -2],      total: 33 },
+        { place: 10, team: "Молчание опят",                   rounds: [7, 7, 5, 5, 6, 5, -3],        total: 32 },
+        { place: 11, team: "Эмпатия",                         rounds: [5, 5, 4, 5.5, 6, 6, -1],      total: 30.5 },
+        { place: 12, team: "19.05",                           rounds: [6, 8, 4, 5.5, 1.5, 5, 0],     total: 30 },
+        { place: 13, team: "По семейным обстоятельствам",     rounds: [7, 5, 4, 5, 1.5, 6, 1],       total: 29.5 },
+        { place: 14, team: "Who knew, как говорится",         rounds: [6, 6, 5, 5.5, 3, 6, -2],      total: 29.5 }
+      ]
+    }
   },
   {
     date: "2026-09-20", organizer: "Эйнштейн Party", title: "Классика №541_1",

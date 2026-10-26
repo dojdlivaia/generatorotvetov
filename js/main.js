@@ -381,12 +381,26 @@
     }
     const tbody = document.getElementById("orgTableBody");
     if (tbody) {
+      // Сумма баллов команды по играм организатора (из подробных результатов)
+      const totalPoints = (org) => GAMES
+        .filter((g) => g.organizer === org && g.results)
+        .reduce((sum, g) => {
+          const ours = g.results.standings.find(
+            (row) => row.team === (g.results.team || "Генератор неслучайных ответов")
+          );
+          return sum + (ours && typeof ours.total === "number" ? ours.total : 0);
+        }, 0);
+      const fmtPoints = (v) => {
+        if (!v) return "—";
+        const num = Math.round(v * 10) / 10;
+        return (num % 1 ? num.toFixed(1) : String(num)).replace(".", ",");
+      };
       const rows = [
-        { label: "Игр сыграно", get: (st) => st.count },
+        { label: "Игр сыграно", get: (st, org) => st.count },
         { label: "Призовых (топ-3)", get: (st) => `🥇${st.firstGold} · 🥈${st.silvers} · 🥉${st.bronzes}` },
         { label: "Доля подиума", get: (st) => `${Math.round(st.winRate)}%` },
         { label: "Лучшее место", get: (st) => st.best == null ? "—" : `№${st.best}` },
-        { label: "Среднее место", get: (st) => st.avg.toFixed(1) },
+        { label: "Сумма баллов", get: (st, org) => fmtPoints(totalPoints(org)) },
         { label: "Медиана", get: (st) => st.median == null ? "—" : (st.median % 1 ? st.median.toFixed(1) : st.median) },
         { label: "Без места", get: (st) => st.count - st.rankCount || "—" }
       ];
@@ -394,7 +408,7 @@
       tbody.innerHTML = rows.map((r) => `
         <tr>
           <td class="org-row-label">${r.label}</td>
-          ${perOrg.map((st) => `<td>${r.get(st)}</td>`).join("")}
+          ${perOrg.map((st, i) => `<td>${r.get(st, orgNames[i])}</td>`).join("")}
         </tr>`).join("");
     }
 
