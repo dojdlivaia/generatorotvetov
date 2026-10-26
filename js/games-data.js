@@ -9,7 +9,25 @@ const GAMES = [
   /* ================= 2026 (октябрь) ================= */
   {
     date: "2026-10-21", organizer: "Squiz", title: "#1018.2",
-    venue: "Золберг", place: 1, photoUrl: "", photoThumb: ""
+    venue: "Золберг", place: 1, photoUrl: "", photoThumb: "",
+    results: {
+      note: "21 октября 2026, среда • Москва",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Генератор неслучайных ответов", rounds: [5, 12, 4, 4, 7.5, 6, 18],   total: 56.5 },
+        { place: 2,  team: "Who knew, как говорится",       rounds: [4, 10, 5, 5, 6, 8, 13],      total: 51 },
+        { place: 3,  team: "Q&j",                           rounds: [6, 10, 4, 4, 4.5, 7, 15],    total: 50.5 },
+        { place: 4,  team: "Найроби",                       rounds: [5, 12, 5, 3, 3, 6, 15],      total: 49 },
+        { place: 5,  team: "Шиба(ри)-Ину",                  rounds: [6, 10, 4, 3.5, 6, 6, 13],    total: 48.5 },
+        { place: 6,  team: "Атомный паяльник",              rounds: [4, 10, 6, 4.5, 3, 7, 13],    total: 47.5 },
+        { place: 7,  team: "Агамемношная",                  rounds: [4, 9, 3, 4, 3, 7, 13],       total: 43 },
+        { place: 8,  team: "19.05",                         rounds: [5, 9, 2, 2.5, 7.5, 3, 11],   total: 40 },
+        { place: 9,  team: "Политровая мышь",               rounds: [4, 7, 5, 4.5, 3, 4, 8],      total: 35.5 },
+        { place: 10, team: "Не такие уж и умные",           rounds: [5, 3, 4, 4, 3, 4, 8],        total: 31 },
+        { place: 11, team: "Жуки завозники",                rounds: [1, 2, 4, 2.5, 1.5],          total: null }
+      ]
+    }
   },
   {
     date: "2026-09-19", organizer: "Squiz", title: "#451 (онлайн)",
