@@ -168,13 +168,54 @@ const GAMES = [
     date: "2026-06-26", organizer: "Квизиум", title: "«Обо всём» #882",
     venue: "Lions Head Pub", place: 2,
     photoUrl: "https://findquiz.ru/event/quizium/photo/334020-obo-vsem-882",
-    photoThumb: ""
+    photoThumb: "https://sun9-66.userapi.com/s/v1/ig2/eXl9qr2YpdJtaAcbV9pbnRL_rc6m4PejhM9lifSX7D9x3NezCSRAokIKrUL4XcFOEgQYTJiV_sFQKVAAXmadY2ua.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
+    results: {
+      note: "26 июня 2026, пятница • Lion's Head Pub • КВИЗИУМ #882.3",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Badminton",                     rounds: [6, 5, 4, 3, 4.5, 8, 2, 18],   total: 50.5 },
+        { place: 2,  team: "Генератор неслучайных ответов", rounds: [4, 5, 4, 4, 4, 9, 4, 15],     total: 49 },
+        { place: 3,  team: "Ползком к победе",              rounds: [5, 5, 6, 3, 3.5, 5, 6, 15],   total: 48.5 },
+        { place: 4,  team: "Вот, во мху енот",              rounds: [4, 5, 6, 1, 3, 3, 4, 19],     total: 45 },
+        { place: 5,  team: "Тень сырка",                    rounds: [4, 4, 6, 4, 2, 3, 2, 9],      total: 34 },
+        { place: 6,  team: "Пупки",                         rounds: [4, 5, 3, 3, 2.5, 3, 0, 12],   total: 32.5 },
+        { place: 7,  team: "Кукушка в панике",              rounds: [3, 4, 1, 3, 2, 1, 2, 10],     total: 26 },
+        { place: 8,  team: "Серийные убийцы",               rounds: [3, 3, 4, 2, 2, 3, 0, 8],      total: 25 },
+        { place: 9,  team: "РАНЕЕ",                         rounds: [2, 4, 4, 1, 1.5, 1, 0, 11],   total: 24.5 },
+        { place: 10, team: "Бумсланг в тунике",             rounds: [3, 3, 3, 1, 0.5, 5, 0, 9],    total: 24.5 },
+        { place: 11, team: "Подлизы от Лизы",               rounds: [1, 3, 2, 1, 1.5, 6, 0, 9],    total: 23.5 },
+        { place: 12, team: "Зайчатки разума",               rounds: [1, 1, 2, 3, 2, 8, 0, 3],      total: 20 },
+        { place: 13, team: "ДАЛЕЕ",                         rounds: [4, 3, 2, 4, 1.5, 0, 0, 5],    total: 19.5 },
+        { place: 14, team: "Игры и смыслы",                 rounds: [4, 1, 1, 3, 2.5, 3, 0, 4],    total: 18.5 }
+      ]
+    }
   },
   {
     date: "2026-06-20", organizer: "Квизиум", title: "«Обо всём» #881",
     venue: "The Tipsy Pub", place: 2,
     photoUrl: "https://findquiz.ru/event/quizium/photo/333524-obo-vsem-881",
-    photoThumb: ""
+    photoThumb: "https://sun9-83.userapi.com/s/v1/ig2/VcBvI6PdIsGyCPdV77euImr6LmJ7EVKspg6sV9IX84Rw1fptr4sQ3mvc5B2oVHl-pQ10gwTDABIoNs4uQJap_GeP.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
+    results: {
+      note: "20 июня 2026, суббота • The Tipsy Pub • КВИЗИУМ #881.2",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Badminton",                     rounds: [5, 6, 6, 5, 3.5, 6, 6, 16],   total: 53.5 },
+        { place: 2,  team: "Генератор неслучайных ответов", rounds: [6, 5, 4, 4, 3.5, 10, 2, 16],   total: 50.5 },
+        { place: 3,  team: "Дураков. net",                  rounds: [6, 6, 6, 4, 2, 9, 2, 15],     total: 50 },
+        { place: 4,  team: "Мама сказала, что я умный",     rounds: [4, 6, 5, 5, 4.5, 6, 2, 14],   total: 46.5 },
+        { place: 5,  team: "Будьте бобры",                  rounds: [6, 6, 2, 4, 3.5, 6, 4, 12],   total: 43.5 },
+        { place: 6,  team: "Лос бандитос",                  rounds: [4, 6, 5, 3, 4, 3, 2, 14],     total: 41 },
+        { place: 7,  team: "Мозги в кубе",                  rounds: [4, 5, 4, 4, 1.5, 7, 2, 13],   total: 40.5 },
+        { place: 8,  team: "Масонская ложачка",             rounds: [4, 5, 6, 2, 3.5, 7, 4, 9],    total: 40.5 },
+        { place: 9,  team: "Якоря не бросать",              rounds: [4, 5, 4, 2, 2.5, 3, 0, 15],   total: 35.5 },
+        { place: 10, team: "Близкие",                       rounds: [5, 4, 1, 2, 2.5, 7, 0, 12],   total: 33.5 },
+        { place: 11, team: "Первые с конца",                rounds: [3, 3, 1, 1, 2.5, 2, 2, 9],    total: 23.5 },
+        { place: 12, team: "ХиХимики",                      rounds: [4, 2, 2, 2, 0.5, 0, 0, 11],   total: 21.5 },
+        { place: 13, team: "Даня в малине",                 rounds: [6, 2, 2, 0, 3, 0, 0, 6],      total: 19 }
+      ]
+    }
   },
   {
     date: "2026-06-07", organizer: "Эйнштейн Party", title: "Классика №526_1",
