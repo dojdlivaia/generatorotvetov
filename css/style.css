@@ -336,6 +336,9 @@ a { color: var(--accent); text-decoration: none; }
   transition: .3s;
 }
 .bar-col:hover .bar { filter: brightness(1.2); }
+.bar-clickable { cursor: pointer; }
+.bar-clickable:hover .bar-value { color: var(--accent); }
+.bar-clickable:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
 .bar-value { font-weight: 900; font-size: 15px; }
 .bar-date { color: var(--muted); font-size: 11px; white-space: nowrap; }
 
@@ -586,27 +589,51 @@ a { color: var(--accent); text-decoration: none; }
   }
   .main-nav.open { display: flex; }
 
-  /* карточки вместо таблицы */
-  .games-table { min-width: 0; }
+  /* карточки вместо таблицы (без «разлёта» колонок) */
+  .games-table { display: block; min-width: 0; }
+  .games-table tbody { display: block; }
   .games-table thead { display: none; }
-  .games-table tr {
+  .games-table tr.game-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    padding: 14px 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    grid-template-columns: auto 1fr;      /* левая колонка — дата/площадка/фото, правая — игра/место */
+    align-items: start;
+    gap: 4px 12px;
+    padding: 14px 14px;
+    margin: 0 0 10px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 12px;
+    background: var(--card);
   }
-  .games-table td {
-    border: 0; padding: 2px 4px; font-size: 14px;
+  .games-table tr.game-row > td {
+    border: 0; padding: 2px 0; font-size: 14px;
     display: flex; flex-direction: column;
+    min-width: 0;                          /* длинные названия не растягивают сетку */
   }
-  .games-table td::before {
+  .games-table tr.game-row > td::before {
     content: attr(data-th);
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--muted);
   }
+  /* раскладка ячеек по двум колонкам */
+  .games-table td[data-th="Дата"]        { grid-column: 1; grid-row: 1; }
+  .games-table td[data-th="Площадка"]    { grid-column: 1; grid-row: 2; }
+  .games-table td[data-th="Фото"]         { grid-column: 1; grid-row: 3; }
+  .games-table td[data-th="Организатор"] { grid-column: 2; grid-row: 1; }
+  .games-table td[data-th="Игра"]        { grid-column: 2; grid-row: 2; word-break: break-word; }
+  .games-table td[data-th="Место"]       { grid-column: 2; grid-row: 3; }
+  .games-table td[data-th=""]            { grid-column: 1; grid-row: 4; }
+  /* строка аккордеона с результатами на мобильных — во всю ширину */
+  .games-table tr.results-row { display: block; width: 100%; margin: 0 0 10px; }
+
+  /* сводная таблица организаторов на мобильных — тоже карточки */
+  .org-summary-table tr.game-row {
+    display: flex; flex-wrap: wrap; gap: 6px 14px;
+    grid-template-columns: none;
+  }
+  .org-summary-table td[data-th] { flex: 0 0 auto; }
+
   .section { padding: 56px 0; }
 }
 
