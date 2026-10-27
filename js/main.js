@@ -324,21 +324,27 @@
   function resultsRow(g, idx) {
     const res = g.results;
     if (!res || !Array.isArray(res.standings) || res.standings.length === 0) return "";
-    const roundCount = res.roundCount || (Array.isArray(res.roundLabels) ? res.roundLabels.length : Math.max(...res.standings.map((s) => s.rounds.length)));
+    // Поддержка двух форматов строк таблицы: team/rounds и name/scores (GO!Квиз)
+    const teamOf = (s) => s.team ?? s.name ?? "";
+    const roundsOf = (s) => Array.isArray(s.rounds) ? s.rounds : (Array.isArray(s.scores) ? s.scores : []);
+    const roundCount = res.roundCount
+      || (Array.isArray(res.roundLabels) ? res.roundLabels.length : 0)
+      || Math.max(...res.standings.map((s) => roundsOf(s).length));
     const roundHeads = Array.from({ length: roundCount }, (_, i) => {
       const label = Array.isArray(res.roundLabels) && res.roundLabels[i] ? res.roundLabels[i] : `Тур ${i + 1}`;
       return `<th class="round-col">${label}</th>`;
     }).join("");
     const bodyRows = res.standings.map((s) => {
-      const isUs = s.team === res.team || (g.place != null && s.place === g.place);
+      const usName = res.team || res.teamName || "Генератор неслучайных ответов";
+      const isUs = teamOf(s) === usName || (g.place != null && s.place === g.place);
       const cells = Array.from({ length: roundCount }, (_, i) => {
-        const v = s.rounds[i];
+        const v = roundsOf(s)[i];
         return `<td class="round-col${v == null ? " round-empty" : ""}">${fmtScore(v)}</td>`;
       }).join("");
       return `
         <tr class="${isUs ? "results-us" : ""}">
           <td>${s.place}</td>
-          <td class="results-team">${s.team}${isUs ? " 🎲" : ""}</td>
+          <td class="results-team">${teamOf(s)}${isUs ? " 🎲" : ""}</td>
           ${cells}
           <td class="results-total">${fmtScore(s.total) || "—"}</td>
         </tr>`;
@@ -436,7 +442,7 @@
         .filter((g) => g.organizer === org && g.results)
         .reduce((sum, g) => {
           const ours = g.results.standings.find(
-            (row) => row.team === (g.results.team || "Генератор неслучайных ответов")
+            (row) => (row.team ?? row.name) === (g.results.team || g.results.teamName || "Генератор неслучайных ответов")
           );
           return sum + (ours && typeof ours.total === "number" ? ours.total : 0);
         }, 0);
