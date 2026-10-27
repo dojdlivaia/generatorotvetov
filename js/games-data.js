@@ -554,13 +554,54 @@ const GAMES = [
     date: "2026-05-16", organizer: "GO!Квиз", title: "Классика_353.1",
     venue: "Пражка", place: 3,
     photoUrl: "https://findquiz.ru/event/go-quiz/photo/326584-klassika-353-1",
-    photoThumb: ""
+    photoThumb: "https://sun9-39.userapi.com/s/v1/ig2/ILySU_hahdMarttbSF2fXb1S8U27reEbBbPnEeHzjbzweHRZIC8av8PhWo1cE79V6g5koVMiV9MiujLdhxNJL4rY.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2560x1706&from=bu&cs=640x0",
+    results: {
+      note: "16 мая 2026, суббота • Пражка • GO!Квиз Классика_353.1",
+      rounds: 7,
+      roundLabels: ["РАУНД 1", "РАУНД 2", "РАУНД 3", "РАУНД 4", "РАУНД 5", "РАУНД 6", "РАУНД 7"],
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, name: "Меньше думаем", scores: [7, 6, 5, 3, 12, 3, 13], total: 49 },
+        { place: 2, name: "Moonlight", scores: [6, 2, 5, 4, 10, 3, 17], total: 47 },
+        { place: 3, name: "Генератор неслучайных ответов", scores: [7, 3, 5, 2, 12, 1, 15], total: 45 },
+        { place: 4, name: "Катька и ко", scores: [7, 3, 5, 3, 12, 1, 11], total: 42 },
+        { place: 5, name: "Новый курс", scores: [7, 1, 6, 3, 8, 1, 13], total: 39 },
+        { place: 6, name: "Полли хочет пряник", scores: [7, 2, 4, 3, 12, -2, 11], total: 37 },
+        { place: 7, name: "Общество безответственности", scores: [7, 3, 5, 3, 12, -2, 8], total: 36 },
+        { place: 8, name: "Сила безумия", scores: [7, 5, 5, 2, 8, 1, 1], total: 29 },
+        { place: 9, name: "[Поколение X:Y:Z]", scores: [8, 1, 3, 2, 9, 0, 4], total: 27 },
+        { place: 10, name: "Дивергент", scores: [6, 1, 2, 2, 5, 1, 1], total: 18 },
+        { place: 11, name: "Тамбовские", scores: [3, 0, 0, 1, 2, 0, 1], total: 7 }
+      ]
+    }
   },
   {
     date: "2026-05-01", organizer: "Квизиум", title: "«Обо всём» #866",
     venue: "The Tipsy Pub", place: 6,
     photoUrl: "https://findquiz.ru/event/quizium/photo/325356-obo-vsem-866",
-    photoThumb: "https://sun9-8.userapi.com/s/v1/ig2/oj9_YALzQQB0Pxbl3eGrsx_l1qAl8NJS7UM99yDQUtZE6yaAVGEqpAS_xsqqWrQynicH97BcUNahK5smSmWJdM2k.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920,1440x2160,1707x2560&from=bu&cs=640x0"
+    photoThumb: "https://sun9-8.userapi.com/s/v1/ig2/oj9_YALzQQB0Pxbl3eGrsx_l1qAl8NJS7UM99yDQUtZE6yaAVGEqpAS_xsqqWrQynicH97BcUNahK5smSmWJdM2k.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920,1440x2160,1707x2560&from=bu&cs=640x0",
+    results: {
+      note: "01 мая 2026, пятница • The Tipsy Pub • КВИЗИУМ #866.3",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Лёд", rounds: [6, 5, 4, 6, 5, 9, 4, 14], total: 53 },
+        { place: 2, team: "#sorgutum", rounds: [6, 5, 6, 2, 4, 9, 6, 12], total: 50 },
+        { place: 3, team: "Космонавты", rounds: [5, 5, 4, 4, 3, 8, 6, 14], total: 49 },
+        { place: 4, team: "Желтый гуталин", rounds: [6, 4, 5, 2, 4.5, 10, 4, 13], total: 48.5 },
+        { place: 5, team: "Братство Квизца", rounds: [4, 5, 4, 4, 4, 9, 4, 11], total: 45 },
+        { place: 6, team: "Генератор неслучайных ответов", rounds: [5, 5, 4, 3, 2, 4, 8, 9], total: 40 },
+        { place: 7, team: "КСК и ЧК", rounds: [4, 6, 4, 1, 3, 4, 6, 11], total: 39 },
+        { place: 8, team: "Орбит без сахара", rounds: [3, 5, 2, 3, 3.5, 8, 4, 8], total: 36.5 },
+        { place: 9, team: "Фантастические твари", rounds: [5, 5, 4, 2, 2, 3, 2, 12], total: 35 },
+        { place: 10, team: "Игристая семья", rounds: [5, 4, 4, 4, 3.5, 5, 4, 5], total: 34.5 },
+        { place: 11, team: "Два капитана", rounds: [3, 5, 2, 4, 2.5, 4, 4, 9], total: 33.5 },
+        { place: 12, team: "Несвятая троица", rounds: [3, 3, 1, 2, 2, 4, 2, 7], total: 24 },
+        { place: 13, team: "Хотим шампанское!", rounds: [2, 3, 1, 2, 1, 0, 4, 1], total: 14 },
+        { place: 14, team: "У команды нет имени", rounds: [2, 3, 3, 1, 0.5, 1, 2, 1], total: 13.5 },
+        { place: 15, team: "Гармония", rounds: [2, 2, 0, 2, 2, 1, 0, 0], total: 9 }
+      ]
+    }
   },
 
   /* ================= 2026 (апрель) ================= */
