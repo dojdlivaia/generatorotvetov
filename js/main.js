@@ -126,7 +126,8 @@
     // раскрываем аккордеон с результатами, если он есть и ещё закрыт
     const targetId = row.dataset.resultsTarget;
     if (targetId) {
-      const panel = document.getElementById(targetId);
+      const panelDiv = document.getElementById(targetId);
+      const panel = panelDiv ? panelDiv.closest("tr.results-row") : null;
       if (panel && panel.hidden) row.click();
     }
     row.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -349,10 +350,11 @@
           <td class="results-total">${fmtScore(s.total) || "—"}</td>
         </tr>`;
     }).join("");
+    const cols = document.querySelectorAll(".games-table thead th").length || 7;
     return `
-      <tr class="results-row" id="results-${idx}" hidden>
-        <td colspan="2">
-          <div class="results-panel">
+      <tr class="results-row" data-results-for="${idx}" hidden>
+        <td colspan="${cols}">
+          <div class="results-panel" id="results-${idx}">
             ${res.note ? `<p class="results-note">${res.note}</p>` : ""}
             <div class="results-scroll">
               <table class="results-table">
@@ -382,15 +384,16 @@
             : `<span class="no-photo">—</span>`
         }</td>
         <td data-th="">${hasResults ? `<span class="expand-icon">▸</span>` : ""}</td>
-      </tr>
-      ${resultsRow(g, idx)}`;
+      </tr>${resultsRow(g, idx)}`;
   }
 
   function bindGamesAccordion(tbody) {
     tbody.querySelectorAll("tr.has-results").forEach((row) => {
       row.addEventListener("click", (e) => {
         if (e.target.closest("a")) return; // клик по ссылке альбома не сворачивает аккордеон
-        const panel = tbody.querySelector(`#${row.dataset.resultsTarget}`);
+        const key = row.dataset.resultsTarget; // id панели, напр. "results-all-0"
+        const panelDiv = tbody.querySelector(`#${key}`);
+        const panel = panelDiv ? panelDiv.closest("tr.results-row") : null;
         if (!panel) return;
         const isOpen = !panel.hidden;
         panel.hidden = isOpen;
