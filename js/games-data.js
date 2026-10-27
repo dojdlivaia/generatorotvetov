@@ -554,7 +554,26 @@ const GAMES = [
     date: "2026-05-16", organizer: "GO!Квиз", title: "Классика_353.1",
     venue: "Пражка", place: 3,
     photoUrl: "https://findquiz.ru/event/go-quiz/photo/326584-klassika-353-1",
-    photoThumb: ""
+    photoThumb: "https://sun9-39.userapi.com/s/v1/ig2/ILySU_hahdMarttbSF2fXb1S8U27reEbBbPnEeHzjbzweHRZIC8av8PhWo1cE79V6g5koVMiV9MiujLdhxNJL4rY.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2560x1706&from=bu&cs=640x0",
+    results: {
+      note: "16 мая 2026, суббота • Пражка • GO!Квиз Классика_353.1",
+      rounds: 7,
+      roundLabels: ["РАУНД 1", "РАУНД 2", "РАУНД 3", "РАУНД 4", "РАУНД 5", "РАУНД 6", "РАУНД 7"],
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, name: "Меньше думаем", scores: [7, 6, 5, 3, 12, 3, 13], total: 49 },
+        { place: 2, name: "Moonlight", scores: [6, 2, 5, 4, 10, 3, 17], total: 47 },
+        { place: 3, name: "Генератор неслучайных ответов", scores: [7, 3, 5, 2, 12, 1, 15], total: 45 },
+        { place: 4, name: "Катька и ко", scores: [7, 3, 5, 3, 12, 1, 11], total: 42 },
+        { place: 5, name: "Новый курс", scores: [7, 1, 6, 3, 8, 1, 13], total: 39 },
+        { place: 6, name: "Полли хочет пряник", scores: [7, 2, 4, 3, 12, -2, 11], total: 37 },
+        { place: 7, name: "Общество безответственности", scores: [7, 3, 5, 3, 12, -2, 8], total: 36 },
+        { place: 8, name: "Сила безумия", scores: [7, 5, 5, 2, 8, 1, 1], total: 29 },
+        { place: 9, name: "[Поколение X:Y:Z]", scores: [8, 1, 3, 2, 9, 0, 4], total: 27 },
+        { place: 10, name: "Дивергент", scores: [6, 1, 2, 2, 5, 1, 1], total: 18 },
+        { place: 11, name: "Тамбовские", scores: [3, 0, 0, 1, 2, 0, 1], total: 7 }
+      ]
+    }
   },
   {
     date: "2026-05-01", organizer: "Квизиум", title: "«Обо всём» #866",
