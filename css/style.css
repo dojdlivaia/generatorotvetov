@@ -398,9 +398,11 @@ a { color: var(--accent); text-decoration: none; }
   border-bottom: 1px solid rgba(255, 255, 255, .05);
   font-size: 15px;
 }
-.games-table tr:last-child td { border-bottom: 0; }
+.games-table tbody.game-group:last-child tr:last-child td { border-bottom: 0; }
 .games-table tbody tr { transition: .15s; }
-.games-table tbody tr:hover { background: rgba(255, 255, 255, .04); }
+.games-table tbody tr.game-row:hover { background: rgba(255, 255, 255, .04); }
+/* Панель результатов не должна подсвечиваться как кликабельная строка */
+.games-table tbody tr.results-row:hover { background: transparent; }
 
 .org-badge {
   display: inline-block;
@@ -651,19 +653,32 @@ tr.game-row.expanded .expand-icon { transform: rotate(90deg); }
 .results-table tr.results-us td:first-child { border-left: 3px solid var(--accent, #7c5cff); }
 
 /* Гарантии корректной работы аккордеона:
-   1) панель результатов рендерится ВНЕ таблицы (#resultsHost после </table>) —
-      она физически не может повлиять на ширину столбцов внешней таблицы;
+   1) панель результатов — это <tr> внутри того же <tbody class="game-group">,
+      сразу под строкой игры; ширина столбцов внешней таблицы задаётся фиксированной
+      сеткой colgroup+table-layout:fixed, поэтому содержимое панели физически не может
+      «распереть» колонки Дата/Организатор;
    2) скрытие панели НЕ зависит от атрибута hidden и порядка подключения CSS:
       display:none задан напрямую классом .results-row, поэтому панель гарантированно
-      закрыта по умолчанию в любом браузере (Chrome/Яндекс); JS при открытии снимает
-      это правило через inline-стиль display:block;
-   3) обычная табличная раскладка колонок как в первых версиях. */
+      закрыта по умолчанию в любом браузере (Chrome/Яндекс); JS при открытии ставит
+      inline-стиль display:table-row, который перебивает это правило;
+   3) панель занимает всю ширину таблицы через colspan + width:100% на td. */
 .results-row {
   display: none; /* закрыто по умолчанию — переопределяет любые кэшированные стили */
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
-  border-radius: 0 0 14px 14px;
-  overflow: hidden;
 }
-.results-row[style*="display: block"],
-.results-row:not([hidden]) { display: block; }
-[hidden] { display: none !important; }
+.results-row > td.results-cell {
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  width: 100%;
+}
+
+/* Фиксированная сетка колонок внешней таблицы игр (задается colgroup'ом из JS).
+   Ширины в процентах суммарно = 100%. */
+.games-table { table-layout: fixed; }
+.games-table col.gc-date    { width: 9%; }
+.games-table col.gc-org     { width: 13%; }
+.games-table col.gc-title   { width: 24%; }
+.games-table col.gc-venue   { width: 20%; }
+.games-table col.gc-place   { width: 11%; }
+.games-table col.gc-photo   { width: 15%; }
+.games-table col.gc-expand  { width: 8%; }
+.games-table td { overflow-wrap: break-word; }
