@@ -118,16 +118,15 @@
   function jumpToGameRow(game) {
     if (!game) return;
     currentFilter = "all";           // чтобы игра гарантированно была в таблице
+    gamesExpanded = true;            // игра может быть среди «скрытых» — раскрываем список
     renderGamesTable();
     const idx = gamesSorted.indexOf(game);
-    const row = document.querySelector(`tr.game-row[data-results-target="all-${idx}"]`)
+    const row = document.querySelector(`#gamesTableBody tr.game-row[data-results-key="all-${idx}"]`)
       || [...document.querySelectorAll("#gamesTableBody tr.game-row")][idx];
     if (!row) return;
     // раскрываем аккордеон с результатами, если он есть и ещё закрыт
-    const targetId = row.dataset.resultsTarget;
-    if (targetId) {
-      const panelDiv = document.getElementById(targetId);
-      const panel = panelDiv ? panelDiv.closest(".results-row") : null;
+    if (row.classList.contains("has-results")) {
+      const panel = document.querySelector(`#resultsHost .results-row[data-results-for="all-${idx}"]`);
       if (panel && panel.hidden) row.click();
     }
     row.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -321,7 +320,11 @@
     return String(v).replace(".", ",");
   }
 
-  // Аккордеон с подробными результатами по турам (если у игры есть поле results)
+  // Аккордеон с подробными результатами по турам (если у игры есть поле results).
+  // Архитектура: строки внешней таблицы НИКОГДА не содержат <td colspan> с панелью —
+  // иначе ширина колонок внешней таблицы пересчитывается под содержимое панели и всё
+  // «разлетается». Вместо этого панель рендерится в отдельный контейнер #resultsHost
+  // ПОСЛЕ </table>, а синхронизация «строка ↔ панель» делается через data-атрибуты.
   function resultsRow(g, idx) {
     const res = g.results;
     if (!res || !Array.isArray(res.standings) || res.standings.length === 0) return "";
@@ -371,7 +374,7 @@
   function gameRow(g, idx) {
     const hasResults = g.results && Array.isArray(g.results.standings) && g.results.standings.length > 0;
     return `
-      <tr class="game-row${hasResults ? " has-results" : ""}"${hasResults ? ` data-results-target="results-${idx}" title="Показать результаты по турам"` : ""}>
+      <tr class="game-row${hasResults ? " has-results" : ""}"${hasResults ? ` data-results-key="${idx}" role="button" tabindex="0" aria-expanded="false" title="Показать результаты по турам"` : ""}>
         <td data-th="Дата">${formatDate(g.date)}</td>
         <td data-th="Организатор"><span class="org-badge">${g.organizer}</span></td>
         <td data-th="Игра">${g.title}</td>
@@ -386,21 +389,49 @@
       </tr>`;
   }
 
-  // Клик по строке игры: раскрыть/скрыть панель результатов (она лежит вне таблицы в #resultsHost)
+  // Клик (или Enter/Пробел) по строке игры: показать/скрыть её панель результатов.
+  // Панель живёт ВНЕ таблицы (#resultsHost), поэтому столбцы внешней таблицы
+  // никогда не пересчитывают ширину под содержимое панели — верстка не «едет».
+  function togglePanel(row, host) {
+    const key = row.dataset.resultsKey;
+    const panel = host.querySelector(`.results-row[data-results-for="${key}"]`);
+    if (!panel) return false;
+    const willOpen = panel.hidden;
+    panel.hidden = !willOpen;
+    row.classList.toggle("expanded", willOpen);
+    row.setAttribute("aria-expanded", String(willOpen));
+    // Открытие/закрытие управляем inline-стилем: он надёжно работает даже при
+    // кэшированной старой версии CSS (display:none у .results-row по умолчанию).
+    panel.style.display = willOpen ? "block" : "none";
+    if (willOpen) {
+      try { window.goatcounter && window.goatcounter.count({ path: location.pathname + "#game-results", noReferrer: true }); } catch (_) {}
+    }
+    return willOpen;
+  }
+
   function bindGamesAccordion(tbody, host) {
     tbody.querySelectorAll("tr.has-results").forEach((row) => {
       row.addEventListener("click", (e) => {
         if (e.target.closest("a")) return; // клик по ссылке альбома не сворачивает аккордеон
-        const key = row.dataset.resultsTarget; // id панели, напр. "results-all-0"
-        const panelDiv = host.querySelector(`#${CSS.escape(key)}`);
-        const panel = panelDiv ? panelDiv.closest(".results-row") : null;
-        if (!panel) return;
-        const isOpen = !panel.hidden;
-        panel.hidden = isOpen;
-        row.classList.toggle("expanded", !isOpen);
-        try { window.goatcounter && window.goatcounter.count({ path: location.pathname + "#game-results", noReferrer: true }); } catch (_) {}
+        const opened = togglePanel(row, host);
+        if (opened) scrollPanelIntoView(host.querySelector(`.results-row[data-results-for="${row.dataset.resultsKey}"]`));
+      });
+      row.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        e.preventDefault();
+        const opened = togglePanel(row, host);
+        if (opened) scrollPanelIntoView(host.querySelector(`.results-row[data-results-for="${row.dataset.resultsKey}"]`));
       });
     });
+  }
+
+  // Если панель ушла за нижний край экрана — аккуратно докрутить до неё.
+  function scrollPanelIntoView(panel) {
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    if (r.bottom > window.innerHeight - 16 || r.top < 70) {
+      panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
   }
 
   function renderGamesTable() {
