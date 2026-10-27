@@ -243,17 +243,30 @@
       const noPlace = g.place == null;
       // Чем лучше место — тем выше столбик; для игр без места — пустой столбик
       const h = noPlace ? 8 : Math.max(12, ((maxPlace - g.place + 1) / maxPlace) * barH);
+      const canJump = hasRoundResults(g);
       const tip = noPlace
         ? `${formatDate(g.date)} — место не указано (${g.organizer})`
         : `${formatDate(g.date)} — ${g.place} место (${g.organizer})`;
+      const attrs = canJump
+        ? ` data-game-idx="${gamesSorted.indexOf(g)}" role="link" tabindex="0" title="${tip} — показать результаты по турам"`
+        : ` title="${tip}"`;
       return `
-        <div class="bar-col" title="${tip}">
+        <div class="bar-col${canJump ? " bar-clickable" : ""}"${attrs}>
           <span class="bar-value">${noPlace ? "—" : g.place}</span>
           <div class="bar ${placeClass(g.place)}" style="height:${h}px"></div>
           <span class="bar-date">${shortDate(g.date)}</span>
         </div>`;
     }).join("");
     chart.scrollLeft = chart.scrollWidth; // ползунок справа — видны последние игры
+
+    // Клик по столбику — переход к строке игры в «Наших играх» и раскрытие аккордеона
+    chart.querySelectorAll(".bar-clickable").forEach((col) => {
+      const handler = () => jumpToGameRow(gamesSorted[Number(col.dataset.gameIdx)]);
+      col.addEventListener("click", handler);
+      col.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handler(); }
+      });
+    });
   }
 
   /* ---------- Распределение результатов ---------- */
@@ -440,9 +453,9 @@
       ];
       const perOrg = orgNames.map((org) => computeStats(GAMES.filter((g) => g.organizer === org)));
       tbody.innerHTML = rows.map((r) => `
-        <tr>
-          <td class="org-row-label">${r.label}</td>
-          ${perOrg.map((st, i) => `<td>${r.get(st, orgNames[i])}</td>`).join("")}
+        <tr class="game-row">
+          <td class="org-row-label" data-th="Метрика">${r.label}</td>
+          ${perOrg.map((st, i) => `<td data-th="${orgNames[i]}">${r.get(st, orgNames[i])}</td>`).join("")}
         </tr>`).join("");
     }
 

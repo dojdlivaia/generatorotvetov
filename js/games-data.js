@@ -401,7 +401,39 @@ const GAMES = [
     date: "2026-08-22", organizer: "Squiz", title: "Игра 1004.1",
     venue: "Liberty", place: 6,
     photoUrl: "https://findquiz.ru/event/squiz/photo/339351-igra-1004-1",
-    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/f31ee4f4-2019-4485-b080-bb0038d559ca/3488f224-0346-4c46-b00a-923484a95255_thumb.jpg"
+    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/f31ee4f4-2019-4485-b080-bb0038d559ca/3488f224-0346-4c46-b00a-923484a95255_thumb.jpg",
+    results: {
+      note: "22 августа 2026, суббота • Liberty • Squiz #1004.1",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Внутренняя интеллигентность", rounds: [7, 8, 7, 5, 9, 9, 18], total: 63 },
+        { place: 2, team: "Халдеев, Налдеев и Пепермалдеев", rounds: [7, 10, 5, 6, 9, 8, 18], total: 63 },
+        { place: 3, team: "Здесь - это вам не тут", rounds: [7, 8, 6, 5.5, 9, 9, 18], total: 62.5 },
+        { place: 4, team: "OnlyFuns", rounds: [7, 8, 7, 5, 9, 9, 13], total: 58 },
+        { place: 5, team: "Тот самый Лев", rounds: [7, 8, 6, 6, 1.5, 8, 18], total: 54.5 },
+        { place: 6, team: "Генератор неслучайных ответов", rounds: [7, 7, 6, 4.5, 7.5, 9, 13], total: 54 },
+        { place: 7, team: "Сборная Швейцарии", rounds: [6, 9, 5, 5.5, 1.5, 9, 15], total: 51 },
+        { place: 8, team: "Более лимения", rounds: [6, 6, 6, 4.5, 4.5, 7, 15], total: 49 },
+        { place: 9, team: "Метод тыка", rounds: [5, 6, 6, 5, 7.5, 7, 10], total: 46.5 },
+        { place: 10, team: "Запускайте гуся", rounds: [6, 6, 6, 5, 1.5, 8, 13], total: 45.5 },
+        { place: 11, team: "Если б мы знали что это такое", rounds: [5, 7, 6, 5.5, 3, 6, 13], total: 45.5 },
+        { place: 12, team: "Отдых грибника", rounds: [5, 8, 5, 3.5, 7.5, 8, 8], total: 45 },
+        { place: 13, team: "Славик и Даша против всех", rounds: [5, 5, 4, 4, 3, 9, 4], total: 34 },
+        { place: 14, team: "Квиздец", rounds: [5, 3, 5, 4.5, 1.5, 8, 6], total: 33 },
+        { place: 15, team: "Струя бобра", rounds: [5, 5, 6, 5.5, 3, 8, 0], total: 32.5 },
+        { place: 16, team: "Ангелы Бухарли", rounds: [6, 3, 5, 4.5, 3, 7, 2], total: 30.5 },
+        { place: 17, team: "Девушки Бонда", rounds: [6, 2, 6, 4.5, 3, 8, 1], total: 30.5 },
+        { place: 18, team: "Казашки", rounds: [5, 3, 5, 4.5, 0, 8, 4], total: 29.5 },
+        { place: 19, team: "Медиакомики", rounds: [6, 6, 5, 4, 3, 9, -5], total: 28 },
+        { place: 20, team: "Ча-ча-чай", rounds: [7, 2, 5, 4, 1.5, 8, -2], total: 25.5 },
+        { place: 21, team: "Иллюминаты", rounds: [4, 4, 5, 2.5, 0, 6, 2], total: 23.5 },
+        { place: 22, team: "Alpha  team", rounds: [5, 1, 5, 4, 0, 6, 1], total: 22 },
+        { place: 23, team: "Король казаков", rounds: [6, 1, 4, 4, 3, 8, -4], total: 22 },
+        { place: 24, team: "Бабушкинские ребята", rounds: [0, 3, 3, 5.5, 3, 9, -7], total: 16.5 },
+        { place: 25, team: "маленькие", rounds: [6, 2, 1, 3.5, 0, 6, -6], total: 12.5 }
+      ]
+    }
   },
   {
     date: "2026-08-22", organizer: "GO!Квиз", title: "Назад в СССР (повтор от 12.08)",
@@ -667,7 +699,38 @@ const GAMES = [
   },
   {
     date: "2025-11-30", organizer: "Squiz", title: "#930.3",
-    venue: "Москва", place: 4, photoUrl: "", photoThumb: ""
+    venue: "Москва", place: 4, photoUrl: "", photoThumb: "",
+    results: {
+      note: "30 ноября 2025, воскресенье • Москва • Squiz #930.3",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Завтрак у Кролика", rounds: [7, 12, 7, 5.5, 9, 8, 18], total: 66.5 },
+        { place: 2, team: "Екатерина Михайловна", rounds: [6, 12, 5, 5.5, 7.5, 7, 15], total: 58 },
+        { place: 3, team: "без подшерстка", rounds: [7, 10, 6, 5, 9, 7, 12], total: 56 },
+        { place: 4, team: "Генератор неслучайных ответов", rounds: [6, 8, 6, 4.5, 4.5, 7, 18], total: 54 },
+        { place: 5, team: "Адекваты", rounds: [7, 8, 4, 5, 9, 8, 9], total: 50 },
+        { place: 6, team: "Без некоторых друзей", rounds: [7, 12, 4, 4, 9, 7, 7], total: 50 },
+        { place: 7, team: "Уканеевы", rounds: [6, 3, 3, 5.5, 7.5, 8, 15], total: 48 },
+        { place: 8, team: "Изо всех сил", rounds: [6, 8, 4, 5.5, 7.5, 9, 3], total: 43 },
+        { place: 9, team: "Пермский государственный ордена Трудового Красного Знамени академический театр оперы и балета им. Петра Ильича Чайковского", rounds: [7, 4, 4, 5, 7.5, 8, 6], total: 41.5 },
+        { place: 10, team: "Тони Лимони", rounds: [7, 6, 4, 6, 9, 8, 0], total: 40 },
+        { place: 11, team: "Фрезерный гамбит", rounds: [6, 5, 2, 5, 6, 7, 7], total: 38 },
+        { place: 12, team: "Корпоративные Капибары", rounds: [6, 7, 5, 3.5, 4.5, 7, 4], total: 37 },
+        { place: 13, team: "3ума", rounds: [7, 8, 5, 5, 4.5, 3, 4], total: 36.5 },
+        { place: 14, team: "Романовские", rounds: [7, 5, 5, 5, 6, 7, -1], total: 34 },
+        { place: 15, team: "Bestii", rounds: [5, 6, 4, 3.5, 3, 6, 5], total: 32.5 },
+        { place: 16, team: "M&M's", rounds: [5, 4, 3, 3.5, 6, 3, 5], total: 29.5 },
+        { place: 17, team: "Взрывные котята", rounds: [6, 5, 4, 4.5, 3, 7, 0], total: 29.5 },
+        { place: 18, team: "Части мозга", rounds: [7, 3, 3, 4.5, 3, 6, 2], total: 28.5 },
+        { place: 19, team: "Эффект бабочки", rounds: [7, 7, 2, 3.5, 3, 6, 0], total: 28.5 },
+        { place: 20, team: "Манькина любовь", rounds: [6, 3, 3, 4.5, 4.5, 4, 3], total: 28 },
+        { place: 21, team: "Мозгомыш", rounds: [6, 3, 4, 5, 3, 4, 3], total: 28 },
+        { place: 22, team: "Налётчики", rounds: [7, 3, 4, 4, 4.5, 2, 3], total: 27.5 },
+        { place: 23, team: "Сон Люды", rounds: [6, 1, 3, 4.5, 1.5, 4, 1], total: 21 },
+        { place: None, team: "По&По и Вы", rounds: [7, 4, 5, 5.5, 6, 8, 6], total: 41.5 }
+      ]
+    }
   },
 
   /* ================= 2025 (ноябрь, далее) ================= */
@@ -698,7 +761,37 @@ const GAMES = [
   },
   {
     date: "2025-09-20", organizer: "Squiz", title: "Игра 910.2",
-    venue: "Coin hall", place: 7, photoUrl: "", photoThumb: ""
+    venue: "Coin hall", place: 7, photoUrl: "", photoThumb: "",
+    results: {
+      note: "20 сентября 2025, суббота • Coin hall • Squiz #910.2",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Киски, тлен, видеоигры", rounds: [7, 10, 7, 5.5, 9, 10, 18], total: 66.5 },
+        { place: 2, team: "Тот самый Лев", rounds: [7, 12, 6, 5.5, 9, 9, 18], total: 66.5 },
+        { place: 3, team: "Сковородка", rounds: [7, 10, 7, 5, 9, 10, 18], total: 66 },
+        { place: 4, team: "Здесь - это вам не тут", rounds: [7, 10, 7, 5.5, 9, 9, 18], total: 65.5 },
+        { place: 5, team: "Q&J", rounds: [7, 8, 6, 6, 9, 10, 18], total: 64 },
+        { place: 6, team: "Kentucky Fried Popugi", rounds: [7, 9, 6, 6, 7.5, 9, 15], total: 59.5 },
+        { place: 7, team: "Генератор неслучайных ответов", rounds: [7, 7, 6, 4.5, 9, 8, 13], total: 54.5 },
+        { place: 8, team: "Беседка", rounds: [6, 4, 7, 5.5, 7.5, 8, 14], total: 52 },
+        { place: 9, team: "Синяя яма", rounds: [6, 6, 5, 5, 4.5, 9, 15], total: 50.5 },
+        { place: 10, team: "Вторая страница Гугла", rounds: [7, 3, 5, 5.5, 6, 8, 15], total: 49.5 },
+        { place: 11, team: "Лапки Живоглота с чаем", rounds: [7, 6, 3, 3.5, 6, 9, 12], total: 46.5 },
+        { place: 12, team: "Шампанский обряд", rounds: [7, 7, 6, 5, 7.5, 9, 5], total: 46.5 },
+        { place: 13, team: "По нам и не скажешь", rounds: [5, 4, 6, 4.5, 6, 8, 12], total: 45.5 },
+        { place: 14, team: "Второй пилот Дринкинс", rounds: [5, 6, 3, 5.5, 4.5, 9, 6], total: 39 },
+        { place: 15, team: "Каюта мистера Данзигера", rounds: [7, 2, 5, 5, 7.5, 9, 1], total: 36.5 },
+        { place: 16, team: "Полководцы", rounds: [4, 4, 5, 3.5, 7.5, 7, 4], total: 35 },
+        { place: 17, team: "3ума", rounds: [6, 3, 4, 4, 1.5, 8, 4], total: 30.5 },
+        { place: 18, team: "МариУлья", rounds: [6, 1, 4, 4, 1.5, 5, 6], total: 27.5 },
+        { place: 19, team: "Смешарики 2.0", rounds: [4, 3, 6, 5.5, 0, 9, 0], total: 27.5 },
+        { place: 20, team: "Ваш рейс в дурку прибыл", rounds: [6, 2, 2, 3.5, 3, 8, 1], total: 25.5 },
+        { place: 21, team: "Откройте форточку", rounds: [4, 3, 2, 4.5, 1.5, 9, 0], total: 24 },
+        { place: 22, team: "Британские психологи", rounds: [2, 1, 2, 4.5, 4.5, 8, 1], total: 23 },
+        { place: 23, team: "Голубино Шпиониро", rounds: [6, 1, 5, 3, 1.5, 4, 0], total: 20.5 }
+      ]
+    }
   },
   {
     date: "2025-09-13", organizer: "Эйнштейн Party", title: "FUN #324_4",
