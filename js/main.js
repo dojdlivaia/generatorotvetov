@@ -121,12 +121,12 @@
     gamesExpanded = true;            // игра может быть среди «скрытых» — раскрываем список
     renderGamesTable();
     const idx = gamesSorted.indexOf(game);
-    const row = document.querySelector(`#gamesTableBody tr.game-row[data-results-key="all-${idx}"]`)
-      || [...document.querySelectorAll("#gamesTableBody tr.game-row")][idx];
+    const row = document.querySelector(`#gamesTable tr.game-row[data-results-key="all-${idx}"]`)
+      || [...document.querySelectorAll("#gamesTable tr.game-row")][idx];
     if (!row) return;
     // раскрываем аккордеон с результатами, если он есть и ещё закрыт
     if (row.classList.contains("has-results")) {
-      const panel = document.querySelector(`#resultsHost .results-row[data-results-for="all-${idx}"]`);
+      const panel = row.parentElement.querySelector(`.results-row[data-results-for="all-${idx}"]`);
       if (panel && panel.hidden) row.click();
     }
     row.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -321,11 +321,24 @@
   }
 
   // Аккордеон с подробными результатами по турам (если у игры есть поле results).
-  // Архитектура: строки внешней таблицы НИКОГДА не содержат <td colspan> с панелью —
-  // иначе ширина колонок внешней таблицы пересчитывается под содержимое панели и всё
-  // «разлетается». Вместо этого панель рендерится в отдельный контейнер #resultsHost
-  // ПОСЛЕ </table>, а синхронизация «строка ↔ панель» делается через data-атрибуты.
-  function resultsRow(g, idx) {
+  // Архитектура: каждая строка внешней таблицы — это НЕ одна <tr>, а группа из двух
+  // строк одного <tbody>: (1) строка игры и (2) строка-панель результатов прямо ПОД ней.
+  // Ширина столбцов всей таблицы задаётся ОДИН раз фиксированной сеткой colgroup
+  // (см. buildTableShell), поэтому содержимое панели физически не может «распереть»
+  // колонки Дата/Организатор — именно это ломало вёрстку в прошлых вариантах.
+  // Для скролла широкой таблицы туров панель занимает всю ширину группы
+  // (<tbody class="game-group"> → grid 1fr / table width:100%).
+  const GAME_COLS = [
+    { w: "9%",  cls: "gc-date" },
+    { w: "13%", cls: "gc-org" },
+    { w: "24%", cls: "gc-title" },
+    { w: "20%", cls: "gc-venue" },
+    { w: "11%", cls: "gc-place" },
+    { w: "15%", cls: "gc-photo" },
+    { w: "8%",  cls: "gc-expand" }
+  ];
+
+  function resultsRowHtml(g, idx) {
     const res = g.results;
     if (!res || !Array.isArray(res.standings) || res.standings.length === 0) return "";
     // Поддержка двух форматов строк таблицы: team/rounds и name/scores (GO!Квиз)
@@ -353,48 +366,47 @@
           <td class="results-total">${fmtScore(s.total) || "—"}</td>
         </tr>`;
     }).join("");
-    // Панель рендерится ПОСЛЕ закрывающего </table> (вне внешней таблицы),
-    // поэтому никогда не может «распирать» столбцы — как в самых первых версиях.
     return `
-      <div class="results-row" data-results-for="${idx}" hidden>
-        <div class="results-panel" id="results-${idx}">
-          ${res.note ? `<p class="results-note">${res.note}</p>` : ""}
-          <div class="results-scroll">
-            <table class="results-table">
-              <thead>
-                <tr><th>Место</th><th>Команда</th>${roundHeads}<th>Итого</th></tr>
-              </thead>
-              <tbody>${bodyRows}</tbody>
-            </table>
+      <tr class="results-row" data-results-for="${idx}" hidden>
+        <td class="results-cell" colspan="${GAME_COLS.length}">
+          <div class="results-panel" id="results-${idx}">
+            ${res.note ? `<p class="results-note">${res.note}</p>` : ""}
+            <div class="results-scroll">
+              <table class="results-table">
+                <thead>
+                  <tr><th>Место</th><th>Команда</th>${roundHeads}<th>Итого</th></tr>
+                </thead>
+                <tbody>${bodyRows}</tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      </div>`;
+        </td>
+      </tr>`;
   }
 
-  function gameRow(g, idx) {
+  function gameRowHtml(g, idx) {
     const hasResults = g.results && Array.isArray(g.results.standings) && g.results.standings.length > 0;
     return `
       <tr class="game-row${hasResults ? " has-results" : ""}"${hasResults ? ` data-results-key="${idx}" role="button" tabindex="0" aria-expanded="false" title="Показать результаты по турам"` : ""}>
-        <td data-th="Дата">${formatDate(g.date)}</td>
-        <td data-th="Организатор"><span class="org-badge">${g.organizer}</span></td>
-        <td data-th="Игра">${g.title}</td>
-        <td data-th="Площадка">${g.venue}</td>
-        <td data-th="Место"><span class="place-badge ${placeClass(g.place)}">${placeLabel(g.place)}</span></td>
-        <td data-th="Фото">${
+        <td class="${GAME_COLS[0].cls}">${formatDate(g.date)}</td>
+        <td class="${GAME_COLS[1].cls}"><span class="org-badge">${g.organizer}</span></td>
+        <td class="${GAME_COLS[2].cls}">${g.title}</td>
+        <td class="${GAME_COLS[3].cls}">${g.venue}</td>
+        <td class="${GAME_COLS[4].cls}"><span class="place-badge ${placeClass(g.place)}">${placeLabel(g.place)}</span></td>
+        <td class="${GAME_COLS[5].cls}">${
           g.photoUrl
             ? `<a class="photo-link" href="${g.photoUrl}" target="_blank" rel="noopener">📷 Альбом</a>`
             : `<span class="no-photo">—</span>`
         }</td>
-        <td data-th="">${hasResults ? `<span class="expand-icon">▸</span>` : ""}</td>
+        <td class="${GAME_COLS[6].cls}">${hasResults ? `<span class="expand-icon">▸</span>` : ""}</td>
       </tr>`;
   }
 
   // Клик (или Enter/Пробел) по строке игры: показать/скрыть её панель результатов.
-  // Панель живёт ВНЕ таблицы (#resultsHost), поэтому столбцы внешней таблицы
-  // никогда не пересчитывают ширину под содержимое панели — верстка не «едет».
-  function togglePanel(row, host) {
+  // Панель — соседняя строка того же <tbody>, сразу под строкой игры.
+  function togglePanel(row) {
     const key = row.dataset.resultsKey;
-    const panel = host.querySelector(`.results-row[data-results-for="${key}"]`);
+    const panel = row.parentElement.querySelector(`.results-row[data-results-for="${key}"]`);
     if (!panel) return false;
     const willOpen = panel.hidden;
     panel.hidden = !willOpen;
@@ -402,53 +414,57 @@
     row.setAttribute("aria-expanded", String(willOpen));
     // Открытие/закрытие управляем inline-стилем: он надёжно работает даже при
     // кэшированной старой версии CSS (display:none у .results-row по умолчанию).
-    panel.style.display = willOpen ? "block" : "none";
+    panel.style.display = willOpen ? "table-row" : "none";
     if (willOpen) {
       try { window.goatcounter && window.goatcounter.count({ path: location.pathname + "#game-results", noReferrer: true }); } catch (_) {}
     }
     return willOpen;
   }
 
-  function bindGamesAccordion(tbody, host) {
+  function bindGamesAccordion(tbody) {
     tbody.querySelectorAll("tr.has-results").forEach((row) => {
       row.addEventListener("click", (e) => {
         if (e.target.closest("a")) return; // клик по ссылке альбома не сворачивает аккордеон
-        const opened = togglePanel(row, host);
-        if (opened) scrollPanelIntoView(host.querySelector(`.results-row[data-results-for="${row.dataset.resultsKey}"]`));
+        togglePanel(row);
       });
       row.addEventListener("keydown", (e) => {
         if (e.key !== "Enter" && e.key !== " ") return;
         e.preventDefault();
-        const opened = togglePanel(row, host);
-        if (opened) scrollPanelIntoView(host.querySelector(`.results-row[data-results-for="${row.dataset.resultsKey}"]`));
+        togglePanel(row);
       });
     });
   }
 
-  // Если панель ушла за нижний край экрана — аккуратно докрутить до неё.
-  function scrollPanelIntoView(panel) {
-    if (!panel) return;
-    const r = panel.getBoundingClientRect();
-    if (r.bottom > window.innerHeight - 16 || r.top < 70) {
-      panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
+  // Фиксированная сетка колонок: widths задаются коломгруппом один раз и больше
+  // никогда не пересчитываются под содержимое аккордеона.
+  function buildTableShell(list) {
+    const colgroup = `<colgroup>${GAME_COLS.map((c) => `<col class="${c.cls}">`).join("")}</colgroup>`;
+    const thead = `<thead><tr>
+        <th class="gc-date">Дата</th>
+        <th class="gc-org">Организатор</th>
+        <th class="gc-title">Игра / пакет</th>
+        <th class="gc-venue">Площадка</th>
+        <th class="gc-place">Место</th>
+        <th class="gc-photo">Фото</th>
+        <th class="gc-expand"></th>
+      </tr></thead>`;
+    const groups = list.map((g, i) => {
+      const idx = `${currentFilter}-${i}`;
+      const gameHtml = gameRowHtml(g, idx);
+      const resHtml = resultsRowHtml(g, idx);
+      return `<tbody class="game-group">${gameHtml}${resHtml}</tbody>`;
+    }).join("");
+    return colgroup + thead + groups;
   }
 
   function renderGamesTable() {
-    const tbody = document.getElementById("gamesTableBody");
-    const wrap = tbody.closest(".games-table-wrap");
-    const host = document.getElementById("resultsHost");
+    const table = document.getElementById("gamesTable");
+    const wrap = table.closest(".games-table-wrap");
     const list = gamesSorted.filter((g) => currentFilter === "all" || g.organizer === currentFilter);
     const shown = gamesExpanded ? list : list.slice(0, GAMES_INITIAL);
-    // Строки таблицы и панели результатов рендерятся РАЗДЕЛЬНО:
-    // tbody содержит только <tr>, а аккордеоны — в #resultsHost после </table>.
-    // Так панель физически не может повлиять на ширину столбцов внешней таблицы.
-    tbody.innerHTML = shown.map((g, i) => gameRow(g, `${currentFilter}-${i}`)).join("");
-    host.innerHTML = shown
-      .map((g, i) => resultsRow(g, `${currentFilter}-${i}`))
-      .filter(Boolean)
-      .join("");
-    bindGamesAccordion(tbody, host);
+    // Пересобираем таблицу целиком (colgroup + tbody-группы «строка игры + панель»).
+    table.innerHTML = buildTableShell(shown);
+    bindGamesAccordion(table);
 
     // Кнопка «показать ещё»
     let moreBtn = wrap.parentElement.querySelector(".show-more-btn");
