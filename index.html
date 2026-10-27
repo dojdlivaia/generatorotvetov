@@ -117,22 +117,10 @@
         </div>
 
         <div class="games-table-wrap">
-          <table class="games-table">
-            <thead>
-              <tr>
-                <th>Дата</th>
-                <th>Организатор</th>
-                <th>Игра / пакет</th>
-                <th>Площадка</th>
-                <th>Место</th>
-                <th>Фото</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="gamesTableBody"><!-- строки таблицы --></tbody>
-          </table>
+          <!-- Таблица собирается из JS: colgroup (фиксированная сетка колонок) +
+               группы <tbody>: строка игры + строка-панель результатов прямо под ней. -->
+          <table class="games-table" id="gamesTable"></table>
         </div>
-        <div id="resultsHost"></div><!-- аккордеоны результатов — вне таблицы, чтобы не расширять столбцы -->
       </div>
     </section>
 
