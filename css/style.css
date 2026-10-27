@@ -652,7 +652,12 @@ tr.game-row.expanded .expand-icon { transform: rotate(90deg); }
 }
 .results-table tr.results-us td:first-child { border-left: 3px solid var(--accent, #7c5cff); }
 
-/* Строка аккордеона всегда ведёт себя как обычная табличная ячейка
-   (display:table-cell), чтобы внутренние таблицы результатов не «распирало». */
+/* Гарантии корректной работы аккордеона:
+   1) атрибут hidden всегда скрывает строку (на случай, если какое-то правило
+      display перекрывает UA-стиль [hidden]);
+   2) строка/ячейка аккордеона всегда остаются табличными элементами —
+      иначе внутренние таблицы результатов «распирают» внешнюю таблицу. */
+[hidden] { display: none !important; }
 .games-table tr.results-row { display: table-row; }
+.games-table tr.results-row[hidden] { display: none !important; }
 .games-table tr.results-row > td { display: table-cell; }
