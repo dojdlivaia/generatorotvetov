@@ -682,3 +682,9 @@ tr.game-row.expanded .expand-icon { transform: rotate(90deg); }
 .games-table col.gc-photo   { width: 15%; }
 .games-table col.gc-expand  { width: 8%; }
 .games-table td { overflow-wrap: break-word; }
+
+/* Подсветка лучшего места в сводной таблице организаторов */
+.best-place { font-weight: 700; }
+.best-place-1 { color: #ffd75e; }
+.best-place-2 { color: #cfd6e4; }
+.best-place-3 { color: #e0a370; }
