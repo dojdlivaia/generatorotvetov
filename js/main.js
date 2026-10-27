@@ -127,7 +127,7 @@
     const targetId = row.dataset.resultsTarget;
     if (targetId) {
       const panelDiv = document.getElementById(targetId);
-      const panel = panelDiv ? panelDiv.closest("tr.results-row") : null;
+      const panel = panelDiv ? panelDiv.closest(".results-row") : null;
       if (panel && panel.hidden) row.click();
     }
     row.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -350,23 +350,22 @@
           <td class="results-total">${fmtScore(s.total) || "—"}</td>
         </tr>`;
     }).join("");
-    const cols = document.querySelectorAll(".games-table thead th").length || 7;
+    // Панель рендерится ПОСЛЕ закрывающего </table> (вне внешней таблицы),
+    // поэтому никогда не может «распирать» столбцы — как в самых первых версиях.
     return `
-      <tr class="results-row" data-results-for="${idx}" hidden>
-        <td colspan="${cols}">
-          <div class="results-panel" id="results-${idx}">
-            ${res.note ? `<p class="results-note">${res.note}</p>` : ""}
-            <div class="results-scroll">
-              <table class="results-table">
-                <thead>
-                  <tr><th>Место</th><th>Команда</th>${roundHeads}<th>Итого</th></tr>
-                </thead>
-                <tbody>${bodyRows}</tbody>
-              </table>
-            </div>
+      <div class="results-row" data-results-for="${idx}" hidden>
+        <div class="results-panel" id="results-${idx}">
+          ${res.note ? `<p class="results-note">${res.note}</p>` : ""}
+          <div class="results-scroll">
+            <table class="results-table">
+              <thead>
+                <tr><th>Место</th><th>Команда</th>${roundHeads}<th>Итого</th></tr>
+              </thead>
+              <tbody>${bodyRows}</tbody>
+            </table>
           </div>
-        </td>
-      </tr>`;
+        </div>
+      </div>`;
   }
 
   function gameRow(g, idx) {
@@ -384,16 +383,17 @@
             : `<span class="no-photo">—</span>`
         }</td>
         <td data-th="">${hasResults ? `<span class="expand-icon">▸</span>` : ""}</td>
-      </tr>${resultsRow(g, idx)}`;
+      </tr>`;
   }
 
-  function bindGamesAccordion(tbody) {
+  // Клик по строке игры: раскрыть/скрыть панель результатов (она лежит вне таблицы в #resultsHost)
+  function bindGamesAccordion(tbody, host) {
     tbody.querySelectorAll("tr.has-results").forEach((row) => {
       row.addEventListener("click", (e) => {
         if (e.target.closest("a")) return; // клик по ссылке альбома не сворачивает аккордеон
         const key = row.dataset.resultsTarget; // id панели, напр. "results-all-0"
-        const panelDiv = tbody.querySelector(`#${key}`);
-        const panel = panelDiv ? panelDiv.closest("tr.results-row") : null;
+        const panelDiv = host.querySelector(`#${CSS.escape(key)}`);
+        const panel = panelDiv ? panelDiv.closest(".results-row") : null;
         if (!panel) return;
         const isOpen = !panel.hidden;
         panel.hidden = isOpen;
@@ -406,10 +406,18 @@
   function renderGamesTable() {
     const tbody = document.getElementById("gamesTableBody");
     const wrap = tbody.closest(".games-table-wrap");
+    const host = document.getElementById("resultsHost");
     const list = gamesSorted.filter((g) => currentFilter === "all" || g.organizer === currentFilter);
     const shown = gamesExpanded ? list : list.slice(0, GAMES_INITIAL);
+    // Строки таблицы и панели результатов рендерятся РАЗДЕЛЬНО:
+    // tbody содержит только <tr>, а аккордеоны — в #resultsHost после </table>.
+    // Так панель физически не может повлиять на ширину столбцов внешней таблицы.
     tbody.innerHTML = shown.map((g, i) => gameRow(g, `${currentFilter}-${i}`)).join("");
-    bindGamesAccordion(tbody);
+    host.innerHTML = shown
+      .map((g, i) => resultsRow(g, `${currentFilter}-${i}`))
+      .filter(Boolean)
+      .join("");
+    bindGamesAccordion(tbody, host);
 
     // Кнопка «показать ещё»
     let moreBtn = wrap.parentElement.querySelector(".show-more-btn");

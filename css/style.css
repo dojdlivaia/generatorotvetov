@@ -603,7 +603,6 @@ a { color: var(--accent); text-decoration: none; }
   .games-table .org-badge { font-size: 11px; padding: 2px 7px; }
   .games-table .place-badge { font-size: 12px; padding: 2px 8px; }
   .games-table .photo-link { font-size: 12px; white-space: nowrap; }
-  .games-table tr.results-row > td { padding: 0 !important; }
   .results-panel { padding: 12px 10px 16px; }
   .results-note { font-size: 12px; }
   .results-table { font-size: 12px; min-width: 560px; }
@@ -626,7 +625,6 @@ a { color: var(--accent); text-decoration: none; }
   font-size: 12px; transition: transform .2s ease;
 }
 tr.game-row.expanded .expand-icon { transform: rotate(90deg); }
-.results-row > td { padding: 0 !important; border-bottom: 1px solid rgba(255,255,255,.08); }
 .results-panel {
   padding: 16px clamp(12px, 3vw, 22px) 20px;
   background: rgba(124, 92, 255, .05);
@@ -653,18 +651,10 @@ tr.game-row.expanded .expand-icon { transform: rotate(90deg); }
 .results-table tr.results-us td:first-child { border-left: 3px solid var(--accent, #7c5cff); }
 
 /* Гарантии корректной работы аккордеона:
-   1) атрибут hidden всегда скрывает строку (на случай, если какое-то правило
+   1) атрибут hidden всегда скрывает панель (на случай, если какое-то правило
       display перекрывает UA-стиль [hidden]);
-   2) fixed layout — колонки внешней таблицы фиксированы и не зависят от
-      содержимого раскрытой панели результатов (ничего не «распирает»);
-   3) строка/ячейка аккордеона всегда остаются табличными элементами. */
+   2) панель результатов рендерится ВНЕ таблицы (#resultsHost после </table>) —
+      она физически не может повлиять на ширину столбцов внешней таблицы;
+   3) обычная табличная раскладка колонок как в первых версиях. */
 [hidden] { display: none !important; }
-.games-table { table-layout: fixed; }
-.games-table th:nth-child(1), .games-table td:nth-child(1) { width: 10ch; }   /* Дата */
-.games-table th:nth-child(2), .games-table td:nth-child(2) { width: 14ch; }   /* Организатор */
-.games-table th:nth-child(5), .games-table td:nth-child(5) { width: 8ch;  }   /* Место */
-.games-table th:nth-child(6), .games-table td:nth-child(6) { width: 10ch; }   /* Фото */
-.games-table th:nth-child(7), .games-table td:nth-child(7) { width: 3ch;  }   /* ▸ */
-.games-table tr.results-row { display: table-row; }
-.games-table tr.results-row[hidden] { display: none !important; }
-.games-table tr.results-row > td { display: table-cell; }
+.results-row { border-bottom: 1px solid rgba(255, 255, 255, .08); border-radius: 0 0 14px 14px; overflow: hidden; }
