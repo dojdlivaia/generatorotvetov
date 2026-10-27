@@ -360,7 +360,7 @@
       }).join("");
       return `
         <tr class="${isUs ? "results-us" : ""}">
-          <td>${s.place}</td>
+          <td>${s.place == null ? "—" : s.place}</td>
           <td class="results-team">${teamOf(s)}${isUs ? " 🎲" : ""}</td>
           ${cells}
           <td class="results-total">${fmtScore(s.total) || "—"}</td>
@@ -511,9 +511,15 @@
       };
       const rows = [
         { label: "Игр сыграно", get: (st, org) => st.count },
-        { label: "Призовых (топ-3)", get: (st) => `🥇${st.firstGold} · 🥈${st.silvers} · 🥉${st.bronzes}` },
+        { label: "Призовых (топ-3)", get: (st) => {
+            const parts = [];
+            if (st.firstGold > 0) parts.push(`🥇${st.firstGold}`);
+            if (st.silvers > 0) parts.push(`🥈${st.silvers}`);
+            if (st.bronzes > 0) parts.push(`🥉${st.bronzes}`);
+            return parts.length ? parts.join(" · ") : "—";
+          } },
         { label: "Доля подиума", get: (st) => `${Math.round(st.winRate)}%` },
-        { label: "Лучшее место", get: (st) => st.best == null ? "—" : `№${st.best}` },
+        { label: "Лучшее место", get: (st) => st.best == null ? "—" : `<span class="best-place ${st.best <= 3 ? "best-place-" + st.best : ""}">${st.best}</span>` },
         { label: "Сумма баллов", get: (st, org) => fmtPoints(totalPoints(org)) },
         { label: "Медиана", get: (st) => st.median == null ? "—" : (st.median % 1 ? st.median.toFixed(1) : st.median) },
         { label: "Без места", get: (st) => st.count - st.rankCount || "—" }
@@ -548,7 +554,7 @@
             <span class="organizer-count">${s.count} ${pluralize(s.count, "игра", "игры", "игр")}</span>
           </div>
           <div class="organizer-stats">
-            <div><strong>${s.best == null ? "—" : "№" + s.best}</strong><span>лучшее место</span></div>
+            <div><strong>${s.best == null ? "—" : `<span class="best-place ${s.best <= 3 ? "best-place-" + s.best : ""}">${s.best}</span>`}</strong><span>лучшее место</span></div>
             <div><strong>${s.avg.toFixed(1)}</strong><span>среднее место</span></div>
             <div><strong>${s.wins}</strong><span>подиумов</span></div>
           </div>
