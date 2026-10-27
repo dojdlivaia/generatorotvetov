@@ -660,6 +660,36 @@ const GAMES = [
 
   /* ================= 2026 (февраль) ================= */
   {
+    date: "2026-02-28", organizer: "ИГРА", title: "ИГРА #40.2",
+    venue: "Perepel", place: 9,
+    photoUrl: "https://findquiz.ru/event/thegame/photo/317529-igra-40-2",
+    photoThumb: "https://sun9-46.userapi.com/s/v1/ig2/hSZzJsFXMGl2TnU8sWdwwlUp_uQkxXhDGw-6XFcIOls0H5_9pE-zlsIc-o3VyjmW0UZOZeFXpdT6-YrVJYQsYQjD.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2560x1706&from=bu&cs=640x0",
+    results: {
+      note: "28 февраля 2026, суббота • Perepel • ИГРА #40.2",
+      roundLabels: ["Тур 1", "Тур 2", "Тур 3", "Тур 4", "Тур 5", "Тур 6", "Тур 7"],
+      team: "Генератор НЕСЛУЧАЙНЫХ ответов",
+      standings: [
+        { place: 1, team: "Эль Шмель", rounds: [80, 120, 70, 140, 80, 120, 230], total: 840 },
+        { place: 2, team: "Собрались внезапно", rounds: [70, 120, 70, 140, 80, 100, 190], total: 770 },
+        { place: 3, team: "Мокрый трансформатор", rounds: [90, 100, 70, 160, 85, 100, 150], total: 755 },
+        { place: 4, team: "Внутренняя интеллигентность", rounds: [80, 120, 80, 100, 75, 120, 140], total: 715 },
+        { place: 5, team: "Отказной гамбит бельгийского Шлёпы", rounds: [95, 100, 60, 120, 75, 120, 130], total: 700 },
+        { place: 6, team: "Ворон", rounds: [90, 120, 30, 140, 55, 100, 160], total: 695 },
+        { place: 7, team: "Нашатырь", rounds: [100, 120, 30, 140, 65, 100, 140], total: 695 },
+        { place: 8, team: "Ближневосточный гектар", rounds: [60, 120, 50, 140, 70, 100, 140], total: 680 },
+        { place: 9, team: "Генератор НЕСЛУЧАЙНЫХ ответов", rounds: [80, 120, 30, 100, 65, 120, 150], total: 665 },
+        { place: 10, team: "Весенние салаты", rounds: [70, 20, 10, 120, 90, 120, 130], total: 560 },
+        { place: 11, team: "Чертов Тупица Джонсон", rounds: [70, 100, 50, 120, 60, 100, 60], total: 560 },
+        { place: 12, team: "69 корочек от пиццы", rounds: [65, 100, 40, 120, 45, 100, 80], total: 550 },
+        { place: null, team: "ChatGPT", rounds: [75, 80, 70, 100, 60, 60, 60], total: 505 },
+        { place: 13, team: "Брокколи", rounds: [75, 100, 20, 120, 65, 40, 70], total: 490 },
+        { place: 14, team: "Твой котик", rounds: [80, 80, 20, 40, 80, 80, 90], total: 470 },
+        { place: 15, team: "Компот", rounds: [30, 20, 30, 40, 25, 100, 80], total: 325 },
+        { place: 16, team: "Лихие Ответчики", rounds: [70, 40, 20, 100, 40, 40, -10], total: 300 }
+      ]
+    }
+  },
+  {
     date: "2026-02-23", organizer: "Квизиум", title: "«Обо всём» #847",
     venue: "The Tipsy Pub", place: 5, photoUrl: "", photoThumb: ""
   },
@@ -902,6 +932,38 @@ const GAMES = [
         { place: 26, team: "Сознание ясное", rounds: [3, 4, 1, 2, 1.5, 5.5, -2], total: 15 },
         { place: 27, team: "Кокоджамба", rounds: [3, 3, 2, 0, 0, 3.5, 0], total: 11.5 },
         { place: 28, team: "Дети Анархии", rounds: [0, 2, 0, 1, 0, 6, -5], total: 4 }
+      ]
+    }
+  },
+  {
+    date: "2025-04-26", organizer: "Мозгва", title: "Новички 473 День 2",
+    venue: "Коктейль Холл", place: 8, photoUrl: "", photoThumb: "",
+    results: {
+      note: "26 апреля 2025, суббота • Коктейль Холл (Тверская 6с2) • Мозгва «Новички 473 День 2»",
+      roundLabels: ["Тур 1", "Тур 2", "Тур 3", "Тур 4", "Тур 5", "Тур 6", "Тур 7"],
+      team: "Генератор НЕ случайных ответов",
+      standings: [
+        { place: 1, team: "ПростоДушные", rounds: [6, 6, 6, 6, 5, 6, 12], total: 47 },
+        { place: 2, team: "Горячие головы", rounds: [6, 6, 6, 4, 6, 5, 12], total: 45 },
+        { place: 3, team: "ПРОВАЛенки", rounds: [6, 5, 6, 6, 5, 6, 10], total: 44 },
+        { place: 4, team: "Свет и ко", rounds: [6, 5, 6, 3, 3, 6, 12], total: 41 },
+        { place: 5, team: "Мама сказала, что я умный", rounds: [6, 5, 6, 4, 4, 6, 10], total: 41 },
+        { place: 6, team: "Блонды, гламур и брюнетки", rounds: [6, 5, 3, 3, 6, 3, 11], total: 37 },
+        { place: 7, team: "Плюс_31", rounds: [6, 6, 6, -2, 5, 5, 11], total: 37 },
+        { place: 8, team: "Генератор НЕ случайных ответов", rounds: [6, 5, 5, 3, 5, 5, 8], total: 37 },
+        { place: 9, team: "chickens", rounds: [5, 6, 4, 4, 3, 3, 10], total: 35 },
+        { place: 10, team: "5oKents", rounds: [6, 5, 5, 4, 4, 2, 9], total: 35 },
+        { place: 11, team: "Сомнительно, но Ок'эээй", rounds: [5, 2, 4, 9, 3, 5, 6], total: 34 },
+        { place: 12, team: "Умницы и пьяницы", rounds: [6, 5, 4, 3, 4, 6, 6], total: 34 },
+        { place: 13, team: "Синагога", rounds: [4, 3, 5, 5, 6, 2, 8], total: 33 },
+        { place: 14, team: "Пень с глазами", rounds: [6, 6, 4, -1, 3, 3, 10], total: 31 },
+        { place: 15, team: "Кулёмы", rounds: [5, 5, 4, 1, 6, 4, 6], total: 31 },
+        { place: 16, team: "Вдруг прокатит", rounds: [5, 4, 2, 4, 3, 4, 8], total: 30 },
+        { place: 17, team: "Кутья с бараниной", rounds: [4, 4, 3, -2, 4, 5, 11], total: 29 },
+        { place: 18, team: "Натуральный интеллект", rounds: [5, 4, 2, 0, 3, 6, 8], total: 28 },
+        { place: 19, team: "Клуб юных техников", rounds: [4, 5, 4, 3, 1, 3, 5], total: 25 },
+        { place: 20, team: "Конь в пальто", rounds: [5, 3, 3, 0, 2, 3, 7], total: 23 },
+        { place: 21, team: "Премудренькие", rounds: [5, 2, 5, -3, 2, 2, 8], total: 21 }
       ]
     }
   },
