@@ -655,9 +655,16 @@ tr.game-row.expanded .expand-icon { transform: rotate(90deg); }
 /* Гарантии корректной работы аккордеона:
    1) атрибут hidden всегда скрывает строку (на случай, если какое-то правило
       display перекрывает UA-стиль [hidden]);
-   2) строка/ячейка аккордеона всегда остаются табличными элементами —
-      иначе внутренние таблицы результатов «распирают» внешнюю таблицу. */
+   2) fixed layout — колонки внешней таблицы фиксированы и не зависят от
+      содержимого раскрытой панели результатов (ничего не «распирает»);
+   3) строка/ячейка аккордеона всегда остаются табличными элементами. */
 [hidden] { display: none !important; }
+.games-table { table-layout: fixed; }
+.games-table th:nth-child(1), .games-table td:nth-child(1) { width: 10ch; }   /* Дата */
+.games-table th:nth-child(2), .games-table td:nth-child(2) { width: 14ch; }   /* Организатор */
+.games-table th:nth-child(5), .games-table td:nth-child(5) { width: 8ch;  }   /* Место */
+.games-table th:nth-child(6), .games-table td:nth-child(6) { width: 10ch; }   /* Фото */
+.games-table th:nth-child(7), .games-table td:nth-child(7) { width: 3ch;  }   /* ▸ */
 .games-table tr.results-row { display: table-row; }
 .games-table tr.results-row[hidden] { display: none !important; }
 .games-table tr.results-row > td { display: table-cell; }
