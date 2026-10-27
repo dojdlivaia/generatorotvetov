@@ -560,7 +560,29 @@ const GAMES = [
     date: "2026-05-01", organizer: "Квизиум", title: "«Обо всём» #866",
     venue: "The Tipsy Pub", place: 6,
     photoUrl: "https://findquiz.ru/event/quizium/photo/325356-obo-vsem-866",
-    photoThumb: "https://sun9-8.userapi.com/s/v1/ig2/oj9_YALzQQB0Pxbl3eGrsx_l1qAl8NJS7UM99yDQUtZE6yaAVGEqpAS_xsqqWrQynicH97BcUNahK5smSmWJdM2k.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920,1440x2160,1707x2560&from=bu&cs=640x0"
+    photoThumb: "https://sun9-8.userapi.com/s/v1/ig2/oj9_YALzQQB0Pxbl3eGrsx_l1qAl8NJS7UM99yDQUtZE6yaAVGEqpAS_xsqqWrQynicH97BcUNahK5smSmWJdM2k.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920,1440x2160,1707x2560&from=bu&cs=640x0",
+    results: {
+      note: "01 мая 2026, пятница • The Tipsy Pub • КВИЗИУМ #866.3",
+      roundCount: 8,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Лёд", rounds: [6, 5, 4, 6, 5, 9, 4, 14], total: 53 },
+        { place: 2, team: "#sorgutum", rounds: [6, 5, 6, 2, 4, 9, 6, 12], total: 50 },
+        { place: 3, team: "Космонавты", rounds: [5, 5, 4, 4, 3, 8, 6, 14], total: 49 },
+        { place: 4, team: "Желтый гуталин", rounds: [6, 4, 5, 2, 4.5, 10, 4, 13], total: 48.5 },
+        { place: 5, team: "Братство Квизца", rounds: [4, 5, 4, 4, 4, 9, 4, 11], total: 45 },
+        { place: 6, team: "Генератор неслучайных ответов", rounds: [5, 5, 4, 3, 2, 4, 8, 9], total: 40 },
+        { place: 7, team: "КСК и ЧК", rounds: [4, 6, 4, 1, 3, 4, 6, 11], total: 39 },
+        { place: 8, team: "Орбит без сахара", rounds: [3, 5, 2, 3, 3.5, 8, 4, 8], total: 36.5 },
+        { place: 9, team: "Фантастические твари", rounds: [5, 5, 4, 2, 2, 3, 2, 12], total: 35 },
+        { place: 10, team: "Игристая семья", rounds: [5, 4, 4, 4, 3.5, 5, 4, 5], total: 34.5 },
+        { place: 11, team: "Два капитана", rounds: [3, 5, 2, 4, 2.5, 4, 4, 9], total: 33.5 },
+        { place: 12, team: "Несвятая троица", rounds: [3, 3, 1, 2, 2, 4, 2, 7], total: 24 },
+        { place: 13, team: "Хотим шампанское!", rounds: [2, 3, 1, 2, 1, 0, 4, 1], total: 14 },
+        { place: 14, team: "У команды нет имени", rounds: [2, 3, 3, 1, 0.5, 1, 2, 1], total: 13.5 },
+        { place: 15, team: "Гармония", rounds: [2, 2, 0, 2, 2, 1, 0, 0], total: 9 }
+      ]
+    }
   },
 
   /* ================= 2026 (апрель) ================= */
