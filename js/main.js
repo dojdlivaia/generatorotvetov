@@ -554,7 +554,7 @@
             <span class="organizer-count">${s.count} ${pluralize(s.count, "игра", "игры", "игр")}</span>
           </div>
           <div class="organizer-stats">
-            <div><strong>${s.best == null ? "—" : "№" + s.best}</strong><span>лучшее место</span></div>
+            <div><strong>${s.best == null ? "—" : `<span class="best-place ${s.best <= 3 ? "best-place-" + s.best : ""}">${s.best}</span>`}</strong><span>лучшее место</span></div>
             <div><strong>${s.avg.toFixed(1)}</strong><span>среднее место</span></div>
             <div><strong>${s.wins}</strong><span>подиумов</span></div>
           </div>
