@@ -385,7 +385,7 @@ const GAMES = [
   },
   {
     date: "2026-09-20", organizer: "Эйнштейн Party", title: "Классика №541_1",
-    venue: "OldSchool Pub Маяковская", place: 8,
+    venue: "OldSchool Pub Маяковская", place: 8, score: 51,
     photoUrl: "https://findquiz.ru/event/einstein-party/photo/344258-klassika-541-1",
     photoThumb: "https://sun9-65.userapi.com/s/v1/ig2/2LY8Yp1VAwZiwokRxVohfoEyjXUBp_MW8g75CXsYUt3Z2OWq4ULmoI11t6wfLVeF3VW6_-eU5sM4SniSepalDBPW.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
     results: {
@@ -412,6 +412,31 @@ const GAMES = [
         { place: 16, team: "Огородники", rounds: [7, 4, 5, 5, -1, -4, 4, 2], total: 22 },
         { place: 17, team: "Фазенда женская", rounds: [0, 3, 4, 2, 3, 0, 2, 0], total: 14 },
         { place: 18, team: "Фазенда мужская", rounds: [4, 4, 4, 4, -9, 0, 0, 0], total: 7 }
+      ]
+    },
+    results: {
+      note: "2026-09-20 • Эйнштейн Party — Классика №541_1 (источник: albertparty.ru/game/28430)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "OnlyFuns", rounds: [9, 6, 12, 10, 18, 12, 6, 2], total: 75 },
+      { place: 2, team: "Первое деепричастие", rounds: [8, 6, 12, 8, 13, 12, 6, 6], total: 71 },
+      { place: 3, team: "Алибидерчи", rounds: [10, 5, 12, 7, 18, 12, 4, 2], total: 70 },
+      { place: 4, team: "Квиз up", rounds: [8, 6, 12, 6, 3, 12, 6, 2], total: 55 },
+      { place: 5, team: "КСББ", rounds: [9, 6, 8, 6, 7, 12, 4, 2], total: 54 },
+      { place: 6, team: "Сами своего рода знатоки", rounds: [5, 5, 10, 5, 13, 8, 2, 4], total: 52 },
+      { place: 7, team: "Послица, министерский советник и банкир", rounds: [6, 6, 12, 8, 8, 8, 2, 2], total: 52 },
+      { place: 8, team: "Генератор неслучайных ответов", rounds: [7, 5, 10, 6, 9, 8, 4, 2], total: 51 },
+      { place: 9, team: "Некультурные клетки", rounds: [7, 5, 12, 7, 8, 5, 4, 2], total: 50 },
+      { place: 10, team: "69 корочек от пиццы", rounds: [7, 5, 6, 8, 1, 12, 4, 0], total: 43 },
+      { place: 11, team: "Кто? Куда? Зачем?", rounds: [7, 6, 6, 6, 3, 8, 4, 2], total: 42 },
+      { place: 12, team: "Отдых грибника", rounds: [9, 4, 10, 4, 8, 0, 4, 0], total: 39 },
+      { place: 13, team: "Драчливые киски", rounds: [3, 5, 6, 5, 3, 1, 2, 2], total: 27 },
+      { place: 14, team: "Шелдон Групп", rounds: [4, 4, 5, 4, 6, 0, 2, 2], total: 27 },
+      { place: 15, team: "Один человек", rounds: [7, 4, 2, 4, 5, 2, 2, 0], total: 26 },
+      { place: 16, team: "Огородники", rounds: [7, 4, 5, 5, -1, -4, 4, 2], total: 22 },
+      { place: 17, team: "Фазенда женская", rounds: [0, 3, 4, 2, 3, 0, 2, 0], total: 14 },
+      { place: 18, team: "Фазенда мужская", rounds: [4, 4, 4, 4, -9, 0, 0, 0], total: 7 }
       ]
     }
   },
@@ -538,9 +563,35 @@ const GAMES = [
   },
   {
     date: "2026-06-07", organizer: "Эйнштейн Party", title: "Классика №526_1",
-    venue: "OldSchool Pub Маяковская", place: 11,
+    venue: "OldSchool Pub Маяковская", place: 11, score: 47,
     photoUrl: "https://findquiz.ru/event/einstein-party/photo/330755-klassika-526-1",
-    photoThumb: ""
+    photoThumb: "",
+    results: {
+      note: "2026-06-07 • Эйнштейн Party — Классика №526_1 (источник: albertparty.ru/game/27052)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "OnlyFuns", rounds: [10, 6, 12, 9, 15, 12, 2, 6], total: 72 },
+      { place: 2, team: "Немолодые ветра", rounds: [10, 6, 12, 9, 6, 12, 4, 6], total: 65 },
+      { place: 3, team: "Голландские рулевые", rounds: [9, 5, 10, 8, 9, 8, 4, 6], total: 59 },
+      { place: 4, team: "Некие", rounds: [9, 4, 10, 6, 15, 4, 4, 6], total: 58 },
+      { place: 5, team: "Послица, министерский советник и банкир", rounds: [7, 5, 8, 9, 9, 8, 4, 6], total: 56 },
+      { place: 6, team: "Новая кассета Малежика", rounds: [8, 4, 10, 7, 15, 4, 2, 4], total: 54 },
+      { place: 7, team: "Алибидерчи", rounds: [10, 6, 12, 10, 0, 12, 2, 2], total: 54 },
+      { place: 8, team: "Небеса и блинчик", rounds: [7, 5, 10, 7, 10, 4, 6, 4], total: 53 },
+      { place: 9, team: "Velochicks", rounds: [8, 5, 6, 8, 10, 8, 2, 4], total: 51 },
+      { place: 10, team: "Сами своего рода знатоки", rounds: [9, 5, 10, 8, 9, -4, 6, 4], total: 47 },
+      { place: 11, team: "Генератор неслучайных ответов", rounds: [9, 4, 10, 7, 7, 4, 2, 4], total: 47 },
+      { place: 12, team: "Mortal Combat", rounds: [8, 3, 9, 6, 9, 0, 4, 4], total: 43 },
+      { place: 13, team: "Пупка за Лупку", rounds: [6, 5, 6, 6, 12, -4, 0, 4], total: 35 },
+      { place: 14, team: "Липецкая Мафия", rounds: [5, 5, 4, 5, 8, 4, 4, 0], total: 35 },
+      { place: 15, team: "Кот и Ученый", rounds: [7, 4, 9, 5, 9, 0, 0, 0], total: 34 },
+      { place: 16, team: "Два в уме", rounds: [6, 4, 4, 5, 9, 2, 2, 0], total: 32 },
+      { place: 17, team: "Делириа", rounds: [6, 5, 6, 6, 6, 0, 2, 0], total: 31 },
+      { place: 18, team: "Двое в лодке и питомец", rounds: [5, 3, 4, 6, 3, 3, 2, 2], total: 28 },
+      { place: 19, team: "CUMьюнити триперов", rounds: [5, 2, 4, 6, -3, 4, 4, 0], total: 22 }
+      ]
+    }
   },
 
   /* ================= 2026 (май) ================= */
@@ -607,9 +658,41 @@ const GAMES = [
   /* ================= 2026 (апрель) ================= */
   {
     date: "2026-04-30", organizer: "Эйнштейн Party", title: "FUN #359_2",
-    venue: "Lions Head Pub", place: 13,
+    venue: "Lions Head Pub", place: 13, score: 47.5,
     photoUrl: "https://findquiz.ru/event/einstein-party/photo/320190-fun-359-2",
-    photoThumb: "https://sun9-84.userapi.com/s/v1/ig2/PhJ-CAgJpLLUvRtkCpC_eflADByktQpB4y-ZcPKz81PlkxqVqcWOrhj2YoB9Y4URnrGaxcfOr7HpFt8PqF5rBms9.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920&from=bu&cs=640x0"
+    photoThumb: "https://sun9-84.userapi.com/s/v1/ig2/PhJ-CAgJpLLUvRtkCpC_eflADByktQpB4y-ZcPKz81PlkxqVqcWOrhj2YoB9Y4URnrGaxcfOr7HpFt8PqF5rBms9.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920&from=bu&cs=640x0",
+    results: {
+      note: "2026-04-30 • Эйнштейн Party — FUN #359_2 (источник: albertparty.ru/game/26162)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Послица, министерский советник и банкир", rounds: [6, 6, 5, 4.5, 6, 12, 12, 5], total: 56.5 },
+      { place: 2, team: "мАшины машИны", rounds: [5, 6, 6, 4.5, 6, 12, 12, 4.5], total: 56 },
+      { place: 3, team: "Мы из Гуглича", rounds: [6, 6, 5, 4.5, 5, 12, 12, 5], total: 55.5 },
+      { place: 4, team: "4 черненьких чумазеньких чертёнка", rounds: [5, 6, 5, 4, 6, 12, 12, 5], total: 55 },
+      { place: 5, team: "Вялые питоны", rounds: [6, 6, 4, 4.5, 5, 12, 12, 5], total: 54.5 },
+      { place: 6, team: "ДжиПиТим", rounds: [5, 6, 4, 4.5, 5, 12, 12, 4], total: 52.5 },
+      { place: 7, team: "Tea party muting", rounds: [5, 6, 6, 5, 5, 12, 8, 5], total: 52 },
+      { place: 8, team: "Корица", rounds: [4, 5, 4, 4.5, 5, 12, 12, 5], total: 51.5 },
+      { place: 9, team: "Галина, бланки!", rounds: [4, 6, 6, 4.5, 6, 12, 8, 5], total: 51.5 },
+      { place: 10, team: "Рогатые трупоеды", rounds: [4, 5, 5, 5, 2, 12, 12, 5], total: 50 },
+      { place: 11, team: "Лунный свет", rounds: [5, 6, 4, 4.5, 5, 12, 10, 3], total: 49.5 },
+      { place: 12, team: "Руст и Ко", rounds: [5, 5, 3, 4.5, 6, 12, 8, 5], total: 48.5 },
+      { place: 13, team: "Генератор неслучайных ответов", rounds: [5, 6, 3, 4, 5, 12, 8, 4.5], total: 47.5 },
+      { place: 14, team: "Море Лаптевых", rounds: [5, 5, 5, 4, 5, 12, 7, 3.5], total: 46.5 },
+      { place: 15, team: "Risk Decisions", rounds: [5, 6, 5, 4, 5, 12, 4, 5], total: 46 },
+      { place: 16, team: "Отсортированные", rounds: [5, 4, 4, 3.5, 6, 12, 8, 3.5], total: 46 },
+      { place: 17, team: "Случайная встреча", rounds: [4, 5, 3, 5, 5, 10, 10, 3], total: 45 },
+      { place: 18, team: "АПЧХИ!", rounds: [4, 4, 2, 1.5, 3, 12, 9, 3.5], total: 39 },
+      { place: 19, team: "Юпитер в 5 доме", rounds: [5, 5, 2, 4, 5, 12, 3, 3], total: 39 },
+      { place: 20, team: "Тропические пингвины", rounds: [5, 6, 2, 4, 3, 10, 7, 2], total: 39 },
+      { place: 21, team: "Мешки с песком", rounds: [5, 5, 4, 2, 6, 12, 3, 2], total: 39 },
+      { place: 22, team: "Apple Pie", rounds: [5, 5, 4, 4, 4, 8, 5, 3.5], total: 38.5 },
+      { place: 23, team: "Афарсек", rounds: [4, 5, 4, 4, 5, 9, 4, 1.5], total: 36.5 },
+      { place: 24, team: "Лексиконовая долина", rounds: [4, 5, 3, 2, 6, 12, 0, 3.5], total: 35.5 },
+      { place: 25, team: "Педанты", rounds: [2, 3, 1, 1.5, 4, 5, 1, 1], total: 18.5 }
+      ]
+    }
   },
   {
     date: "2026-04-18", organizer: "Квизиум", title: "«Обо всём» #863",
@@ -751,7 +834,35 @@ const GAMES = [
   /* ================= 2025 (декабрь) ================= */
   {
     date: "2025-12-30", organizer: "Эйнштейн Party", title: "Классика №503_3",
-    venue: "Lions Head Pub", place: 2, photoUrl: "", photoThumb: ""
+    venue: "Lions Head Pub", place: 2, score: 72, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-12-30 • Эйнштейн Party — Классика №503_3 (источник: albertparty.ru/game/24307)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Задняя шкаторина", rounds: [10, 5, 12, 8, 18, 12, 4, 6], total: 75 },
+      { place: 2, team: "Генератор неслучайных ответов", rounds: [10, 5, 12, 8, 15, 12, 4, 6], total: 72 },
+      { place: 3, team: "Ночной Кошмар", rounds: [9, 5, 12, 9, 18, 8, 6, 4], total: 71 },
+      { place: 4, team: "Eine Hälfte des Kleinbusses", rounds: [10, 5, 10, 7, 18, 4, 6, 6], total: 66 },
+      { place: 5, team: "Ни к чему не обязанные", rounds: [9, 5, 10, 6, 15, 8, 4, 6], total: 63 },
+      { place: 6, team: "Сова на глобусе", rounds: [7, 2, 4, 7, 18, 8, 6, 6], total: 58 },
+      { place: 7, team: "Маршрут построен", rounds: [8, 5, 9, 7, 15, 4, 6, 2], total: 56 },
+      { place: 8, team: "Очень дальние родственники", rounds: [9, 3, 8, 5, 12, 4, 6, 4], total: 51 },
+      { place: 9, team: "Дочки-матери", rounds: [7, 4, 4, 9, 12, 4, 6, 4], total: 50 },
+      { place: 10, team: "Трутовик Трудовика", rounds: [5, 6, 4, 9, 9, 8, 4, 4], total: 49 },
+      { place: 11, team: "Сомнительно, но окэй", rounds: [7, 5, 8, 6, 12, 3, 4, 4], total: 49 },
+      { place: 12, team: "Геннадий Геннадьевич", rounds: [8, 2, 6, 9, 9, 3, 4, 6], total: 47 },
+      { place: 13, team: "Успехов Даниил", rounds: [5, 5, 7, 6, 11, 4, 6, 2], total: 46 },
+      { place: 14, team: "CerebroBonito", rounds: [7, 2, 5, 8, 6, 8, 6, 2], total: 44 },
+      { place: 15, team: "Номер 5", rounds: [6, 3, 3, 8, 6, 4, 6, 4], total: 40 },
+      { place: 16, team: "3 хача и пури", rounds: [7, 3, 3, 6, 12, -6, 4, 6], total: 35 },
+      { place: 17, team: "Завтра Новый год!", rounds: [5, 3, 3, 8, 9, 3, 2, 2], total: 35 },
+      { place: 18, team: "Это 100%", rounds: [4, 1, 5, 7, 7, 3, 4, 2], total: 33 },
+      { place: 19, team: "Некогда думать!", rounds: [3, 2, 4, 7, 3, 4, 6, 2], total: 31 },
+      { place: 20, team: "Кухххня", rounds: [4, 3, 3, 2, 5, 0, 2, 2], total: 21 },
+      { place: 21, team: "ПРИС", rounds: [4, 0, 1, 5, 4, 0, 2, 4], total: 20 }
+      ]
+    }
   },
   {
     date: "2025-12-18", organizer: "Квизиум", title: "«Обо всём» #828",
@@ -824,7 +935,42 @@ const GAMES = [
   /* ================= 2025 (ноябрь) ================= */
   {
     date: "2025-11-22", organizer: "Эйнштейн Party", title: "FUN #334_4",
-    venue: "Metafora Bar", place: 4, photoUrl: "", photoThumb: ""
+    venue: "Metafora Bar", place: 4, score: 50.5, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-11-22 • Эйнштейн Party — FUN #334_4 (источник: albertparty.ru/game/23841)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Хитрый Кртек", rounds: [4, 5, 6, 4, 6, 12, 12, 5], total: 54 },
+      { place: 2, team: "Дети хоронят коня", rounds: [5, 6, 6, 4.5, 5, 12, 10, 5], total: 53.5 },
+      { place: 3, team: "Мама сказала, что я умный", rounds: [4, 5, 6, 4.5, 5, 12, 11, 4], total: 51.5 },
+      { place: 4, team: "Генератор неслучайных ответов", rounds: [3, 5, 5, 4, 5, 12, 12, 4.5], total: 50.5 },
+      { place: 5, team: "Ни к чему не обязанные", rounds: [4, 6, 3, 2.5, 6, 12, 6, 4.5], total: 44 },
+      { place: 6, team: "Рогатые трупоеды", rounds: [3, 5, 6, 3.5, 3, 12, 6, 4], total: 42.5 },
+      { place: 7, team: "635 причин моей ненависти", rounds: [5, 4, 6, 5, 5, 6, 8, 3.5], total: 42.5 },
+      { place: 8, team: "Какая ты собака?", rounds: [5, 5, 5, 4.5, 3, 6, 8, 4], total: 40.5 },
+      { place: 9, team: "Болельщики ТС и Уми", rounds: [3, 5, 3, 4, 5, 12, 4, 3.5], total: 39.5 },
+      { place: 10, team: "Гвоздь & Соболь", rounds: [3, 5, 4, 3.5, 6, 6, 8, 2.5], total: 38 },
+      { place: 11, team: "Деревенский движ", rounds: [6, 5, 4, 4, 5, 6, 2, 4.5], total: 36.5 },
+      { place: 12, team: "Феминисты", rounds: [6, 3, 3, 3, 6, 11, 0, 3.5], total: 35.5 },
+      { place: 13, team: "Виталясина", rounds: [5, 5, 2, 3.5, 6, 4, 4, 1.5], total: 31 },
+      { place: 14, team: "Лучше звоните Гуглу", rounds: [3, 3, 3, 3, 4, 10, 1, 3.5], total: 30.5 },
+      { place: 15, team: "спокусливки", rounds: [5, 5, 4, 4, 6, -4, 8, 2.5], total: 30.5 },
+      { place: 16, team: "Креативная безнадега", rounds: [3, 3, 6, 4, 5, 4, 4, 1.5], total: 30.5 },
+      { place: 17, team: "¡Vamos a la playa!", rounds: [5, 3, 6, 4, 4, -1, 6, 2.5], total: 29.5 },
+      { place: 18, team: "Инна, мы душним", rounds: [4, 4, 5, 3.5, 5, 0, 4, 3], total: 28.5 },
+      { place: 19, team: "Эрудиты в законе", rounds: [4, 4, 2, 3, 5, 6, 2, 2.5], total: 28.5 },
+      { place: 20, team: "50 % интуиция, 50 % паника", rounds: [3, 4, 6, 1.5, 4, 2, 6, 1], total: 27.5 },
+      { place: 21, team: "Мастера БТ Новинский", rounds: [4, 3, 2, 3, 5, 5, 0, 1.5], total: 23.5 },
+      { place: 22, team: "Выпивающие спортсмены", rounds: [2, 1, 3, 4.5, 3, 4, 4, 0.5], total: 22 },
+      { place: 23, team: "Гуру йони", rounds: [3, 4, 4, 2, 5, 1, 0, 2.5], total: 21.5 },
+      { place: 24, team: "Два пива и лимонад", rounds: [4, 1, 4, 2, 3, 5, 1, 1.5], total: 21.5 },
+      { place: 25, team: "Мегакрипы", rounds: [4, 4, 3, 1.5, 5, 0, 1, 2.5], total: 21 },
+      { place: 26, team: "01ка", rounds: [3, 3, 3, 2, 4, 1, 0, 2], total: 18 },
+      { place: 27, team: "самое время", rounds: [3, 2, 2, 3, 2, 6, -4, 2], total: 16 },
+      { place: 28, team: "Попокатепетль", rounds: [0, 0, 0, 0, 2, 2, 0, 1.5], total: 5.5 }
+      ]
+    }
   },
   {
     date: "2025-11-30", organizer: "Squiz", title: "#930.3",
@@ -871,7 +1017,37 @@ const GAMES = [
   /* ================= 2025 (октябрь) ================= */
   {
     date: "2025-10-29", organizer: "Эйнштейн Party", title: "Классика №494_3",
-    venue: "Metafora Bar", place: 15, photoUrl: "", photoThumb: ""
+    venue: "Metafora Bar", place: 15, score: 32, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-10-29 • Эйнштейн Party — Классика №494_3 (источник: albertparty.ru/game/23400)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Компост Мэлоун", rounds: [10, 6, 12, 10, 18, 12, 6, 4], total: 78 },
+      { place: 2, team: "Алиса, позови Сири!", rounds: [10, 4, 12, 10, 12, 12, 4, 4], total: 68 },
+      { place: 3, team: "ПсиКотики", rounds: [9, 6, 12, 10, 15, 8, 4, 4], total: 68 },
+      { place: 4, team: "Вопросом на вопрос", rounds: [9, 5, 10, 9, 15, 4, 4, 6], total: 62 },
+      { place: 5, team: "Хитрый Кртек", rounds: [8, 5, 8, 8, 16, 8, 4, 4], total: 61 },
+      { place: 6, team: "Mortal Combat", rounds: [9, 6, 8, 7, 12, 4, 2, 4], total: 52 },
+      { place: 7, team: "Торо Руссо", rounds: [9, 5, 8, 9, 7, 4, 2, 4], total: 48 },
+      { place: 8, team: "А, точно!", rounds: [9, 5, 7, 9, 6, 4, 2, 4], total: 46 },
+      { place: 9, team: "Кафедра КИС", rounds: [9, 5, 5, 9, 9, 4, 2, 2], total: 45 },
+      { place: 10, team: "Слюни слона", rounds: [10, 4, 10, 7, 4, 0, 4, 4], total: 43 },
+      { place: 11, team: "Пролетая над гнездом чекушки", rounds: [7, 3, 3, 6, 7, 6, 2, 2], total: 36 },
+      { place: 12, team: "Ума палата", rounds: [8, 4, 5, 5, 6, 6, 0, 2], total: 36 },
+      { place: 13, team: "Из лифта налево", rounds: [8, 4, 4, 9, 6, 0, 2, 2], total: 35 },
+      { place: 14, team: "Мы в курсе", rounds: [7, 4, 8, 9, 1, 4, 0, 2], total: 35 },
+      { place: 15, team: "Генератор неслучайных ответов", rounds: [10, 2, 5, 6, 7, 0, 0, 2], total: 32 },
+      { place: 16, team: "Атака Метана", rounds: [10, 4, 4, 5, 3, 2, 0, 2], total: 30 },
+      { place: 17, team: "Недержание мочи: стрессовая форма", rounds: [8, 4, 2, 7, 12, -6, 2, 0], total: 29 },
+      { place: 18, team: "Макаки в атаке", rounds: [7, 2, 5, 5, 6, 3, 0, 0], total: 28 },
+      { place: 19, team: "ЖуСи/ДуСи", rounds: [6, 2, 2, 6, 3, 2, 0, 4], total: 25 },
+      { place: 20, team: "Змеищи", rounds: [3, 4, 2, 4, 6, 2, 0, 0], total: 21 },
+      { place: 21, team: "Улыбаемся и Маша)", rounds: [7, 3, 2, 3, 3, 1, 0, 0], total: 19 },
+      { place: 22, team: "купавинские псы", rounds: [6, 0, 2, 5, 1, 3, 0, 0], total: 17 },
+      { place: 23, team: "«Первоцветы»", rounds: [2, 1, 3, 5, 1, 0, 0, 0], total: 12 }
+      ]
+    }
   },
   {
     date: "2025-10-25", organizer: "Квизиум", title: "«Обо всём» #811",
@@ -924,7 +1100,31 @@ const GAMES = [
   },
   {
     date: "2025-09-13", organizer: "Эйнштейн Party", title: "FUN #324_4",
-    venue: "Nebar Moscow", place: 7, photoUrl: "", photoThumb: ""
+    venue: "Nebar Moscow", place: 7, score: 41.5, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-09-13 • Эйнштейн Party — FUN #324_4 (источник: albertparty.ru/game/22870)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Заюши", rounds: [4, 6, 4, 2.5, 4, 12, 10, 4.5], total: 47 },
+      { place: 2, team: "Последняя извилина", rounds: [5, 5, 6, 3, 5, 9, 10, 4], total: 47 },
+      { place: 3, team: "NE ABBA", rounds: [3, 5, 4, 3.5, 5, 9, 9, 5], total: 43.5 },
+      { place: 4, team: "Карты, деньги, два кота", rounds: [5, 4, 4, 2.5, 6, 9, 8, 5], total: 43.5 },
+      { place: 5, team: "Мы от Эммануила Гедеоновича!", rounds: [3, 4, 5, 3, 5, 8, 11, 4], total: 43 },
+      { place: 6, team: "3 разряд по квизу", rounds: [4, 3, 4, 2.5, 5, 12, 7, 5], total: 42.5 },
+      { place: 7, team: "Генератор неслучайных ответов", rounds: [4, 5, 2, 2.5, 6, 9, 8, 5], total: 41.5 },
+      { place: 8, team: "Бордель ромашка", rounds: [2, 5, 4, 2.5, 3, 11, 7, 4.5], total: 39 },
+      { place: 9, team: "Красные Пингвины", rounds: [3, 4, 4, 3.5, 5, 9, 6, 4.5], total: 39 },
+      { place: 10, team: "ОБИП", rounds: [2, 3, 4, 4, 5, 9, 5, 4.5], total: 36.5 },
+      { place: 11, team: "Дважды три", rounds: [2, 4, 5, 2.5, 5, 9, 6, 3], total: 36.5 },
+      { place: 12, team: "Голожаберные", rounds: [4, 2, 2, 3.5, 6, 12, 4, 2.5], total: 36 },
+      { place: 13, team: "спокусливки", rounds: [4, 6, 4, 3.5, 3, 1, 8, 3.5], total: 33 },
+      { place: 14, team: "Оба на!", rounds: [4, 5, 3, 3.5, 3, 10, 2, 2.5], total: 33 },
+      { place: 15, team: "Сибирский стыд", rounds: [2, 4, 3, 2.5, 4, 8, 4, 5], total: 32.5 },
+      { place: 16, team: "Гуру йони", rounds: [3, 5, 5, 3, 4, 5, 3, 4.5], total: 32.5 },
+      { place: 17, team: "NaRaz", rounds: [1, 5, 4, 1.5, 2, 8, 3, 3], total: 27.5 }
+      ]
+    }
   },
 
   /* ================= 2025 (август) ================= */
@@ -1170,42 +1370,311 @@ const GAMES = [
      Полные протоколы по турам для этих игр недоступны — добавлены только место и балл. */
   {
     date: "2026-10-28", organizer: "Эйнштейн Party", title: "Классика №546_3",
-    venue: "Old School Pub Маяковская", place: 5, photoUrl: "", photoThumb: "", score: 57
+    venue: "Old School Pub Маяковская", place: 5, score: 57, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2026-10-28 • Эйнштейн Party — Классика №546_3 (источник: albertparty.ru/game/28935)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Квантовая запутанность", rounds: [10, 5, 12, 9, 18, 12, 4, 6], total: 76 },
+      { place: 2, team: "ПсиКотики", rounds: [10, 5, 12, 9, 18, 12, 0, 4], total: 70 },
+      { place: 3, team: "Алиса, позови Сири!", rounds: [9, 5, 8, 7, 18, 12, 4, 6], total: 69 },
+      { place: 4, team: "блёстки", rounds: [8, 5, 10, 8, 15, 12, 0, 4], total: 62 },
+      { place: 5, team: "Генератор неслучайных ответов", rounds: [10, 3, 12, 6, 12, 8, 2, 4], total: 57 },
+      { place: 5, team: "Полусухарик", rounds: [9, 3, 12, 5, 12, 8, 2, 6], total: 57 },
+      { place: 7, team: "Красиво шарим", rounds: [10, 1, 8, 6, 9, 6, 4, 2], total: 46 },
+      { place: 8, team: "Лена Головач", rounds: [7, 3, 5, 5, 7, 4, 0, 6], total: 37 },
+      { place: 9, team: "Мачка пасла", rounds: [8, 1, 3, 3, 7, 4, 0, 4], total: 30 },
+      { place: 10, team: "Prosecco", rounds: [6, 3, 1, 7, 4, 3, 0, 4], total: 28 },
+      { place: 11, team: "Кевин и компания", rounds: [5, 1, 2, 7, 6, 4, 0, 2], total: 27 },
+      { place: 12, team: "Маргиналы", rounds: [3, 1, 2, 3, 4, 2, 2, 2], total: 19 },
+      { place: 13, team: "Текущий контроль", rounds: [2, 0, 1, 4, 1, -6, 2, 2], total: 6 },
+      { place: 14, team: "Мозговой резерв", rounds: [2, 0, 1, 4, -2, -6, 0, 2], total: 1 }
+      ]
+    }
   },
   {
     date: "2026-01-06", organizer: "Эйнштейн Party", title: "18+ №23_1",
-    venue: "Old School Pub Маяковская", place: 6, photoUrl: "", photoThumb: "", score: 58.5
+    venue: "Old School Pub Маяковская", place: 6, score: 58.5, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2026-01-06 • Эйнштейн Party — 18+ №23_1 (источник: albertparty.ru/game/24673)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Множественные сарказмы", rounds: [4, 6, 4, 5, 5, 12, 12, 19], total: 67 },
+      { place: 2, team: "Коридор", rounds: [5, 4, 3, 3, 5, 12, 12, 18], total: 62 },
+      { place: 3, team: "Падла Эскобар", rounds: [5, 5, 2, 2.5, 5, 12, 12, 18], total: 61.5 },
+      { place: 4, team: "Алконяшки", rounds: [4, 5, 4, 3, 5, 12, 12, 15], total: 60 },
+      { place: 5, team: "Сами своего рода знатоки", rounds: [5, 3, 3, 3.5, 4, 12, 10, 18], total: 58.5 },
+      { place: 6, team: "Генератор неслучайных ответов", rounds: [5, 5, 3, 4.5, 4, 11, 8, 18], total: 58.5 },
+      { place: 7, team: "Серийные упийцы", rounds: [5, 5, 2, 2.5, 4, 9, 12, 18], total: 57.5 },
+      { place: 8, team: "The Wassermans", rounds: [4, 5, 2, 3.5, 3, 12, 10, 18], total: 57.5 },
+      { place: 9, team: "Немолодые ветра", rounds: [5, 5, 3, 4, 4, 12, 8, 16], total: 57 },
+      { place: 10, team: "Bang-cock", rounds: [5, 5, 3, 3, 5, 11, 4, 17], total: 53 },
+      { place: 11, team: "Батино сало", rounds: [5, 5, 3, 4.5, 5, 8, 8, 12], total: 50.5 },
+      { place: 12, team: "Направо левее", rounds: [3, 3, 2, 3.5, 3, 5, 11, 18], total: 48.5 },
+      { place: 13, team: "6 чувство", rounds: [5, 5, 1, 3.5, 3, 5, 9, 16], total: 47.5 },
+      { place: 14, team: "Период полураспада", rounds: [5, 4, 2, 3, 5, 8, 10, 10], total: 47 },
+      { place: 15, team: "Коламбия Пикчерз не представляет", rounds: [2, 3, 2, 2.5, 3, 8, 6, 17], total: 43.5 },
+      { place: 16, team: "Том и Джерри", rounds: [3, 3, 2, 2, 2, 6, 8, 16], total: 42 },
+      { place: 17, team: "ЖЖ", rounds: [2, 4, 0, 3, 2, 6, 9, 9], total: 35 },
+      { place: 18, team: "Мари в ванне", rounds: [3, 2, 1, 2.5, 2, 6, 6, 11], total: 33.5 },
+      { place: 19, team: "Мы далеки от одеяла", rounds: [4, 5, 2, 2, 4, 4, 6, 6], total: 33 },
+      { place: 20, team: "Сосискины", rounds: [2, 3, 1, 1.5, 2, 3, 6, 12], total: 30.5 },
+      { place: 21, team: "Что то там это", rounds: [3, 2, 0, 2.5, 3, 4, 4, 4], total: 22.5 },
+      { place: 22, team: "Голодные игры", rounds: [0, 2, 0, 1, 1, 3, 6, 4], total: 17 },
+      { place: 23, team: "Зато Красивые", rounds: [2, 0, 0, 1, 2, 5, 2, 4], total: 16 },
+      { place: 24, team: "Незнайки", rounds: [1, 2, 0, 0.5, 3, 1, 4, 1], total: 12.5 }
+      ]
+    }
   },
   {
     date: "2025-10-11", organizer: "Эйнштейн Party", title: "Классика №491_4",
-    venue: "Metafora Bar", place: 6, photoUrl: "", photoThumb: "", score: 53
+    venue: "Metafora Bar", place: 6, score: 53, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-10-11 • Эйнштейн Party — Классика №491_4 (источник: albertparty.ru/game/23389)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Первое деепричастие", rounds: [8, 3, 12, 7, 18, 12, 6, 6], total: 72 },
+      { place: 2, team: "Ближневосточный гектар", rounds: [9, 4, 12, 7, 18, 12, 4, 6], total: 72 },
+      { place: 3, team: "Тот самый Лев", rounds: [9, 5, 10, 7, 18, 12, 4, 6], total: 71 },
+      { place: 4, team: "Тайна третьей котлеты", rounds: [8, 3, 10, 8, 18, 8, 6, 6], total: 67 },
+      { place: 5, team: "В гостях у сказки", rounds: [9, 3, 8, 5, 16, 8, 4, 4], total: 57 },
+      { place: 6, team: "Генератор неслучайных ответов", rounds: [6, 3, 10, 6, 10, 8, 4, 6], total: 53 },
+      { place: 7, team: "Да по фиг!", rounds: [8, 2, 7, 5, 16, 4, 4, 6], total: 52 },
+      { place: 8, team: "Мяу и Фыр", rounds: [9, 3, 8, 4, 12, 8, 2, 6], total: 52 },
+      { place: 9, team: "Как улитки", rounds: [8, 1, 4, 6, 12, 8, 4, 6], total: 49 },
+      { place: 10, team: "Странные сны о Леониде Викторовиче Слуцком", rounds: [6, 2, 5, 4, 15, 8, 4, 4], total: 48 },
+      { place: 11, team: "Касьянс посынка", rounds: [7, 0, 8, 3, 12, 5, 4, 4], total: 43 },
+      { place: 12, team: "Запись дубля 2.0", rounds: [10, 3, 5, 7, 6, 0, 4, 6], total: 41 },
+      { place: 13, team: "Рой душнил", rounds: [9, 3, 5, 7, 0, 0, 6, 6], total: 36 },
+      { place: 14, team: "Недоразвитые гении", rounds: [7, 2, 1, 5, 12, 1, 0, 4], total: 32 },
+      { place: 15, team: "Курс рубля", rounds: [5, 3, 1, 6, 0, 8, 2, 2], total: 27 },
+      { place: 16, team: "Высокий IQ", rounds: [5, 2, 1, 4, 3, 3, 4, 4], total: 26 },
+      { place: 17, team: "Артем, харе сливаться", rounds: [5, 2, 6, 5, 3, 0, 2, 2], total: 25 },
+      { place: 18, team: "Double V", rounds: [6, 0, 5, 3, -3, 0, 2, 6], total: 19 },
+      { place: 19, team: "Не Москва", rounds: [6, 1, 1, 2, 0, 1, 2, 4], total: 17 },
+      { place: 20, team: "Глаз коррекции", rounds: [5, 1, 4, 5, -5, 1, 4, 2], total: 17 },
+      { place: 21, team: "Голова два уха", rounds: [3, 1, 2, 3, 1, 0, 0, 4], total: 14 },
+      { place: 22, team: "Крошка Марти", rounds: [6, 1, 4, 0, 0, 1, 0, 2], total: 14 },
+      { place: 23, team: "Классные ребята", rounds: [2, 1, 1, 3, 0, 0, 2, 2], total: 11 },
+      { place: 24, team: "Victory", rounds: [6, 0, 3, 7, -5, -6, 0, 4], total: 9 },
+      { place: 25, team: "Слушаем и не осуждаем", rounds: [2, 0, 1, 3, 0, 1, 2, 0], total: 9 },
+      { place: 26, team: "Прохоровы", rounds: [5, 1, 4, 2, -6, -4, 2, 4], total: 8 },
+      { place: 27, team: "Монополисты", rounds: [4, 2, 2, 4, -2, -6, 0, 0], total: 4 }
+      ]
+    }
   },
   {
     date: "2025-10-04", organizer: "Эйнштейн Party", title: "Поп-культура: 00-е",
-    venue: "Metafora Bar", place: 12, photoUrl: "", photoThumb: "", score: 27.5
+    venue: "Metafora Bar", place: 12, score: 27.5, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-10-04 • Эйнштейн Party — Поп-культура: 00-е (источник: albertparty.ru/game/23284)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Компост Мэлоун", rounds: [5, 6, 5, 4.5, 4, 12, 10, 18], total: 64.5 },
+      { place: 2, team: "11 друзей Аюши", rounds: [3, 6, 3, 3.5, 5, 12, 9, 19], total: 60.5 },
+      { place: 3, team: "Нас гуглят уфологи", rounds: [2, 5, 1, 2.5, 4, 10, 9, 16], total: 49.5 },
+      { place: 4, team: "Низкий IQ", rounds: [5, 6, 1, 3.5, 3, 10, 7, 12], total: 47.5 },
+      { place: 5, team: "ИИИИгааарь", rounds: [1, 6, 0, 3, 3, 8, 8, 16], total: 45 },
+      { place: 6, team: "Эхо поколений", rounds: [3, 5, 2, 2, 3, 6, 11, 13], total: 45 },
+      { place: 7, team: "Те еще штучки", rounds: [4, 4, 2, 2, 3, 10, 4, 14], total: 43 },
+      { place: 8, team: "Экс-коллеги", rounds: [5, 5, 1, 2.5, 3, 10, 6, 9], total: 41.5 },
+      { place: 9, team: "Козий комитет", rounds: [2, 4, 1, 1, 4, 4, 4, 11], total: 31 },
+      { place: 10, team: "Поездка в Воронеж", rounds: [3, 3, 2, 2.5, 1, 6, 6, 7], total: 30.5 },
+      { place: 11, team: "Притяжения больше нет", rounds: [2, 5, 0, 1.5, 4, 3, 5, 9], total: 29.5 },
+      { place: 12, team: "Генератор неслучайных ответов", rounds: [6, 3, 1, 0.5, 1, 7, 6, 3], total: 27.5 },
+      { place: 13, team: "Тюбики - Выжмем все, что сможем.", rounds: [3, 3, 0, 2, 3, 2, 4, 6], total: 23 },
+      { place: 14, team: "Трулалейла трулала", rounds: [3, 2, 1, 1.5, 1, 4, 7, 3], total: 22.5 },
+      { place: 15, team: "Flatbar", rounds: [3, 3, 1, 1, 1, 0, 2, 6], total: 17 },
+      { place: 16, team: "Пешки", rounds: [2, 3, 0, 4, 1, 2, 3, 2], total: 17 },
+      { place: 17, team: "1+1", rounds: [2, 4, 0, 0, 1, 2, 0, -1], total: 8 }
+      ]
+    }
   },
   {
     date: "2025-09-26", organizer: "Эйнштейн Party", title: "FUN #326_3",
-    venue: "Nebar Moscow", place: 4, photoUrl: "", photoThumb: "", score: 53.5
+    venue: "Nebar Moscow", place: 4, score: 53.5, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-09-26 • Эйнштейн Party — FUN #326_3 (источник: albertparty.ru/game/22877)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Дети хоронят коня", rounds: [6, 6, 6, 4, 6, 12, 12, 5], total: 57 },
+      { place: 2, team: "Вопросом на вопрос", rounds: [5, 6, 6, 4.5, 6, 12, 12, 5], total: 56.5 },
+      { place: 3, team: "Не ори на мать!", rounds: [6, 5, 6, 4.5, 6, 12, 12, 3], total: 54.5 },
+      { place: 4, team: "Генератор неслучайных ответов", rounds: [4, 6, 4, 4.5, 6, 12, 12, 5], total: 53.5 },
+      { place: 5, team: "Мишки Вани", rounds: [5, 6, 4, 4, 6, 12, 12, 3], total: 52 },
+      { place: 6, team: "Послица, министерский советник и банкир", rounds: [5, 4, 6, 3, 6, 10, 10, 4.5], total: 48.5 },
+      { place: 7, team: "Big babies", rounds: [5, 5, 6, 4.5, 6, 12, 8, 1.5], total: 48 },
+      { place: 8, team: "USB здесь, а к Никите вопросики", rounds: [4, 5, 6, 3.5, 6, 12, 8, 3], total: 47.5 },
+      { place: 9, team: "Играем как умеем", rounds: [6, 4, 5, 4, 6, 12, 6, 4], total: 47 },
+      { place: 10, team: "Ни к чему не обязанные", rounds: [6, 3, 4, 3, 4, 12, 10, 3.5], total: 45.5 },
+      { place: 11, team: "Рогатые трупоеды", rounds: [5, 4, 4, 2.5, 6, 8, 9, 3.5], total: 42 },
+      { place: 12, team: "Щукинские маневры", rounds: [5, 4, 5, 3.5, 5, 12, 4, 3.5], total: 42 },
+      { place: 13, team: "КорваЛОЛ и текила", rounds: [5, 3, 5, 4, 6, 9, 6, 3.5], total: 41.5 },
+      { place: 14, team: "Лебедь, рак и мухи", rounds: [5, 3, 5, 2.5, 6, 11, 7, 1.5], total: 41 },
+      { place: 15, team: "Леру и Бали", rounds: [3, 5, 2, 3.5, 4, 10, 8, 2], total: 37.5 },
+      { place: 16, team: "Все пошло по Канту", rounds: [5, 5, 4, 3.5, 4, 8, 4, 1.5], total: 35 },
+      { place: 17, team: "Space mushrooms", rounds: [4, 3, 5, 2, 5, 10, 4, 1.5], total: 34.5 },
+      { place: 18, team: "Бесконечность", rounds: [3, 2, 5, 3, 5, 11, 1, 2.5], total: 32.5 },
+      { place: 19, team: "СУП ИЗ СЕМИ ЛАБУБ", rounds: [5, 3, 5, 4, 4, 8, 2, 1.5], total: 32.5 },
+      { place: 20, team: "Сальвадор в дали", rounds: [4, 4, 5, 3, 5, 10, 0, 0.5], total: 31.5 },
+      { place: 21, team: "Чайник для инструкции", rounds: [2, 4, 4, 3, 5, 8, 4, 1], total: 31 },
+      { place: 22, team: "Жены миллионеров", rounds: [3, 2, 4, 0.5, 3, 10, 2, 3], total: 27.5 },
+      { place: 23, team: "а ь и Ъ", rounds: [4, 4, 4, 2.5, 4, 4, 1, 3], total: 26.5 },
+      { place: 24, team: "Связь без брака", rounds: [2, 3, 4, 3.5, 4, 6, 3, 1], total: 26.5 },
+      { place: 25, team: "Тугие извилины", rounds: [4, 3, 2, 3.5, 3, 10, -2, 1], total: 24.5 },
+      { place: 26, team: "Наталья", rounds: [3, 3, 5, 2, 2, 7, 0, 2], total: 24 }
+      ]
+    }
   },
   {
     date: "2025-08-17", organizer: "Эйнштейн Party", title: "Классика №484_1",
-    venue: "Metafora Bar", place: 7, photoUrl: "", photoThumb: "", score: 45
+    venue: "Metafora Bar", place: 7, score: 45, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-08-17 • Эйнштейн Party — Классика №484_1 (источник: albertparty.ru/game/22501)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "OnlyFuns", rounds: [10, 6, 12, 10, 18, 12, 2, 4], total: 74 },
+      { place: 2, team: "Алибидерчи", rounds: [8, 5, 12, 8, 18, 12, 4, 6], total: 73 },
+      { place: 3, team: "Легионеры из Нью Джерси", rounds: [10, 5, 10, 6, 12, 12, 4, 2], total: 61 },
+      { place: 4, team: "Сибирский стыд", rounds: [10, 4, 5, 4, 13, 12, 6, 6], total: 60 },
+      { place: 5, team: "Булочки в животе", rounds: [9, 4, 7, 7, 12, 8, 6, 2], total: 55 },
+      { place: 6, team: "Просто посмотрим", rounds: [7, 3, 6, 7, 7, 8, 6, 4], total: 48 },
+      { place: 7, team: "Генератор неслучайных ответов", rounds: [8, 6, 7, 4, 6, 8, 2, 4], total: 45 },
+      { place: 8, team: "Сквончеры", rounds: [9, 2, 0, 7, 10, 6, 4, 6], total: 44 },
+      { place: 9, team: "Настин день", rounds: [4, 4, 2, 8, 3, 3, 0, 0], total: 24 },
+      { place: 10, team: "Starпёрс", rounds: [4, 2, 1, 2, 4, 3, 0, 2], total: 18 },
+      { place: 11, team: "trofim419@gmail.com", rounds: [2, 3, 1, 3, 5, 2, 0, 2], total: 18 },
+      { place: 12, team: "Туда Сюда", rounds: [2, 2, 1, 2, 0, 0, 0, 2], total: 9 }
+      ]
+    }
   },
   {
     date: "2025-07-01", organizer: "Эйнштейн Party", title: "Пой. Танцуй. Люби: 90 vs. 00 №28_1",
-    venue: "O'Donoghue's Pub", place: 15, photoUrl: "", photoThumb: "", score: 52
+    venue: "O'Donoghue's Pub", place: 15, score: 52, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-07-01 • Эйнштейн Party — Пой. Танцуй. Люби: 90 vs. 00 №28_1 (источник: albertparty.ru/game/22082)",
+      roundCount: 7,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Мы шли в караоке", rounds: [10, 4, 8, 18, 17, 18, 18], total: 93 },
+      { place: 2, team: "The Who не спросят", rounds: [10, 5, 8, 18, 18, 18, 16], total: 93 },
+      { place: 3, team: "Полли хочет пряник", rounds: [10, 4, 8, 17, 18, 18, 15], total: 90 },
+      { place: 4, team: "Водочка с селедочкой", rounds: [8, 1, 8, 13, 14, 18, 14], total: 76 },
+      { place: 5, team: "Prosecco", rounds: [10, 3, 7, 17, 17, 4, 14], total: 72 },
+      { place: 6, team: "отчаянная инКВИЗиция", rounds: [7, 3, 8, 16, 12, 15, 11], total: 72 },
+      { place: 7, team: "Ты меня называлаааааа!", rounds: [8, 1, 8, 15, 14, 18, 8], total: 72 },
+      { place: 8, team: "Не знаем, но угадаем", rounds: [6, 3, 6, 16, 13, 18, 8], total: 70 },
+      { place: 9, team: "Тичеры", rounds: [10, 4, 8, 15, 11, 16, 2], total: 66 },
+      { place: 10, team: "Музы конфуза", rounds: [6, 2, 8, 12, 11, 14, 12], total: 65 },
+      { place: 11, team: "Скрыжапель", rounds: [8, 5, 6, 16, 14, 12, 3], total: 64 },
+      { place: 12, team: "Святые МОТОугодники", rounds: [8, 1, 7, 12, 10, 18, 5], total: 61 },
+      { place: 13, team: "ВИА Мармеладзе", rounds: [6, 2, 7, 10, 11, 18, 5], total: 59 },
+      { place: 14, team: "42", rounds: [7, 2, 6, 13, 12, 12, 1], total: 53 },
+      { place: 15, team: "Генератор неслучайных ответов", rounds: [8, 2, 6, 12, 10, 12, 2], total: 52 },
+      { place: 16, team: "Танцуй, детка!", rounds: [9, 2, 5, 12, 10, 5, 2], total: 45 },
+      { place: 17, team: "Изо всех сил", rounds: [5, 2, 4, 13, 8, 6, 4], total: 42 },
+      { place: 18, team: "Капибарчики", rounds: [8, 2, 4, 9, 9, 5, 3], total: 40 },
+      { place: 19, team: "Умный и блондинки", rounds: [3, 2, 4, 8, 11, 12, -2], total: 38 },
+      { place: 20, team: "ХХХ и звёзды", rounds: [3, 2, 5, 9, 9, 9, -1], total: 36 },
+      { place: 21, team: "Двое в лодке не считая ВИА Гры", rounds: [2, 1, 5, 9, 6, 5, 5], total: 33 },
+      { place: 22, team: "РэпТоп", rounds: [6, 1, 5, 8, 7, 7, -1], total: 33 },
+      { place: 23, team: "Магистры", rounds: [3, 1, 2, 12, 7, -1, 4], total: 28 },
+      { place: 24, team: "Сиииильные индейки", rounds: [1, 1, 2, 3, 4, 3, 0], total: 14 },
+      { place: 25, team: "Electric Vibes", rounds: [0, 1, 1, 5, 4, 1, 1], total: 13 },
+      { place: 26, team: "Котята", rounds: [1, 0, 2, 2, 2, 5, 0], total: 12 }
+      ]
+    }
   },
   {
     date: "2025-06-21", organizer: "Эйнштейн Party", title: "FUN #312_4",
-    venue: "Nebar Moscow", place: 3, photoUrl: "", photoThumb: "", score: 49.5
+    venue: "Nebar Moscow", place: 3, score: 49.5, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-06-21 • Эйнштейн Party — FUN #312_4 (источник: albertparty.ru/game/21674)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "Голый Сева", rounds: [4, 6, 4, 4, 5, 12, 12, 5], total: 52 },
+      { place: 2, team: "Чиж&Ки", rounds: [6, 4, 4, 3.5, 5, 12, 12, 4.5], total: 51 },
+      { place: 3, team: "Генератор неслучайных ответов", rounds: [4, 5, 5, 3.5, 5, 12, 12, 3], total: 49.5 },
+      { place: 4, team: "кОРелия", rounds: [5, 5, 5, 4.5, 5, 10, 8, 4], total: 46.5 },
+      { place: 5, team: "Споры Грибов", rounds: [5, 4, 5, 4, 5, 12, 7, 3.5], total: 45.5 },
+      { place: 6, team: "Экспериментальный полёт астронавта Семёнова", rounds: [5, 3, 5, 4.5, 4, 8, 12, 3], total: 44.5 },
+      { place: 7, team: "Немолодые ветра", rounds: [5, 6, 4, 4, 6, 8, 8, 2.5], total: 43.5 },
+      { place: 8, team: "Лебедь, рак и мухи", rounds: [5, 4, 6, 5, 4, 8, 8, 3], total: 43 },
+      { place: 9, team: "Еле собрались", rounds: [6, 6, 4, 4.5, 4, 10, 0, 3.5], total: 38 },
+      { place: 10, team: "ТРИКО!", rounds: [6, 5, 4, 4, 4, 3, 8, 3], total: 37 },
+      { place: 11, team: "Соевый союз", rounds: [4, 3, 2, 4.5, 3, 4, 6, 1.5], total: 28 },
+      { place: 12, team: "Пупуни", rounds: [4, 4, 2, 2, 3, 2, 6, 2.5], total: 25.5 },
+      { place: 13, team: "Папа, я покушала", rounds: [5, 4, 2, 3.5, 5, 3, 0, 2], total: 24.5 },
+      { place: 14, team: "Слоны", rounds: [3, 1, 2, 3.5, 3, 3, 2, 3], total: 20.5 },
+      { place: 15, team: "Скоро отпуск!", rounds: [2, 3, 3, 2.5, 2, 3, 3, 1.5], total: 20 },
+      { place: 16, team: "4+1", rounds: [2, 1, 3, 3, 3, 4, -2, 2.5], total: 16.5 }
+      ]
+    }
   },
   {
     date: "2025-06-07", organizer: "Эйнштейн Party", title: "Верните мой 2007-ой №2_2",
-    venue: "Metafora Bar", place: 5, photoUrl: "", photoThumb: "", score: 53.5
+    venue: "Metafora Bar", place: 5, score: 53.5, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-06-07 • Эйнштейн Party — Верните мой 2007-ой №2_2 (источник: albertparty.ru/game/21620)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "И Сережи тоже", rounds: [5, 6, 5, 4, 6, 12, 12, 19], total: 69 },
+      { place: 2, team: "The Wassermans", rounds: [5, 6, 5, 3, 4, 10, 12, 18], total: 63 },
+      { place: 3, team: "Tea party muting", rounds: [5, 6, 5, 3.5, 4, 12, 12, 14], total: 61.5 },
+      { place: 4, team: "Назло рекордам", rounds: [6, 6, 6, 2.5, 4, 12, 10, 12], total: 58.5 },
+      { place: 5, team: "Генератор неслучайных ответов", rounds: [4, 3, 5, 2.5, 3, 12, 12, 12], total: 53.5 },
+      { place: 6, team: "За знакомство", rounds: [1, 6, 5, 3, 2, 10, 12, 12], total: 51 },
+      { place: 7, team: "Не конкретный вопрос", rounds: [5, 6, 5, 3, 1, 6, 6, 16], total: 48 },
+      { place: 8, team: "Странные сны о Леониде Викторовиче Слуцком", rounds: [4, 5, 4, 2.5, 2, 10, 6, 14], total: 47.5 },
+      { place: 9, team: "###Темнота Внутри###", rounds: [5, 6, 5, 4.5, 2, 4, 8, 13], total: 47.5 },
+      { place: 10, team: "Вобла и Ко", rounds: [2, 5, 3, 2, 1, 5, 8, 19], total: 45 },
+      { place: 11, team: "Чунга-Чанга", rounds: [5, 5, 3, 1.5, 3, 5, 8, 14], total: 44.5 },
+      { place: 12, team: "Огненные драконы", rounds: [2, 5, 3, 1.5, 2, 10, 3, 13], total: 39.5 },
+      { place: 13, team: "Рики-тики-твари", rounds: [3, 4, 2, 2.5, 3, 10, 3, 4], total: 31.5 },
+      { place: 14, team: "Я же говорила!", rounds: [3, 4, 1, 2, 0, 1, 2, 5], total: 18 },
+      { place: 15, team: "Пивозавры", rounds: [3, 4, 2, 1, 2, 1, 3, 1], total: 17 },
+      { place: 16, team: "В шортах с лонгом", rounds: [1, 3, 2, 2, 1, -4, 2, 7], total: 14 },
+      { place: 17, team: "Пивопузики", rounds: [3, 1, 1, 1, 2, 0, 0, 2], total: 10 }
+      ]
+    }
   },
   {
     date: "2025-06-01", organizer: "Эйнштейн Party", title: "Классика №473_1",
-    venue: "Metafora Bar", place: 10, photoUrl: "", photoThumb: "", score: 55
+    venue: "Metafora Bar", place: 10, score: 55, photoUrl: "", photoThumb: "",
+    results: {
+      note: "2025-06-01 • Эйнштейн Party — Классика №473_1 (источник: albertparty.ru/game/21377)",
+      roundCount: 8,
+      teamName: "Генератор неслучайных ответов",
+      standings: [
+      { place: 1, team: "OnlyFuns", rounds: [10, 5, 12, 9, 18, 12, 6, 6], total: 78 },
+      { place: 2, team: "Внутренняя интеллигентность", rounds: [10, 5, 10, 8, 18, 12, 6, 4], total: 73 },
+      { place: 3, team: "Кокошин эль", rounds: [10, 4, 10, 8, 15, 12, 6, 6], total: 71 },
+      { place: 4, team: "Старушки Лопес", rounds: [10, 5, 10, 8, 18, 8, 6, 6], total: 71 },
+      { place: 5, team: "Томные лошадки", rounds: [9, 5, 12, 9, 15, 8, 6, 4], total: 68 },
+      { place: 6, team: "Метод Тыка", rounds: [10, 4, 12, 6, 15, 8, 6, 6], total: 67 },
+      { place: 7, team: "Затмение", rounds: [9, 4, 10, 7, 15, 8, 4, 6], total: 63 },
+      { place: 8, team: "Отдых грибника", rounds: [8, 4, 8, 7, 15, 4, 4, 6], total: 56 },
+      { place: 9, team: "Мы далеки от одеяла", rounds: [9, 3, 10, 8, 12, 4, 6, 4], total: 56 },
+      { place: 10, team: "Генератор неслучайных ответов", rounds: [8, 5, 10, 9, 15, -4, 6, 6], total: 55 },
+      { place: 11, team: "Сами своего рода знатоки", rounds: [9, 4, 9, 8, 7, 8, 2, 4], total: 51 },
+      { place: 12, team: "Уналашка Холдингс", rounds: [7, 5, 10, 8, 12, -4, 4, 6], total: 48 },
+      { place: 13, team: "Genius", rounds: [7, 3, 12, 7, 12, -4, 4, 6], total: 47 },
+      { place: 14, team: "USB здесь, а к Никите вопросики", rounds: [6, 3, 4, 8, 9, 8, 2, 6], total: 46 },
+      { place: 15, team: "Пятизвездочный теремок", rounds: [9, 4, 8, 5, 3, 4, 6, 6], total: 45 },
+      { place: 16, team: "Гарри", rounds: [6, 2, 4, 6, 10, 1, 4, 4], total: 37 },
+      { place: 17, team: "Может договоримся?", rounds: [4, 3, 6, 7, 9, 0, 4, 4], total: 37 },
+      { place: 18, team: "неКюри", rounds: [4, 3, 4, 6, 7, 4, 2, 4], total: 34 },
+      { place: 19, team: "Серебро", rounds: [5, 3, 8, 5, 7, 2, 0, 0], total: 30 },
+      { place: 20, team: "Скрытый потенциал", rounds: [6, 1, 4, 6, 0, 4, 0, 2], total: 23 }
+      ]
+    }
   }
 ];
