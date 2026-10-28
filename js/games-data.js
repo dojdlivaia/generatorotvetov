@@ -1052,7 +1052,7 @@ const GAMES = [
         { place: 18, team: "Редко,_но метко!!", rounds: [2, 4, 3, 1, 4, 4, 4], total: 22 },
         { place: 19, team: "Сковорода", rounds: [6, 5, 3, -3, 3, 6, 2], total: 22 },
         { place: 20, team: "Малополезные Псевдоколабсы", rounds: [4, 5, 3, -3, 3, 5, 4], total: 21 },
-        { place: 21, team: "42в хромасома", rounds: [2, 5, 3, 0, 3, 3, 2], total: 17 }
+        { place: 21, team: "42в хромасома", rounds: [2, 5, 3, 0, 3, 3, 2], total: 18 }
       ]
     }
   },
