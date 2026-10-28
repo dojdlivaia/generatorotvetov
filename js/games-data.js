@@ -1159,9 +1159,9 @@ const GAMES = [
     }
   },
   {
-    // Место неизвестно (полного протокола нет) — намеренно null, игра вне рейтинговых метрик.
+    // 3 место подтверждено пользователем (фото на сцене + сертификат); полной таблицы нет.
     date: "2025-07-05", organizer: "Мозгва", title: "Новички 493 День 2",
-    venue: "Коктейль Холл", place: null,
+    venue: "Коктейль Холл", place: 3,
     photoUrl: "https://findquiz.ru/event/mozgva/photo/282712-novichki-493-den-2",
     photoThumb: "https://sun9-56.userapi.com/s/v1/ig2/dSsC1V3rBvBie53QK0mM8iscbtk7WfkL4BEjzeyD83MNILpcDm6G8sEi3UwQd8jKLM6lv68EbEVlIXwh1PggBnxJ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2000x1333&from=bu&cs=640x0"
   },
