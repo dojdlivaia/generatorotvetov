@@ -385,7 +385,7 @@ const GAMES = [
   },
   {
     date: "2026-09-20", organizer: "Эйнштейн Party", title: "Классика №541_1",
-    venue: "OldSchool Pub Маяковская", place: 8,
+    venue: "OldSchool Pub Маяковская", place: 8, score: 51,
     photoUrl: "https://findquiz.ru/event/einstein-party/photo/344258-klassika-541-1",
     photoThumb: "https://sun9-65.userapi.com/s/v1/ig2/2LY8Yp1VAwZiwokRxVohfoEyjXUBp_MW8g75CXsYUt3Z2OWq4ULmoI11t6wfLVeF3VW6_-eU5sM4SniSepalDBPW.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
     results: {
@@ -563,7 +563,7 @@ const GAMES = [
   },
   {
     date: "2026-06-07", organizer: "Эйнштейн Party", title: "Классика №526_1",
-    venue: "OldSchool Pub Маяковская", place: 11,
+    venue: "OldSchool Pub Маяковская", place: 11, score: 47,
     photoUrl: "https://findquiz.ru/event/einstein-party/photo/330755-klassika-526-1",
     photoThumb: "",
     results: {
@@ -658,7 +658,7 @@ const GAMES = [
   /* ================= 2026 (апрель) ================= */
   {
     date: "2026-04-30", organizer: "Эйнштейн Party", title: "FUN #359_2",
-    venue: "Lions Head Pub", place: 13,
+    venue: "Lions Head Pub", place: 13, score: 47.5,
     photoUrl: "https://findquiz.ru/event/einstein-party/photo/320190-fun-359-2",
     photoThumb: "https://sun9-84.userapi.com/s/v1/ig2/PhJ-CAgJpLLUvRtkCpC_eflADByktQpB4y-ZcPKz81PlkxqVqcWOrhj2YoB9Y4URnrGaxcfOr7HpFt8PqF5rBms9.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920&from=bu&cs=640x0",
     results: {
@@ -834,7 +834,7 @@ const GAMES = [
   /* ================= 2025 (декабрь) ================= */
   {
     date: "2025-12-30", organizer: "Эйнштейн Party", title: "Классика №503_3",
-    venue: "Lions Head Pub", place: 2, photoUrl: "", photoThumb: "",
+    venue: "Lions Head Pub", place: 2, score: 72, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-12-30 • Эйнштейн Party — Классика №503_3 (источник: albertparty.ru/game/24307)",
       roundCount: 8,
@@ -935,7 +935,7 @@ const GAMES = [
   /* ================= 2025 (ноябрь) ================= */
   {
     date: "2025-11-22", organizer: "Эйнштейн Party", title: "FUN #334_4",
-    venue: "Metafora Bar", place: 4, photoUrl: "", photoThumb: "",
+    venue: "Metafora Bar", place: 4, score: 50.5, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-11-22 • Эйнштейн Party — FUN #334_4 (источник: albertparty.ru/game/23841)",
       roundCount: 8,
@@ -1017,7 +1017,7 @@ const GAMES = [
   /* ================= 2025 (октябрь) ================= */
   {
     date: "2025-10-29", organizer: "Эйнштейн Party", title: "Классика №494_3",
-    venue: "Metafora Bar", place: 15, photoUrl: "", photoThumb: "",
+    venue: "Metafora Bar", place: 15, score: 32, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-10-29 • Эйнштейн Party — Классика №494_3 (источник: albertparty.ru/game/23400)",
       roundCount: 8,
@@ -1100,7 +1100,7 @@ const GAMES = [
   },
   {
     date: "2025-09-13", organizer: "Эйнштейн Party", title: "FUN #324_4",
-    venue: "Nebar Moscow", place: 7, photoUrl: "", photoThumb: "",
+    venue: "Nebar Moscow", place: 7, score: 41.5, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-09-13 • Эйнштейн Party — FUN #324_4 (источник: albertparty.ru/game/22870)",
       roundCount: 8,
@@ -1370,7 +1370,7 @@ const GAMES = [
      Полные протоколы по турам для этих игр недоступны — добавлены только место и балл. */
   {
     date: "2026-10-28", organizer: "Эйнштейн Party", title: "Классика №546_3",
-    venue: "Old School Pub Маяковская", place: 5, photoUrl: "", photoThumb: "", score: 57,
+    venue: "Old School Pub Маяковская", place: 5, score: 57, photoUrl: "", photoThumb: "",
     results: {
       note: "2026-10-28 • Эйнштейн Party — Классика №546_3 (источник: albertparty.ru/game/28935)",
       roundCount: 8,
@@ -1395,7 +1395,7 @@ const GAMES = [
   },
   {
     date: "2026-01-06", organizer: "Эйнштейн Party", title: "18+ №23_1",
-    venue: "Old School Pub Маяковская", place: 6, photoUrl: "", photoThumb: "", score: 58.5,
+    venue: "Old School Pub Маяковская", place: 6, score: 58.5, photoUrl: "", photoThumb: "",
     results: {
       note: "2026-01-06 • Эйнштейн Party — 18+ №23_1 (источник: albertparty.ru/game/24673)",
       roundCount: 8,
@@ -1430,7 +1430,7 @@ const GAMES = [
   },
   {
     date: "2025-10-11", organizer: "Эйнштейн Party", title: "Классика №491_4",
-    venue: "Metafora Bar", place: 6, photoUrl: "", photoThumb: "", score: 53,
+    venue: "Metafora Bar", place: 6, score: 53, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-10-11 • Эйнштейн Party — Классика №491_4 (источник: albertparty.ru/game/23389)",
       roundCount: 8,
@@ -1468,7 +1468,7 @@ const GAMES = [
   },
   {
     date: "2025-10-04", organizer: "Эйнштейн Party", title: "Поп-культура: 00-е",
-    venue: "Metafora Bar", place: 12, photoUrl: "", photoThumb: "", score: 27.5,
+    venue: "Metafora Bar", place: 12, score: 27.5, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-10-04 • Эйнштейн Party — Поп-культура: 00-е (источник: albertparty.ru/game/23284)",
       roundCount: 8,
@@ -1496,7 +1496,7 @@ const GAMES = [
   },
   {
     date: "2025-09-26", organizer: "Эйнштейн Party", title: "FUN #326_3",
-    venue: "Nebar Moscow", place: 4, photoUrl: "", photoThumb: "", score: 53.5,
+    venue: "Nebar Moscow", place: 4, score: 53.5, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-09-26 • Эйнштейн Party — FUN #326_3 (источник: albertparty.ru/game/22877)",
       roundCount: 8,
@@ -1533,7 +1533,7 @@ const GAMES = [
   },
   {
     date: "2025-08-17", organizer: "Эйнштейн Party", title: "Классика №484_1",
-    venue: "Metafora Bar", place: 7, photoUrl: "", photoThumb: "", score: 45,
+    venue: "Metafora Bar", place: 7, score: 45, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-08-17 • Эйнштейн Party — Классика №484_1 (источник: albertparty.ru/game/22501)",
       roundCount: 8,
@@ -1556,7 +1556,7 @@ const GAMES = [
   },
   {
     date: "2025-07-01", organizer: "Эйнштейн Party", title: "Пой. Танцуй. Люби: 90 vs. 00 №28_1",
-    venue: "O'Donoghue's Pub", place: 15, photoUrl: "", photoThumb: "", score: 52,
+    venue: "O'Donoghue's Pub", place: 15, score: 52, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-07-01 • Эйнштейн Party — Пой. Танцуй. Люби: 90 vs. 00 №28_1 (источник: albertparty.ru/game/22082)",
       roundCount: 7,
@@ -1593,7 +1593,7 @@ const GAMES = [
   },
   {
     date: "2025-06-21", organizer: "Эйнштейн Party", title: "FUN #312_4",
-    venue: "Nebar Moscow", place: 3, photoUrl: "", photoThumb: "", score: 49.5,
+    venue: "Nebar Moscow", place: 3, score: 49.5, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-06-21 • Эйнштейн Party — FUN #312_4 (источник: albertparty.ru/game/21674)",
       roundCount: 8,
@@ -1620,7 +1620,7 @@ const GAMES = [
   },
   {
     date: "2025-06-07", organizer: "Эйнштейн Party", title: "Верните мой 2007-ой №2_2",
-    venue: "Metafora Bar", place: 5, photoUrl: "", photoThumb: "", score: 53.5,
+    venue: "Metafora Bar", place: 5, score: 53.5, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-06-07 • Эйнштейн Party — Верните мой 2007-ой №2_2 (источник: albertparty.ru/game/21620)",
       roundCount: 8,
@@ -1648,7 +1648,7 @@ const GAMES = [
   },
   {
     date: "2025-06-01", organizer: "Эйнштейн Party", title: "Классика №473_1",
-    venue: "Metafora Bar", place: 10, photoUrl: "", photoThumb: "", score: 55,
+    venue: "Metafora Bar", place: 10, score: 55, photoUrl: "", photoThumb: "",
     results: {
       note: "2025-06-01 • Эйнштейн Party — Классика №473_1 (источник: albertparty.ru/game/21377)",
       roundCount: 8,
