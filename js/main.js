@@ -495,15 +495,20 @@
     }
     const tbody = document.getElementById("orgTableBody");
     if (tbody) {
-      // Сумма баллов команды по играм организатора (из подробных результатов)
-      const totalPoints = (org) => GAMES
-        .filter((g) => g.organizer === org && g.results)
-        .reduce((sum, g) => {
+      // Сумма баллов команды по играм организатора.
+      // Приоритет: балл из подробной таблицы результатов; если её нет — поле score игры.
+      const gamePoints = (g) => {
+        if (g.results) {
           const ours = g.results.standings.find(
             (row) => (row.team ?? row.name) === (g.results.team || g.results.teamName || "Генератор неслучайных ответов")
           );
-          return sum + (ours && typeof ours.total === "number" ? ours.total : 0);
-        }, 0);
+          if (ours && typeof ours.total === "number") return ours.total;
+        }
+        return typeof g.score === "number" ? g.score : 0;
+      };
+      const totalPoints = (org) => GAMES
+        .filter((g) => g.organizer === org)
+        .reduce((sum, g) => sum + gamePoints(g), 0);
       const fmtPoints = (v) => {
         if (!v) return "—";
         const num = Math.round(v * 10) / 10;

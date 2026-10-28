@@ -781,8 +781,40 @@ const GAMES = [
     }
   },
   {
-    date: "2025-12-13", organizer: "Мозгва", title: "Зачетная 931 День 2",
-    venue: "Коктейль Холл", place: 16, photoUrl: "", photoThumb: ""
+    date: "2025-05-19", organizer: "Мозгва", title: "Зачетная 931 День 2",
+    venue: "Коктейль Холл", place: 16,
+    photoUrl: "https://findquiz.ru/event/mozgva/photo/302078-zachetnaya-931-den-2",
+    photoThumb: "https://sun9-53.userapi.com/s/v1/ig2/D2wc_zGlQpPQL6XVndpqEhWt6odz3ykw6ZIWtp8UnDzde7p_H8cF5edsGfSxIQKGLFXt_VHI0dGR9WugO1YKh2oq.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
+    results: {
+      note: "19 мая 2025, понедельник • Коктейль Холл (Тверская 6с2) • Мозгва, Зачетная 931 День 2",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Привет, Олимпийский!", rounds: [6, 6, 6, 9, 6, 6, 10], total: 49 },
+        { place: 2, team: "Немолодые ветра", rounds: [6, 5, 6, 9, 6, 6, 8], total: 46 },
+        { place: 3, team: "Кремень монолита", rounds: [6, 5, 6, 6, 6, 6, 8], total: 43 },
+        { place: 4, team: "Метод_Тыка", rounds: [6, 5, 6, 3, 6, 6, 10], total: 42 },
+        { place: 5, team: "Нострадамус Предсказамус", rounds: [6, 5, 6, 0, 6, 6, 11], total: 40 },
+        { place: 6, team: "Два каштана", rounds: [6, 5, 5, 3, 6, 6, 8], total: 39 },
+        { place: 7, team: "Сады Мельдония", rounds: [6, 4, 5, 1, 4, 6, 10], total: 36 },
+        { place: 8, team: "Можно не надо", rounds: [5, 6, 5, 3, 4, 6, 7], total: 36 },
+        { place: 9, team: "Танчики и кабанчики", rounds: [6, 3, 5, 4, 6, 2, 8], total: 34 },
+        { place: 10, team: "Музыкалити", rounds: [6, 4, 5, 3, 3, 5, 8], total: 34 },
+        { place: 11, team: "Жмых моей совести", rounds: [6, 4, 5, 0, 5, 3, 10], total: 33 },
+        { place: 12, team: "Tea and chairs", rounds: [5, 6, 5, 0, 4, 4, 9], total: 33 },
+        { place: 13, team: "69 корочек от пиццы", rounds: [6, 3, 5, 6, 3, 5, 4], total: 32 },
+        { place: 14, team: "Жены Пикассо", rounds: [6, 5, 3, 6, 4, 3, 3], total: 30 },
+        { place: 15, team: "Слуби_Ду", rounds: [3, 5, 5, 4, 4, 1, 7], total: 29 },
+        { place: 16, team: "Генератор неслучайных ответов", rounds: [6, 5, 5, 0, 4, 3, 6], total: 29 },
+        { place: 17, team: "Трим и шасси", rounds: [4, 3, 6, 0, 4, 3, 6], total: 26 },
+        { place: 18, team: "Вокруг Светы", rounds: [3, 3, 4, -2, 4, 4, 6], total: 22 },
+        { place: 19, team: "Дети шпионов 3D", rounds: [5, 4, 5, 0, 4, 3, 0], total: 21 },
+        { place: 20, team: "СВЕТАголики", rounds: [3, 2, 4, -4, 3, 2, 8], total: 18 },
+        { place: 21, team: "Дугг", rounds: [2, 1, 4, 0, 4, 1, 6], total: 18 },
+        { place: 22, team: "Рыба-дракон", rounds: [5, 2, 0, 0, 4, 3, 4], total: 18 },
+        { place: 23, team: "Бубнилы", rounds: [2, 2, 3, 0, 2, 3, 4], total: 16 }
+      ]
+    }
   },
   {
     date: "2025-12-11", organizer: "BelkinQuiz", title: "БелкинКвиз #401",
@@ -969,8 +1001,62 @@ const GAMES = [
   },
   {
     date: "2025-08-23", organizer: "Мозгва", title: "Зачетная 909",
-    venue: "Коктейль Холл", place: 3, photoUrl: "", photoThumb: ""
+    venue: "Коктейль Холл", place: 3,
+    photoUrl: "https://findquiz.ru/event/mozgva/photo/286223-zachetnaya-909",
+    photoThumb: "https://sun9-6.userapi.com/s/v1/ig2/IYz1wSBeX082NYMms_mdL1sj43kaBLHP2QqxotvX90pv3xtaW3UJhMyAVM2pkLkdbM5D02q-a2Dh1UpjAxzrhSE5.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2000x1333&from=bu&cs=640x0",
+    results: {
+      note: "23 августа 2025, суббота • Коктейль Холл (Тверская 6с2) • Мозгва, Зачетная 909",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Парадная жилетка Вассермана", rounds: [5, 5, 6, 9, 6, 6, 12], total: 49 },
+        { place: 2, team: "Немолодые ветра", rounds: [6, 5, 6, 9, 6, 6, 10], total: 48 },
+        { place: 3, team: "Генератор неслучайных ответов", rounds: [5, 6, 4, 6, 5, 5, 11], total: 42 },
+        { place: 4, team: "Бобр_крута!", rounds: [4, 4, 4, 7, 5, 4, 12], total: 40 },
+        { place: 5, team: "Синяя Яма", rounds: [5, 4, 5, 3, 5, 5, 12], total: 39 },
+        { place: 6, team: "Лашате Ми Кантаре", rounds: [4, 5, 4, 6, 5, 5, 8], total: 37 },
+        { place: 7, team: "Мыли залы", rounds: [4, 4, 4, 3, 5, 6, 8], total: 34 },
+        { place: 8, team: "Жан-Клод_Вам дам", rounds: [4, 5, 4, 3, 5, 5, 4], total: 30 },
+        { place: 9, team: "Лесные феи", rounds: [2, 5, 2, 1, 3, 1, 6], total: 20 },
+        { place: 10, team: "ЭйтиПи", rounds: [2, 3, 2, 3, 1, 0, 5], total: 16 }
+      ]
+    }
   },
+  {
+    date: "2025-09-06", organizer: "Мозгва", title: "Зачетная 911 День 2",
+    venue: "Коктейль Холл", place: 5,
+    photoUrl: "https://findquiz.ru/quiz/mozgva/photo/308759816",
+    photoThumb: "https://sun9-69.userapi.com/s/v1/ig2/hiZFBYvocROzJOQ7RKTmlGeAdskm2UoE1abPUMdp8V2FBKroudAl4-glJ6gVGfAcwLMXc7LodqgYcCaXPmS0ojob.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2560x1706&from=bu&cs=640x0",
+    results: {
+      note: "6 сентября 2025, суббота • Коктейль Холл (Тверская 6с2) • Мозгва, Зачетная 911 День 2",
+      roundCount: 7,
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "На удачу 2.0!", rounds: [4, 6, 5, 9, 6, 6, 12], total: 48 },
+        { place: 2, team: "Метод_Тыка", rounds: [6, 4, 6, 9, 5, 6, 11], total: 47 },
+        { place: 3, team: "Омерзительная Батика Восьмёрка", rounds: [5, 6, 4, 9, 6, 6, 10], total: 46 },
+        { place: 4, team: "Екатерина Михайловна", rounds: [5, 6, 5, 9, 3, 6, 10], total: 44 },
+        { place: 5, team: "Генератор неслучайных ответов", rounds: [5, 5, 4, 9, 4, 6, 10], total: 43 },
+        { place: 6, team: "Кремень монолита", rounds: [6, 5, 6, 3, 5, 6, 11], total: 42 },
+        { place: 7, team: "Бажовкан Мелалле", rounds: [2, 5, 6, 9, 5, 4, 8], total: 39 },
+        { place: 8, team: "Смеркил", rounds: [5, 5, 5, 3, 5, 6, 8], total: 37 },
+        { place: 9, team: "Нострадамус Предсказамус", rounds: [6, 5, 4, -3, 4, 6, 11], total: 33 },
+        { place: 10, team: "Бобр_крута!", rounds: [4, 5, 4, 6, 4, 6, 4], total: 33 },
+        { place: 11, team: "Под крылом Вингелота", rounds: [1, 4, 5, 6, 1, 6, 8], total: 31 },
+        { place: 12, team: "Малополезные Псевдосыры", rounds: [4, 5, 4, 0, 4, 6, 8], total: 31 },
+        { place: 13, team: "Белый кролик", rounds: [2, 5, 4, 0, 5, 6, 8], total: 30 },
+        { place: 14, team: "Единорни", rounds: [6, 6, 4, 0, 3, 5, 6], total: 30 },
+        { place: 15, team: "Шампинь_Тим", rounds: [4, 5, 4, -3, 6, 6, 6], total: 28 },
+        { place: 16, team: "Леся и компания", rounds: [4, 4, 3, 1, 4, 6, 4], total: 26 },
+        { place: 17, team: "И то ХЛЕБУ!", rounds: [4, 5, 4, -3, 4, 3, 6], total: 23 },
+        { place: 18, team: "Редко,_но метко!!", rounds: [2, 4, 3, 1, 4, 4, 4], total: 22 },
+        { place: 19, team: "Сковорода", rounds: [6, 5, 3, -3, 3, 6, 2], total: 22 },
+        { place: 20, team: "Малополезные Псевдоколабсы", rounds: [4, 5, 3, -3, 3, 5, 4], total: 21 },
+        { place: 21, team: "42в хромасома", rounds: [2, 5, 3, 0, 3, 3, 2], total: 18 }
+      ]
+    }
+  },
+
   /* ================= 2025 (июль) ================= */
   {
     date: "2025-07-25", organizer: "Squiz", title: "Игра #894.1",
@@ -1073,9 +1159,53 @@ const GAMES = [
     }
   },
   {
+    // Место неизвестно (полного протокола нет) — намеренно null, игра вне рейтинговых метрик.
     date: "2025-07-05", organizer: "Мозгва", title: "Новички 493 День 2",
     venue: "Коктейль Холл", place: null,
     photoUrl: "https://findquiz.ru/event/mozgva/photo/282712-novichki-493-den-2",
     photoThumb: "https://sun9-56.userapi.com/s/v1/ig2/dSsC1V3rBvBie53QK0mM8iscbtk7WfkL4BEjzeyD83MNILpcDm6G8sEi3UwQd8jKLM6lv68EbEVlIXwh1PggBnxJ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2000x1333&from=bu&cs=640x0"
+  },
+
+  /* ================= Эйнштейн Party (источник: albertparty.ru/team/78854) =================
+     Полные протоколы по турам для этих игр недоступны — добавлены только место и балл. */
+  {
+    date: "2026-10-28", organizer: "Эйнштейн Party", title: "Классика №546_3",
+    venue: "Old School Pub Маяковская", place: 5, photoUrl: "", photoThumb: "", score: 57
+  },
+  {
+    date: "2026-01-06", organizer: "Эйнштейн Party", title: "18+ №23_1",
+    venue: "Old School Pub Маяковская", place: 6, photoUrl: "", photoThumb: "", score: 58.5
+  },
+  {
+    date: "2025-10-11", organizer: "Эйнштейн Party", title: "Классика №491_4",
+    venue: "Metafora Bar", place: 6, photoUrl: "", photoThumb: "", score: 53
+  },
+  {
+    date: "2025-10-04", organizer: "Эйнштейн Party", title: "Поп-культура: 00-е",
+    venue: "Metafora Bar", place: 12, photoUrl: "", photoThumb: "", score: 27.5
+  },
+  {
+    date: "2025-09-26", organizer: "Эйнштейн Party", title: "FUN #326_3",
+    venue: "Nebar Moscow", place: 4, photoUrl: "", photoThumb: "", score: 53.5
+  },
+  {
+    date: "2025-08-17", organizer: "Эйнштейн Party", title: "Классика №484_1",
+    venue: "Metafora Bar", place: 7, photoUrl: "", photoThumb: "", score: 45
+  },
+  {
+    date: "2025-07-01", organizer: "Эйнштейн Party", title: "Пой. Танцуй. Люби: 90 vs. 00 №28_1",
+    venue: "O'Donoghue's Pub", place: 15, photoUrl: "", photoThumb: "", score: 52
+  },
+  {
+    date: "2025-06-21", organizer: "Эйнштейн Party", title: "FUN #312_4",
+    venue: "Nebar Moscow", place: 3, photoUrl: "", photoThumb: "", score: 49.5
+  },
+  {
+    date: "2025-06-07", organizer: "Эйнштейн Party", title: "Верните мой 2007-ой №2_2",
+    venue: "Metafora Bar", place: 5, photoUrl: "", photoThumb: "", score: 53.5
+  },
+  {
+    date: "2025-06-01", organizer: "Эйнштейн Party", title: "Классика №473_1",
+    venue: "Metafora Bar", place: 10, photoUrl: "", photoThumb: "", score: 55
   }
 ];
