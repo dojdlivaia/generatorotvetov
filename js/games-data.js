@@ -1164,5 +1164,48 @@ const GAMES = [
     venue: "Коктейль Холл", place: null,
     photoUrl: "https://findquiz.ru/event/mozgva/photo/282712-novichki-493-den-2",
     photoThumb: "https://sun9-56.userapi.com/s/v1/ig2/dSsC1V3rBvBie53QK0mM8iscbtk7WfkL4BEjzeyD83MNILpcDm6G8sEi3UwQd8jKLM6lv68EbEVlIXwh1PggBnxJ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2000x1333&from=bu&cs=640x0"
+  },
+
+  /* ================= Эйнштейн Party (источник: albertparty.ru/team/78854) =================
+     Полные протоколы по турам для этих игр недоступны — добавлены только место и балл. */
+  {
+    date: "2026-10-28", organizer: "Эйнштейн Party", title: "Классика №546_3",
+    venue: "Old School Pub Маяковская", place: 5, photoUrl: "", photoThumb: "", score: 57
+  },
+  {
+    date: "2026-01-06", organizer: "Эйнштейн Party", title: "18+ №23_1",
+    venue: "Old School Pub Маяковская", place: 6, photoUrl: "", photoThumb: "", score: 58.5
+  },
+  {
+    date: "2025-10-11", organizer: "Эйнштейн Party", title: "Классика №491_4",
+    venue: "Metafora Bar", place: 6, photoUrl: "", photoThumb: "", score: 53
+  },
+  {
+    date: "2025-10-04", organizer: "Эйнштейн Party", title: "Поп-культура: 00-е",
+    venue: "Metafora Bar", place: 12, photoUrl: "", photoThumb: "", score: 27.5
+  },
+  {
+    date: "2025-09-26", organizer: "Эйнштейн Party", title: "FUN #326_3",
+    venue: "Nebar Moscow", place: 4, photoUrl: "", photoThumb: "", score: 53.5
+  },
+  {
+    date: "2025-08-17", organizer: "Эйнштейн Party", title: "Классика №484_1",
+    venue: "Metafora Bar", place: 7, photoUrl: "", photoThumb: "", score: 45
+  },
+  {
+    date: "2025-07-01", organizer: "Эйнштейн Party", title: "Пой. Танцуй. Люби: 90 vs. 00 №28_1",
+    venue: "O'Donoghue's Pub", place: 15, photoUrl: "", photoThumb: "", score: 52
+  },
+  {
+    date: "2025-06-21", organizer: "Эйнштейн Party", title: "FUN #312_4",
+    venue: "Nebar Moscow", place: 3, photoUrl: "", photoThumb: "", score: 49.5
+  },
+  {
+    date: "2025-06-07", organizer: "Эйнштейн Party", title: "Верните мой 2007-ой №2_2",
+    venue: "Metafora Bar", place: 5, photoUrl: "", photoThumb: "", score: 53.5
+  },
+  {
+    date: "2025-06-01", organizer: "Эйнштейн Party", title: "Классика №473_1",
+    venue: "Metafora Bar", place: 10, photoUrl: "", photoThumb: "", score: 55
   }
 ];
