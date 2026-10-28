@@ -1073,6 +1073,7 @@ const GAMES = [
     }
   },
   {
+    // Место неизвестно (полного протокола нет) — намеренно null, игра вне рейтинговых метрик.
     date: "2025-07-05", organizer: "Мозгва", title: "Новички 493 День 2",
     venue: "Коктейль Холл", place: null,
     photoUrl: "https://findquiz.ru/event/mozgva/photo/282712-novichki-493-den-2",
