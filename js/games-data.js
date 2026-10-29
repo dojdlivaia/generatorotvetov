@@ -6,6 +6,129 @@
  * host — хост альбома, заполняется автоматически из photoUrl в main.js.
  */
 const GAMES = [
+  /* ================= 2026: Квиз, плиз! (Кафе Гоген) ================= */
+  {
+    date: "2026-04-11", organizer: "Квиз, плиз!", title: "#1266",
+    venue: "Кафе Гоген", place: 3, score: 52,
+    photoUrl: "https://vk.ru/album-114998728_310759482",
+    photoThumb: "https://sun9-55.vkuserphoto.ru/s/v1/ig2/RJQU-ZxfSfUt2njbzZdZSYhTLUIzy_66xRQHx_SiWCm65KYy0FHDsB8kJ00MbR9fUY1mxOc8ZdA4AwrguuuJ3Sl1.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2500x1666&from=bu&cs=2500x0",
+    results: {
+      note: "11.04.2026 | Кафе Гоген | #1266",
+      roundCount: 7,
+      roundLabels: ["Раунд 1", "Раунд 2", "Раунд 3", "Раунд 4", "Раунд 5", "Раунд 6", "Раунд 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Низкий IQ", rounds: [7, 7, 4, 5, 6, 4, 23], total: 56 },
+        { place: 2, team: "Бородатая Агама", rounds: [6, 8, 4, 6, 5, 6, 19], total: 54 },
+        { place: 3, team: "Генератор неслучайных ответов", rounds: [6, 8, 4, 6, 6, 6, 16], total: 52 },
+        { place: 4, team: "Катехизиs гедонизма", rounds: [7, 8, 3, 6.5, 5, 8, 13], total: 50.5 },
+        { place: 5, team: "Недра Чили", rounds: [7, 7, 5, 5.5, 6, 4, 13], total: 47.5 },
+        { place: 6, team: "LEGION", rounds: [7, 6, 6, 4.5, 5, 6, 12], total: 46.5 },
+        { place: 7, team: "Эдвард Хинкаллен", rounds: [6, 6, 6, 6.5, 6, 2, 13], total: 45.5 },
+        { place: 8, team: "Шумелка мышь", rounds: [6, 7, 5, 6, 5, 2, 13], total: 44 },
+        { place: 9, team: "69 корочек от пиццы", rounds: [7, 5, 3, 6.5, 4, 4, 14], total: 43.5 },
+        { place: 10, team: "Головастики", rounds: [7, 7, 4, 4.5, 5, 2, 14], total: 43.5 },
+        { place: 11, team: "Интеллект на максималках", rounds: [6, 5, 4, 5, 4, 4, 13], total: 41 },
+        { place: 12, team: "Нотариально заверены", rounds: [7, 7, 5, 5.5, 4, 2, 10], total: 40.5 },
+        { place: 13, team: "Лисья морда", rounds: [5, 7, 3, 4.5, 4, 4, 10], total: 37.5 },
+        { place: 14, team: "Мы тут случайно", rounds: [6, 7, 2, 5.5, 5, 0, 10], total: 35.5 },
+        { place: 15, team: "Камбалапы", rounds: [7, 5, 4, 5.5, 4, 0, 10], total: 35.5 },
+        { place: 16, team: "Илон Маркс", rounds: [7, 7, 5, 4, 5, 0, 6], total: 34 },
+        { place: 17, team: "Цитатник Стетхема", rounds: [5, 3, 4, 4.5, 5, 2, 10], total: 33.5 },
+        { place: 18, team: "Хинкали танцевали", rounds: [6, 7, 3, 4, 4, 2, 7], total: 33 },
+        { place: 19, team: "Квокка за квокку", rounds: [6, 4, 3, 5.5, 3, 0, 9], total: 30.5 },
+        { place: 20, team: "Ой, всё!", rounds: [6, 5, 3, 5.5, 3, 2, 6], total: 30.5 },
+        { place: 21, team: "Сглыпы", rounds: [6, 4, 2, 2.5, 2, 0, 9], total: 25.5 },
+        { place: 22, team: "The best people", rounds: [4, 3, 3, 3.5, 4, 2, 6], total: 25.5 },
+        { place: 23, team: "три друга за друга", rounds: [6, 3, 4, 2, 2, 0, 7], total: 24 },
+        { place: 24, team: "внуки бабушки Козловой", rounds: [5, 5, 1, 3.5, 2, 2, 5], total: 23.5 },
+        { place: 25, team: "Безумчики", rounds: [4, 1, 4, 2, 4, 0, 8], total: 23 },
+        { place: 26, team: "Чистые росы", rounds: [4, 1, 2, 3, 2, 0, 8], total: 20 },
+        { place: 27, team: "Совпадение", rounds: [5, 4, 2, 1, 3, 0, 4], total: 19 },
+        { place: 28, team: "Э кошмары", rounds: [5, 2, 4, 3, 2, 0, 3], total: 19 }
+      ]
+    }
+  },
+  {
+    date: "2026-04-11", organizer: "Квиз, плиз!", title: "[про космос] #1",
+    venue: "Кафе Гоген", place: 12, score: 47.5,
+    photoUrl: "https://vk.ru/album-114998728_310764675",
+    photoThumb: "https://sun9-15.vkuserphoto.ru/s/v1/ig2/3t2pfoIBC8dgyXDQYK1mtYs0hoCpTauK_s7zHHYNeyq-LCAHcMuBVHNWfkSKIlGH6jvV9gMLxnfikdWuGDjaNKWo.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2500x1667&from=bu&cs=2500x0",
+    results: {
+      note: "11.04.2026 | Кафе Гоген | #1 Квиз, плиз! [про космос]",
+      roundCount: 7,
+      roundLabels: ["Раунд 1", "Раунд 2", "Раунд 3", "Раунд 4", "Раунд 5", "Раунд 6", "Раунд 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Сахар, дрожжи и вода", rounds: [6, 6, 6, 6, 6, 5.5, 20], total: 55.5 },
+        { place: 2, team: "Новая кассета Малежика", rounds: [6, 6, 6, 5, 6, 5, 21], total: 55 },
+        { place: 3, team: "ИП Русинова", rounds: [6, 6, 6, 5, 5, 4.5, 22], total: 54.5 },
+        { place: 4, team: "Бабушки и бутса", rounds: [6, 6, 5, 6, 6, 5, 19], total: 53 },
+        { place: 5, team: "Алиса, миелофон у меня!", rounds: [6, 6, 6, 5, 6, 5, 18], total: 52 },
+        { place: 6, team: "Роскошный Джордж", rounds: [6, 6, 6, 5, 5, 4.5, 19], total: 51.5 },
+        { place: 7, team: "Пьяные свиристели", rounds: [6, 6, 6, 5, 5, 4, 18], total: 50 },
+        { place: 8, team: "Отдых грибника", rounds: [6, 6, 5, 5, 4, 4, 18], total: 48 },
+        { place: 9, team: "НИЧИВАВО", rounds: [6, 6, 6, 5, 6, 3, 16], total: 48 },
+        { place: 10, team: "Время Че", rounds: [5, 6, 5, 4, 5, 3.5, 19], total: 47.5 },
+        { place: 11, team: "Game republic", rounds: [6, 6, 5, 5, 6, 3.5, 16], total: 47.5 },
+        { place: 12, team: "Генератор неслучайных ответов", rounds: [6, 6, 6, 5, 5, 4.5, 15], total: 47.5 },
+        { place: 13, team: "Слабоумие и отвага", rounds: [6, 6, 6, 5, 4, 4.5, 14], total: 45.5 },
+        { place: 14, team: "\"Я\" бывают разные", rounds: [6, 6, 6, 5, 5, 3, 13], total: 44 },
+        { place: 15, team: "Дрожжь земли!", rounds: [6, 5, 6, 3.5, 4, 2.5, 14], total: 41 },
+        { place: 16, team: "КафКа", rounds: [6, 6, 3, 4.5, 4, 5, 12], total: 40.5 },
+        { place: 17, team: "может быть", rounds: [6, 5, 5, 4, 3, 3, 14], total: 40 },
+        { place: 18, team: "Успешный Успех", rounds: [6, 5, 5, 3, 6, 1.5, 13], total: 39.5 },
+        { place: 19, team: "А мы думали сова", rounds: [4, 5, 4, 5, 4, 5, 12], total: 39 },
+        { place: 20, team: "НОВА", rounds: [6, 5, 4, 3, 4, 4, 12], total: 38 },
+        { place: 21, team: "Трое в лодке и Ко", rounds: [5, 6, 4, 2, 4, 4, 12], total: 37 },
+        { place: 22, team: "Поцелованные огнём", rounds: [4, 4, 6, 3.5, 3, 4, 10], total: 34.5 }
+      ]
+    }
+  },
+  {
+    date: "2026-04-25", organizer: "Квиз, плиз!", title: "#1271",
+    venue: "Кафе Гоген", place: 11, score: 44.5,
+    photoUrl: "https://vk.ru/album-114998728_310958218",
+    photoThumb: "https://sun9-7.vkuserphoto.ru/s/v1/ig2/-nXcCje2NDRG5GcuvDR1KfOtJxIDYH8fRsjLWPaZ0-4IZFGCsbEejJIgEUQ73J_w2TSHpRm33jEQAP2M561vlhJY.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,1920x1280&from=bu&cs=1920x0",
+    results: {
+      note: "25.04.2026 | Кафе Гоген | #1271",
+      roundCount: 7,
+      roundLabels: ["Раунд 1", "Раунд 2", "Раунд 3", "Раунд 4", "Раунд 5", "Раунд 6", "Раунд 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Лосин кусь", rounds: [6, 8, 3, 7.5, 6, 8, 20], total: 58.5 },
+        { place: 2, team: "Злые", rounds: [6, 8, 4, 5.5, 6, 8, 20], total: 57.5 },
+        { place: 3, team: "Иван Царевич", rounds: [6, 8, 4, 7, 6, 6, 20], total: 57 },
+        { place: 4, team: "Бам! Буки", rounds: [7, 8, 5, 6.5, 6, 6, 17], total: 55.5 },
+        { place: 5, team: "Dreamy Team", rounds: [7, 8, 4, 7.5, 6, 4, 18], total: 54.5 },
+        { place: 6, team: "Наследники Пуффендуя", rounds: [6, 8, 6, 3, 6, 8, 17], total: 54 },
+        { place: 7, team: "Сковородка", rounds: [7, 7, 4, 5.5, 4, 8, 17], total: 52.5 },
+        { place: 8, team: "Рита и Вагоны", rounds: [6, 8, 4, 6.5, 5, 4, 15], total: 48.5 },
+        { place: 9, team: "Культ Слаанеша", rounds: [5, 8, 4, 5.5, 6, 4, 15], total: 47.5 },
+        { place: 10, team: "Группа захвата за щеку", rounds: [6, 7, 3, 5, 6, 0, 19], total: 46 },
+        { place: 11, team: "Генератор неслучайных ответов", rounds: [5, 7, 3, 3.5, 6, 4, 16], total: 44.5 },
+        { place: 12, team: "Лисья морда", rounds: [7, 5, 2, 3, 5, 4, 15], total: 41 },
+        { place: 13, team: "Пес его знает", rounds: [6, 5, 5, 3, 4, 4, 12], total: 39 },
+        { place: 14, team: "Апероль в капюшоне", rounds: [6, 6, 5, 5, 6, 2, 9], total: 39 },
+        { place: 15, team: "Слишком много вариантов", rounds: [3, 5, 2, 4, 5, 2, 15], total: 36 },
+        { place: 16, team: "Лидкины хламидки", rounds: [3, 6, 2, 5, 6, 0, 13], total: 35 },
+        { place: 17, team: "Квентин Буратино", rounds: [2, 5, 2, 4, 6, 0, 15], total: 34 },
+        { place: 18, team: "чикибомбони", rounds: [4, 6, 4, 6.5, 3, 4, 6], total: 33.5 },
+        { place: 19, team: "Пупики", rounds: [3, 4, 3, 4, 4, 4, 11], total: 33 },
+        { place: 20, team: "Медицина бессильна", rounds: [4, 6, 3, 5, 5, 2, 8], total: 33 },
+        { place: 21, team: "Just 4 fun", rounds: [3, 6, 3, 1, 3, 4, 12], total: 32 },
+        { place: 22, team: "КВ", rounds: [7, 4, 2, 3.5, 4, 2, 7], total: 29.5 },
+        { place: 23, team: "Пять причин улыбаться", rounds: [2, 4, 3, 3.5, 5, 0, 11], total: 28.5 },
+        { place: 24, team: "Васяны", rounds: [5, 5, 1, 2.5, 4, 0, 10], total: 27.5 },
+        { place: 25, team: "Все пропало, шеф", rounds: [4, 5, 5, 2.5, 4, 0, 7], total: 27.5 },
+        { place: 26, team: "Олежа", rounds: [5, 2, 4, 1.5, 1, 0, 9], total: 22.5 },
+        { place: 27, team: "Зашли спросить", rounds: [4, 4, 4, 2.5, 3, 0, 5], total: 22.5 },
+        { place: 28, team: "Лысая крыса", rounds: [3, 5, 2, 2.5, 2, 0, 5], total: 19.5 },
+        { place: 29, team: "Путя и все-все-все", rounds: [3, 3, 2, 3.5, 2, 0, 3], total: 16.5 }
+      ]
+    }
+  },
+
   /* ================= 2026 (октябрь) ================= */
   {
     date: "2026-10-21", organizer: "Squiz", title: "#1018.2",
@@ -1053,10 +1176,6 @@ const GAMES = [
     date: "2025-10-25", organizer: "Квизиум", title: "«Обо всём» #811",
     venue: "The Tipsy Pub", place: null, photoUrl: "", photoThumb: ""
   },
-  {
-    date: "2025-10-25", organizer: "BUBO-КВИЗ", title: "Искусство и культура",
-    venue: "Travel Рестобар", place: null, photoUrl: "", photoThumb: ""
-  },
 
   /* ================= 2025 (сентябрь) ================= */
   // Примечание: фотографий с этой игры нет
@@ -1164,6 +1283,36 @@ const GAMES = [
         { place: 26, team: "Сознание ясное", rounds: [3, 4, 1, 2, 1.5, 5.5, -2], total: 15 },
         { place: 27, team: "Кокоджамба", rounds: [3, 3, 2, 0, 0, 3.5, 0], total: 11.5 },
         { place: 28, team: "Дети Анархии", rounds: [0, 2, 0, 1, 0, 6, -5], total: 4 }
+      ]
+    }
+  },
+  {
+    date: "2025-04-12", organizer: "GO!Квиз", title: "Новички_76.3",
+    venue: "Пражка", place: 2,
+    photoUrl: "https://findquiz.ru/event/go-quiz/photo/272509-novichki-76-3",
+    photoThumb: "https://sun9-4.userapi.com/s/v1/ig2/WE6auCUbJ_tcvIYjCY_b9mrcGwBTyr8EPLQCv_krnsqne4QO2lWcTfgb54j6DrGCLRoeqsT1SXKsLqpluYneU4M5.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2560x1706&from=bu&cs=640x0",
+    results: {
+      note: "12 апреля 2025, суббота • Пражка • GO!Квиз «НОВИЧКИ__76.3»",
+      roundLabels: ["Раунд 1", "Раунд 2", "Раунд 3", "Раунд 4", "Раунд 5", "Раунд 6", "Раунд 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Ложа бенуара", rounds: [9, 6, 6, 6, 10, 4, 18], total: 59 },
+        { place: 2, team: "Генератор неслучайных ответов", rounds: [8, 6, 5, 5, 12, 4, 18], total: 58 },
+        { place: 3, team: "Doc&Co", rounds: [10, 4, 5, 4, 10, 3, 18], total: 54 },
+        { place: 4, team: "Юра мы все выиграли", rounds: [10, 6, 3, 4, 9, 5, 15], total: 52 },
+        { place: 5, team: "Ne_Secta", rounds: [9, 6, 4, 5, 10, 5, 10], total: 49 },
+        { place: 6, team: "69 корочек от пиццы", rounds: [9, 6, 3, 4, 8, 4, 12], total: 46 },
+        { place: 7, team: "Шарики разума", rounds: [10, 6, 4, 5, 7, 5, 9], total: 46 },
+        { place: 8, team: "Low-code диета", rounds: [8, 4, 6, 4, 8, 5, 9], total: 44 },
+        { place: 9, team: "Жилетка Вассермана", rounds: [9, 6, 5, 4, 4, 2, 13], total: 43 },
+        { place: 10, team: "Спотыкачка", rounds: [10, 4, 3, 4, 8, 4, 9], total: 42 },
+        { place: 11, team: "3 кота", rounds: [7, 4, 4, 2, 6, 3, 14], total: 40 },
+        { place: 12, team: "Куралеська", rounds: [10, 6, 3, 3, 10, 2, 6], total: 40 },
+        { place: 13, team: "Трое в лодке нищета и собаки", rounds: [6, 6, 3, 3, 10, 3, 8], total: 39 },
+        { place: 14, team: "Кузя Лакомкин", rounds: [8, 5, 4, 4, 8, 2, 5], total: 36 },
+        { place: 15, team: "Безумие и отвага", rounds: [7, 4, 2, 3, 5, 0, 10], total: 31 },
+        { place: 16, team: "Пиченеги", rounds: [7, 6, 3, 2, 7, 4, 0], total: 29 },
+        { place: 17, team: "Мистер fish", rounds: [8, 4, 3, 1, 5, 3, 4], total: 28 }
       ]
     }
   },
