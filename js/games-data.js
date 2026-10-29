@@ -1053,10 +1053,6 @@ const GAMES = [
     date: "2025-10-25", organizer: "Квизиум", title: "«Обо всём» #811",
     venue: "The Tipsy Pub", place: null, photoUrl: "", photoThumb: ""
   },
-  {
-    date: "2025-10-25", organizer: "BUBO-КВИЗ", title: "Искусство и культура",
-    venue: "Travel Рестобар", place: null, photoUrl: "", photoThumb: ""
-  },
 
   /* ================= 2025 (сентябрь) ================= */
   // Примечание: фотографий с этой игры нет
@@ -1164,6 +1160,36 @@ const GAMES = [
         { place: 26, team: "Сознание ясное", rounds: [3, 4, 1, 2, 1.5, 5.5, -2], total: 15 },
         { place: 27, team: "Кокоджамба", rounds: [3, 3, 2, 0, 0, 3.5, 0], total: 11.5 },
         { place: 28, team: "Дети Анархии", rounds: [0, 2, 0, 1, 0, 6, -5], total: 4 }
+      ]
+    }
+  },
+  {
+    date: "2025-04-12", organizer: "GO!Квиз", title: "Новички_76.3",
+    venue: "Пражка", place: 2,
+    photoUrl: "https://findquiz.ru/event/go-quiz/photo/272509-novichki-76-3",
+    photoThumb: "https://sun9-4.userapi.com/s/v1/ig2/WE6auCUbJ_tcvIYjCY_b9mrcGwBTyr8EPLQCv_krnsqne4QO2lWcTfgb54j6DrGCLRoeqsT1SXKsLqpluYneU4M5.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853,1440x960,2560x1706&from=bu&cs=640x0",
+    results: {
+      note: "12 апреля 2025, суббота • Пражка • GO!Квиз «НОВИЧКИ__76.3»",
+      roundLabels: ["Раунд 1", "Раунд 2", "Раунд 3", "Раунд 4", "Раунд 5", "Раунд 6", "Раунд 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Ложа бенуара", rounds: [9, 6, 6, 6, 10, 4, 18], total: 59 },
+        { place: 2, team: "Генератор неслучайных ответов", rounds: [8, 6, 5, 5, 12, 4, 18], total: 58 },
+        { place: 3, team: "Doc&Co", rounds: [10, 4, 5, 4, 10, 3, 18], total: 54 },
+        { place: 4, team: "Юра мы все выиграли", rounds: [10, 6, 3, 4, 9, 5, 15], total: 52 },
+        { place: 5, team: "Ne_Secta", rounds: [9, 6, 4, 5, 10, 5, 10], total: 49 },
+        { place: 6, team: "69 корочек от пиццы", rounds: [9, 6, 3, 4, 8, 4, 12], total: 46 },
+        { place: 7, team: "Шарики разума", rounds: [10, 6, 4, 5, 7, 5, 9], total: 46 },
+        { place: 8, team: "Low-code диета", rounds: [8, 4, 6, 4, 8, 5, 9], total: 44 },
+        { place: 9, team: "Жилетка Вассермана", rounds: [9, 6, 5, 4, 4, 2, 13], total: 43 },
+        { place: 10, team: "Спотыкачка", rounds: [10, 4, 3, 4, 8, 4, 9], total: 42 },
+        { place: 11, team: "3 кота", rounds: [7, 4, 4, 2, 6, 3, 14], total: 40 },
+        { place: 12, team: "Куралеська", rounds: [10, 6, 3, 3, 10, 2, 6], total: 40 },
+        { place: 13, team: "Трое в лодке нищета и собаки", rounds: [6, 6, 3, 3, 10, 3, 8], total: 39 },
+        { place: 14, team: "Кузя Лакомкин", rounds: [8, 5, 4, 4, 8, 2, 5], total: 36 },
+        { place: 15, team: "Безумие и отвага", rounds: [7, 4, 2, 3, 5, 0, 10], total: 31 },
+        { place: 16, team: "Пиченеги", rounds: [7, 6, 3, 2, 7, 4, 0], total: 29 },
+        { place: 17, team: "Мистер fish", rounds: [8, 4, 3, 1, 5, 3, 4], total: 28 }
       ]
     }
   },
