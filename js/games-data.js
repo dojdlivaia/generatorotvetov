@@ -1554,24 +1554,26 @@ const GAMES = [
   },
 
   /* ================= Эйнштейн Party (источник: albertparty.ru/team/78854) =================
-     Полные протоколы по турам для этих игр недоступны — добавлены только место и балл. */
+     Полные протоколы по турам для этих игр недоступны — добавлены только место и балл.
+     Исключение: Игра № 546_3 — таблица распознана с изображения результатов findquiz.ru */
   {
     date: "2026-10-28", organizer: "Эйнштейн Party", title: "Классика №546_3",
-    venue: "Old School Pub Маяковская", place: 5, score: 57,
+    venue: "Old School Pub", place: 6, score: 57,
     photoUrl: "https://findquiz.ru/event/einstein-party/photo/349601-klassika-546-3",
     photoThumb: "https://sun9-52.userapi.com/s/v1/ig2/DIqFOG_jak4q0K5_pgPPrAX4ZH002b-MGI1kf_nJ8SFCvIC5qx6avDICrPJzCgLMf05Zp7UL9e6XR878Y-Sur9QQ.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920&from=bu&cs=640x0",
-    resultsUrl: "https://findquiz.ru/images/game_results/349601/1.jpg",
+    resultsUrl: null,
     results: {
-      note: "2026-10-28 • Эйнштейн Party — Классика №546_3 (источник: albertparty.ru/game/28935)",
+      note: "28 октября 2026 • Old School Pub • Эйнштейн Party — Игра № 546_3 (результаты распознаны с изображения findquiz.ru/images/game_results/349601/1.jpg)",
       roundCount: 8,
+      roundLabels: ["ТУР №1", "ТУР №2", "ТУР №3", "ТУР №4", "ТУР №5", "ТУР №6", "ТУР №7", "ТУР КЭП"],
       teamName: "Генератор неслучайных ответов",
       standings: [
       { place: 1, team: "Квантовая запутанность", rounds: [10, 5, 12, 9, 18, 12, 4, 6], total: 76 },
       { place: 2, team: "ПсиКотики", rounds: [10, 5, 12, 9, 18, 12, 0, 4], total: 70 },
       { place: 3, team: "Алиса, позови Сири!", rounds: [9, 5, 8, 7, 18, 12, 4, 6], total: 69 },
       { place: 4, team: "блёстки", rounds: [8, 5, 10, 8, 15, 12, 0, 4], total: 62 },
-      { place: 5, team: "Генератор неслучайных ответов", rounds: [10, 3, 12, 6, 12, 8, 2, 4], total: 57 },
       { place: 5, team: "Полусухарик", rounds: [9, 3, 12, 5, 12, 8, 2, 6], total: 57 },
+      { place: 6, team: "Генератор неслучайных ответов", rounds: [10, 3, 12, 6, 12, 8, 2, 4], total: 57 },
       { place: 7, team: "Красиво шарим", rounds: [10, 1, 8, 6, 9, 6, 4, 2], total: 46 },
       { place: 8, team: "Лена Головач", rounds: [7, 3, 5, 5, 7, 4, 0, 6], total: 37 },
       { place: 9, team: "Мачка пасла", rounds: [8, 1, 3, 3, 7, 4, 0, 4], total: 30 },
