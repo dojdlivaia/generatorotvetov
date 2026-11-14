@@ -1515,11 +1515,52 @@ const GAMES = [
     photoThumb: "https://sun9-56.userapi.com/s/v1/ig2/dSsC1V3rBvBie53QK0mM8iscbtk7WfkL4BEjzeyD83MNILpcDm6G8sEi3UwQd8jKLM6lv68EbEVlIXwh1PggBnxJ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2000x1333&from=bu&cs=640x0"
   },
 
+  /* ================= Новые игры (добавлены автоматически, скрипт collect_games.py) ================= */
+  {
+    date: "2026-11-12", organizer: "Squiz", title: "Сезон 32. Полуфинал #2",
+    venue: "Золберг", place: 14, score: 32,
+    photoUrl: "https://squiz.ru/photos/760bda7d-66e0-4c26-ac1c-eaddbc07f7a6",
+    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/760bda7d-66e0-4c26-ac1c-eaddbc07f7a6/f634f2ea-dac8-4597-aa6f-adc2135e74b3.jpg",
+    resultsUrl: "https://squiz.ru/game/msk-sezon-32-polufinal-2/results",
+    results: {
+      note: "12 ноября 2026, четверг, начало 19:30 МСК • Москва • Золберг, 1-й Люсиновский переулок, 3Б • Squiz «Сезон 32. Полуфинал #2» (источник: REST API squiz.ru, rpc get_game_results_public)",
+      roundCount: 7,
+      roundLabels: ["Раунд 1", "Раунд 2", "Раунд 3", "Раунд 4", "Раунд 5", "Раунд 6", "Раунд 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Лепс дует!",                   rounds: [7, 12, 2, 4, 9, 8.5, 18],   total: 60.5 },
+        { place: 2,  team: "Здесь - это вам не тут",       rounds: [4, 10, 2, 3.5, 9, 10, 18],  total: 56.5 },
+        { place: 3,  team: "Декорация прав человека",      rounds: [6, 7, 3, 3, 9, 10, 15],     total: 53 },
+        { place: 4,  team: "Сосочек Меладзе",              rounds: [5, 10, 1, 3, 9, 7.5, 13],   total: 48.5 },
+        { place: 5,  team: "Внутренняя интеллигентность",  rounds: [5, 4, 3, 5, 9, 9, 13],      total: 48 },
+        { place: 6,  team: "Слюни слона",                  rounds: [4, 5, 0, 2.5, 9, 8, 12],    total: 40.5 },
+        { place: 7,  team: "НеСмокинг",                    rounds: [4, 3, 2, 3, 9, 7.5, 7],     total: 35.5 },
+        { place: 8,  team: "В районе соска",               rounds: [3, 4, 2, 2.5, 9, 8, 6],     total: 34.5 },
+        { place: 8,  team: "Я и балл",                     rounds: [4, 6, 3, 2, 7.5, 8, 4],     total: 34.5 },
+        { place: 10, team: "Выходи, я на качелях",         rounds: [4, 4, 2, 2, 7.5, 6.5, 8],   total: 34 },
+        { place: 11, team: "Миндальная связь",             rounds: [3, 3, 2, 2, 4.5, 8.5, 10],  total: 33 },
+        { place: 11, team: "Ноль из 51",                   rounds: [5, 3, 1, 3.5, 6, 6.5, 8],   total: 33 },
+        { place: 11, team: "Отдых грибника",               rounds: [3, 3, 1, 3, 7.5, 8.5, 7],   total: 33 },
+        { place: 14, team: "Генератор неслучайных ответов", rounds: [2, 5, 1, 4, 9, 9, 2],      total: 32 },
+        { place: 15, team: "Кокоджамба",                   rounds: [3, 5, 2, 2, 7.5, 7.5, 4],   total: 31 },
+        { place: 16, team: "Кекесы",                       rounds: [4, 4, 3, 2, 4.5, 5.5, 7],   total: 30 },
+        { place: 17, team: "Atomic Fart",                  rounds: [2, 2, 2, 2.5, 7.5, 6.5, 6], total: 28.5 },
+        { place: 18, team: "Лапочки Ильича",               rounds: [4, 1, 0, 1.5, 4.5, 9, 5],   total: 25 },
+        { place: 19, team: "Предки Фрухтиков",             rounds: [3, 4, 1, 1.5, 4.5, 7, 2],   total: 23 },
+        { place: 20, team: "Шиба(ри)-Ину",                 rounds: [3, 3, 1, 1, 7.5, 6, 1],     total: 22.5 },
+        { place: 21, team: "Слабоалкогольный интеллект",   rounds: [4, 0, 1, 1.5, 3, 5, 7],     total: 21.5 }
+      ]
+    }
+  },
+
   /* ================= Эйнштейн Party (источник: albertparty.ru/team/78854) =================
      Полные протоколы по турам для этих игр недоступны — добавлены только место и балл. */
   {
     date: "2026-10-28", organizer: "Эйнштейн Party", title: "Классика №546_3",
-    venue: "Old School Pub Маяковская", place: 5, score: 57, photoUrl: "", photoThumb: "",
+    venue: "Old School Pub Маяковская", place: 5, score: 57,
+    photoUrl: "https://findquiz.ru/event/einstein-party/photo/349601-klassika-546-3",
+    photoThumb: "https://sun9-52.userapi.com/s/v1/ig2/DIqFOG_jak4q0K5_pgPPrAX4ZH002b-MGI1kf_nJ8SFCvIC5qx6avDICrPJzCgLMf05Zp7UL9e6XR878Y-Sur9QQ.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920&from=bu&cs=640x0",
+    resultsUrl: "https://findquiz.ru/images/game_results/349601/1.jpg",
     results: {
       note: "2026-10-28 • Эйнштейн Party — Классика №546_3 (источник: albertparty.ru/game/28935)",
       roundCount: 8,

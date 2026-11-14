@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ru" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Язык страницы и запрет автоперевода. Тут стоял lang="en" при русском
+         тексте: Chrome считал страницу иностранной и предлагал «перевести»,
+         люди соглашались — и получали «Потеновое лицо» вместо «Контактное
+         лицо», «Да, всечж» вместо «Да, все верно», а на страницах игр белый
+         экран: переводчик оборачивает текстовые узлы в свои <font>, React
+         теряет свои узлы и падает (R-919, 03.09.2026 — Полина Субботина не
+         могла оплатить игру с телефона). Guard в main.tsx гасит только часть
+         таких падений, поэтому лечим причину. -->
+    <meta name="google" content="notranslate" />
+    <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
+    <!-- Большая иконка для сниппетов Яндекса: ему нужно от 120x120,
+         favicon.ico 16x16 он считает отсутствующим (BIG_FAVICON_ABSENT). -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script>
+      (function() {
+        var link = document.createElement('link');
+        link.rel = 'manifest';
+        link.href = location.pathname.startsWith('/admin') ? '/manifest-admin.json' : '/manifest.json';
+        document.head.appendChild(link);
+      })();
+    </script>
+    <!-- Вход в Минске: squiz.by — отдельный домен, cookie `.squiz.ru` туда не
+         доходит. Скрипт один раз за визит переносит сессию с squiz.ru через
+         одноразовый код (public/site-kit/sso.js). Синхронно и до бандла:
+         приложение должно стартовать уже с готовой cookie. На остальных
+         доменах он сразу выходит. В сборке тег заменяется на инлайн
+         содержимого файла (inlineSsoPlugin в vite.config.ts, T-4440), чтобы
+         не блокировать парсинг отдельным запросом. -->
+    <script>/**
+ * Вход в Минске: подхват сессии с squiz.ru (T-4485).
+ *
+ * squiz.by — отдельный домен верхнего уровня, cookie `.squiz.ru` туда не
+ * попадает по правилам браузеров, поэтому залогиненный на squiz.ru человек
+ * приходил в Минск гостем. Скрипт один раз за визит сходит на мост
+ * squiz.ru/site-kit/sso-bridge.html, получит одноразовый код и обменяет его на
+ * сессию, которую положит в свою cookie на `.squiz.by`.
+ *
+ * Подключен и к статическим страницам (site-kit/chrome.js), и к приложению
+ * (index.html): дальше все работает как на остальных доменах — шапка видит
+ * профиль, брони и бонусы на месте.
+ *
+ * Схема кода на сервере — server/routes/sso.js.
+ */
+(function () {
+  if (window.__squizSso) return;
+  window.__squizSso = true;
+
+  var HOSTS = ["squiz.by", "www.squiz.by", "squiz.ae", "www.squiz.ae"];
+  if (HOSTS.indexOf(location.hostname) === -1) return;
+
+  var KEY = "squiz-auth";
+  var CHUNK = 3000;
+  var MAX_CHUNKS = 8;
+  var TRIED = "squiz:sso-tried";
+  var BRIDGE = "https://squiz.ru/site-kit/sso-bridge.html";
+  // Роботам мост не нужен, а лишний переход на соседний домен при обходе
+  // страницы им только вредит.
+  var BOT = /bot|crawler|spider|yandex|google|bing|slurp|duckduck|facebookexternalhit|headless/i;
+
+  function readCookie(name) {
+    var found = document.cookie.split("; ").filter(function (c) {
+      return c.indexOf(name + "=") === 0;
+    })[0];
+    return found ? decodeURIComponent(found.slice(name.length + 1)) : null;
+  }
+
+  function writeCookie(name, value, maxAgeSec) {
+    var parts = [
+      name + "=" + encodeURIComponent(value),
+      "path=/",
+      "max-age=" + maxAgeSec,
+      "SameSite=Lax",
+      "domain=." + location.hostname.replace(/^www\./, ""),
+    ];
+    if (location.protocol === "https:") parts.push("Secure");
+    document.cookie = parts.join("; ");
+  }
+
+  function readSessionRaw() {
+    var first = readCookie(KEY + ".0");
+    if (first === null) return readCookie(KEY);
+    var value = first;
+    for (var i = 1; i < MAX_CHUNKS; i++) {
+      var part = readCookie(KEY + "." + i);
+      if (part === null) break;
+      value += part;
+    }
+    return value;
+  }
+
+  /** Срок токена: поле exp внутри JWT (секунды); 0 — если не разобрать. */
+  function tokenExp(session) {
+    try {
+      var payload = session.access_token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+      while (payload.length % 4) payload += "=";
+      var exp = JSON.parse(atob(payload)).exp;
+      if (exp) return Number(exp);
+    } catch (e) { /* не JWT — смотрим expires_at */ }
+    return Number(session.expires_at) || 0;
+  }
+
+  // Копия входа, которую мост положил сюда в прошлый раз. Токен живет неделю
+  // (GOTRUE_JWT_EXP), и на squiz.by его никто не обновляет: приложения тут
+  // нет, только статические страницы. Поэтому просроченную копию считаем
+  // отсутствующей и идем на мост за свежей. Иначе шапка неделями показывала
+  // почту вместо имени и фото, а брони и бонусы не подхватывались (12.10.2026).
+  function sessionState() {
+    var raw = readSessionRaw();
+    if (raw === null) return "none";
+    var s;
+    try { s = JSON.parse(raw); } catch (e) { return "stale"; }
+    if (!s || !s.access_token) return "stale";
+    var exp = tokenExp(s);
+    // Минута запаса: токен, который истечет через секунды, тоже не нужен.
+    return exp && exp - 60 < Date.now() / 1000 ? "stale" : "fresh";
+  }
+
+  function dropSession() {
+    writeCookie(KEY, "", 0);
+    for (var i = 0; i < MAX_CHUNKS; i++) writeCookie(KEY + "." + i, "", 0);
+    try { localStorage.removeItem(KEY); } catch (e) { /* приватный режим */ }
+  }
+
+  /** Кладем сессию так же, как приложение: частями по 3000 символов. */
+  function saveSession(raw) {
+    var year = 365 * 24 * 60 * 60;
+    writeCookie(KEY, "", 0);
+    for (var i = 0; i < MAX_CHUNKS; i++) writeCookie(KEY + "." + i, "", 0);
+    for (var j = 0; j * CHUNK < raw.length && j < MAX_CHUNKS; j++) {
+      writeCookie(KEY + "." + j, raw.slice(j * CHUNK, (j + 1) * CHUNK), year);
+    }
+    try { localStorage.setItem(KEY, raw); } catch (e) { /* приватный режим */ }
+  }
+
+  function flag(set) {
+    try {
+      if (set) sessionStorage.setItem(TRIED, "1");
+      return sessionStorage.getItem(TRIED) === "1";
+    } catch (e) { return set ? false : true; }
+  }
+
+  function stripHash() {
+    var clean = location.pathname + location.search;
+    try { history.replaceState(null, "", clean); } catch (e) { location.hash = ""; }
+  }
+
+  var m = /[#&]sso=([^&]+)/.exec(location.hash || "");
+  if (m) {
+    flag(true);
+    var code = m[1];
+    stripHash();
+    // На squiz.ru гость — переносить нечего, дальше живем как обычно.
+    if (code === "none") return;
+
+    fetch("https://squiz.ru/functions/v1/sso/redeem", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code: code }),
+    })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || !d.session) return;
+        saveSession(JSON.stringify(d.session));
+        // Перезагрузка нужна: и приложение, и шапка читают cookie на старте,
+        // а к этому моменту они уже стартовали гостями.
+        location.reload();
+      })
+      .catch(function () { /* остаемся гостем */ });
+    return;
+  }
+
+  var state = sessionState();
+  if (state === "fresh") return;
+  // Просроченную копию убираем сразу: шапка не должна показывать по ней
+  // человека, а если мост ответит «гость», страница останется гостевой.
+  if (state === "stale") dropSession();
+  if (flag(false)) return;
+  if (BOT.test(navigator.userAgent || "")) return;
+
+  flag(true);
+  // replace, а не assign: мост не должен оседать в истории — «Назад» из Минска
+  // возвращал бы на него и крутил переход по кругу.
+  location.replace(BRIDGE + "?return=" + encodeURIComponent(location.href));
+})();
+</script>
+    <!-- Адрес игрового сервера Squiz Online (T-4745). Файл лежит только на
+         сервере и меняется без выкладки (deploy.sh его не трогает). defer:
+         парсинг не блокирует и выполняется раньше бандла (тот тоже отложен
+         и идет ниже по документу). -->
+    <script src="/play-url.js" defer></script>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <script>
+      (function() {
+        var meta = document.createElement('meta');
+        meta.name = 'apple-mobile-web-app-title';
+        meta.content = location.pathname.startsWith('/admin') ? 'Squiz OS' : 'Squiz';
+        document.head.appendChild(meta);
+      })();
+    </script>
+    <script>
+      // Шрифт: приложение набрано Mulish, админка — прежним системным стеком.
+      // Класс ставим до первой отрисовки, иначе админка мигает Mulish. Дальше
+      // его держит FontScope в src/App.tsx.
+      (function() {
+        if (location.pathname.startsWith('/admin')) {
+          document.documentElement.classList.add('ui-system-font');
+        }
+      })();
+    </script>
+    <meta name="theme-color" content="#00AFEA" />
+    <script>
+      // /widget грузится в iframe на squiz.ru/Tilda. Чтобы фон был прозрачным:
+      // 1) перебиваем body { bg-background } из @layer base через !important;
+      // 2) выключаем color-scheme: dark — иначе браузер красит page canvas
+      //    в системный тёмный, и сквозь прозрачный body виден чёрный квадрат
+      //    (next-themes forcedTheme="dark" ставит этот стиль на <html>).
+      (function() {
+        if (location.pathname === '/widget') {
+          var s = document.createElement('style');
+          s.textContent = 'html,body,#root{background:transparent !important;background-color:transparent !important;color-scheme:normal !important}';
+          document.head.appendChild(s);
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://squiz.ru" crossorigin />
+    <link rel="dns-prefetch" href="https://squiz.ru" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Squiz</title>
+    <meta name="description" content="Squiz" />
+    <meta name="author" content="Squiz" />
+
+    <meta property="og:title" content="Squiz" />
+    <meta property="og:description" content="Squiz — квизы и интеллектуальные игры" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Google Ads, только dubai.squiz.ru (R-745). Второй экземпляр тега — в
+         копиях страниц Дубая, см. scripts/tilda-pages/patch_google_ads_dubai.py:
+         там комментарий целиком, почему нужны оба места и чего тегу не хватает
+         для конверсий. -->
+    <script>
+      (function(w, d) {
+        if (d.location.hostname.toLowerCase() !== 'dubai.squiz.ru') return;
+        // Админку и встраиваемый чат-виджет не трекаем — как у Метрики.
+        if (d.location.pathname.indexOf('/widget') === 0) return;
+        if (d.location.pathname.indexOf('/admin') === 0) return;
+        w.dataLayer = w.dataLayer || [];
+        w.gtag = function() { w.dataLayer.push(arguments); };
+        w.gtag('js', new Date());
+        w.gtag('config', 'AW-18391443163');
+        var js = d.createElement('script');
+        js.async = 1;
+        js.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18391443163';
+        d.head.appendChild(js);
+      })(window, document);
+    </script>
+    <!-- Google Ads End -->
+    <script type="module" crossorigin src="/assets/index-DzfR58e9.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-BYGPFH1I.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-C7yaoTCg.js">
+    <link rel="modulepreload" crossorigin href="/assets/radix-Ds3laCOZ.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CsHYWzgo.css">
+    <meta name="sq-build-id" content="2026-11-13T19:27:11.642Z">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      // Страховка на случай, когда не загрузился САМ бандл (404 на
+      // /assets/index-*.js). Такой же обработчик есть в main.tsx, но здесь он
+      // бесполезен: main.tsx и есть тот самый файл, который не приехал, — JS
+      // не выполняется вовсе и человек видит белый экран, пока не обновит
+      // страницу руками. Так было 07.09.2026 у вкладки, провисевшей две
+      // недели: крон /etc/cron.d/squiz-assets-cleanup удаляет чанки старше
+      // 14 дней, и ее index-*.js на сервере уже не было.
+      //
+      // Ключ и защита от петли — общие с main.tsx: перезагружаемся один раз
+      // за 30 секунд, иначе страница закольцуется на настоящей ошибке.
+      (function () {
+        window.addEventListener(
+          'error',
+          function (event) {
+            var target = event.target;
+            if (!target || target.tagName !== 'SCRIPT') return;
+            if ((target.src || '').indexOf('/assets/') === -1) return;
+            try {
+              var KEY = 'sq-stale-chunk-reload';
+              var last = parseInt(sessionStorage.getItem(KEY) || '0', 10);
+              if (Date.now() - last < 30000) return;
+              sessionStorage.setItem(KEY, String(Date.now()));
+            } catch (e) {
+              // Приватный режим без storage: одна перезагрузка все равно лучше
+              // белого экрана, петлю ограничит сам сервер свежим index.html.
+            }
+            location.reload();
+          },
+          true,
+        );
+      })();
+    </script>
+  </body>
+</html>
