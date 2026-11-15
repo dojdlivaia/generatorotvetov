@@ -849,8 +849,16 @@ const GAMES = [
       ]
     }
   },
+  {
+    date: "2026-04-12", organizer: "Квизиум", title: "«Обо всём» #861",
+    venue: "Lions Head Pub", place: null, photoUrl: "", photoThumb: ""
+  },
 
   /* ================= 2026 (март) ================= */
+  {
+    date: "2026-03-26", organizer: "ИГРА", title: "ИГРА #45",
+    venue: "Temple Bar", place: null, photoUrl: "", photoThumb: ""
+  },
   {
     date: "2026-03-14", organizer: "Квизиум", title: "Азартный [Новички] #46",
     venue: "Lions Head Pub", place: 4, photoUrl: "", photoThumb: ""
@@ -949,8 +957,7 @@ const GAMES = [
   /* ================= 2025 (декабрь) ================= */
   {
     date: "2025-12-30", organizer: "Эйнштейн Party", title: "Классика №503_3",
-    venue: "Lions Head Pub", place: 2, score: 72,  
-    photoUrl: "https://findquiz.ru/event/einstein-party/photo/301769-klassika-503-3",
+    venue: "Lions Head Pub", place: 2, score: 72, photoUrl: "https://findquiz.ru/event/einstein-party/photo/301769-klassika-503-3",
     photoThumb: "https://sun9-50.userapi.com/s/v1/ig2/EEEVOOQn7VzWSXWmnIqKC688wtIXXLkTz1WFWc4Ygj8whHQCcn9gA_xomZhO4ygFOABl6TzGTHfnXEn8W9Jn3Nvb.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
     results: {
       note: "2025-12-30 • Эйнштейн Party — Классика №503_3 (источник: albertparty.ru/game/24307)",
@@ -1044,14 +1051,16 @@ const GAMES = [
       ]
     }
   },
+  {
+    date: "2025-12-11", organizer: "BelkinQuiz", title: "БелкинКвиз #401",
+    venue: "Пражка", place: null, photoUrl: "", photoThumb: ""
+  },
 
   /* ================= 2025 (ноябрь) ================= */
   {
     date: "2025-11-22", organizer: "Эйнштейн Party", title: "FUN #334_4",
-    venue: "Metafora Bar", place: 4, score: 50.5, 
-    photoUrl: "https://findquiz.ru/quiz/einstein-party/photo/311826355",
-    photoThumb: "https://sun9-66.userapi.com/s/v1/ig2/nU_UvckT1DPUPAS44wNuH8-M_Bc1_0wBEj-Oc5eTgCrjB1186MajYKztqiU7MbVEgo99S-JN-QRVbgfxMXETvaXa.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920&from=bu&cs=640x0"
-
+    venue: "Metafora Bar", place: 4, score: 50.5, photoUrl: "https://findquiz.ru/quiz/einstein-party/photo/311826355",
+    photoThumb: "https://sun9-66.userapi.com/s/v1/ig2/nU_UvckT1DPUPAS44wNuH8-M_Bc1_0wBEj-Oc5eTgCrjB1186MajYKztqiU7MbVEgo99S-JN-QRVbgfxMXETvaXa.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920&from=bu&cs=640x0",
     results: {
       note: "2025-11-22 • Эйнштейн Party — FUN #334_4 (источник: albertparty.ru/game/23841)",
       roundCount: 8,
@@ -1155,6 +1164,7 @@ const GAMES = [
     }
   },
 
+
   /* ================= 2025 (октябрь) ================= */
   {
     date: "2025-10-29", organizer: "Эйнштейн Party", title: "Классика №494_3",
@@ -1189,6 +1199,10 @@ const GAMES = [
       { place: 23, team: "«Первоцветы»", rounds: [2, 1, 3, 5, 1, 0, 0, 0], total: 12 }
       ]
     }
+  },
+  {
+    date: "2025-10-25", organizer: "Квизиум", title: "«Обо всём» #811",
+    venue: "The Tipsy Pub", place: null, photoUrl: "", photoThumb: ""
   },
 
   /* ================= 2025 (сентябрь) ================= */
