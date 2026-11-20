@@ -10,7 +10,8 @@ const GAMES = [
   {
     date: "2026-11-17", organizer: "Квизиум", title: "#924",
     venue: "The Tipsy Pub", place: 2, score: 57.5,
-    photoUrl: "", photoThumb: "",
+    photoUrl: "https://findquiz.ru/event/quizium/photo/357245-obo-vsem-924", 
+    photoThumb: "https://sun9-53.userapi.com/s/v1/ig2/nRfhqDZ2FwK4jid3Lwt1kpcA1OFH9pdQhPo56Z8rTyUzAJxeHBCwvOgq3c1RUgM8XgfzSRBmZwEcRKzWCL6gUCWM.jpg?quality=95&as=32x47,48x70,72x105,108x157,160x233,240x349,360x523,480x698,540x785,640x930,720x1047,1080x1570,1280x1861,1440x2093,1651x2400&from=bu&cs=640x0",
     results: {
       note: "17.11.2026 • The Tipsy Pub • КВИЗИУМ #924",
       roundCount: 8,
