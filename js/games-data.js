@@ -883,10 +883,6 @@ const GAMES = [
       ]
     }
   },
-  {
-    date: "2026-04-12", organizer: "Квизиум", title: "«Обо всём» #861",
-    venue: "Lions Head Pub", place: null, photoUrl: "", photoThumb: ""
-  },
 
   /* ================= 2026 (март) ================= */
   {
