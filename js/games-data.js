@@ -924,10 +924,7 @@ const GAMES = [
   },
 
   /* ================= 2026 (март) ================= */
-  {
-    date: "2026-03-26", organizer: "ИГРА", title: "ИГРА #45",
-    venue: "Temple Bar", place: null, photoUrl: "", photoThumb: ""
-  },
+
   {
     date: "2026-03-14", organizer: "Квизиум", title: "Азартный [Новички] #46",
     venue: "Lions Head Pub", place: 4, photoUrl: "", photoThumb: ""
