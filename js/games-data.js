@@ -6,6 +6,45 @@
  * host — хост альбома, заполняется автоматически из photoUrl в main.js.
  */
 const GAMES = [
+    /* ================= 2026: Squiz (Ноябрь) ================= */
+  {
+    date: "2026-11-21", organizer: "Squiz", title: "Сезон 32. Финал",
+    venue: "Москва", place: 14, score: 23,
+    photoUrl: "https://squiz.ru/photos/a0f3bae2-84df-4499-b8b9-fe1f5b6ddd63",
+    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/a0f3bae2-84df-4499-b8b9-fe1f5b6ddd63/2f9d1c2a-cc5c-4420-a63f-d276bf49c06e.jpg",
+    results: {
+      note: "21 ноября 2026, суббота • Москва • Squiz — Сезон 32. Финал",
+      roundCount: 7,
+      roundLabels: ["Раунд 1", "Раунд 2", "Раунд 3", "Раунд 4", "Раунд 5", "Раунд 6", "Раунд 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Здесь - это вам не тут", rounds: [6, 12, 5, 4.5, 9, 10, 18], total: 64.5 },
+        { place: 2,  team: "Завтрак у Кролика", rounds: [5, 10, 4, 4, 9, 6.5, 18], total: 56.5 },
+        { place: 3,  team: "Декорация прав человека", rounds: [6, 3, 2, 2.5, 4.5, 9, 12], total: 39 },
+        { place: 4,  team: "Шумелка мышь", rounds: [5, 3, 4, 2, 7.5, 8.5, 9], total: 39 },
+        { place: 5,  team: "Дружки-пирожки", rounds: [4, 3, 3, 2, 7.5, 7.5, 6], total: 33 },
+        { place: 6,  team: "Слоны слона", rounds: [2, 3, 3, 3.5, 7.5, 6, 7], total: 32 },
+        { place: 7,  team: "Шампанский обряд", rounds: [5, 4, 3, 2, 3, 5.5, 9], total: 31.5 },
+        { place: 8,  team: "Prosecco lovers social club", rounds: [4, 1, 2, 3, 4.5, 5.5, 9], total: 29 },
+        { place: 9,  team: "Кекесы", rounds: [3, 1, 3, 2, 4.5, 9, 3], total: 25.5 },
+        { place: 10, team: "Чувствую потенциал", rounds: [3, 2, 3, 2, 0, 9, 6], total: 25 },
+        { place: 11, team: "Внутренняя интеллигентность", rounds: [5, 4, 3, 3, 0, 5, 4], total: 24 },
+        { place: 12, team: "Who knew, как говорится", rounds: [4, 2, 2, 1, 3, 5.5, 6], total: 23.5 },
+        { place: 13, team: "Сосочек Мелодзе", rounds: [4, 1, 2, 1.5, 6, 8, 1], total: 23.5 },
+        { place: 14, team: "Генератор неслучайных ответов", rounds: [2, 3, 2, 1.5, 3, 5.5, 6], total: 23 },
+        { place: 15, team: "Создатели и пространство", rounds: [5, 1, 1, 1.5, 0, 6.5, 4], total: 19 },
+        { place: 16, team: "НеСкоking", rounds: [3, 1, 3, 1, 0, 6.5, 4], total: 18.5 },
+        { place: 17, team: "Я и балл", rounds: [3, 1, 3, 2, 1.5, 5, 3], total: 18.5 },
+        { place: 18, team: "Отдых грибника", rounds: [4, 4, 1, 2, 0, 6.5, 1], total: 18.5 },
+        { place: 19, team: "Кокоджамба", rounds: [3, 1, 2, 0.5, 1.5, 4, 6], total: 18 },
+        { place: 20, team: "В районе соска", rounds: [4, 1, 2, 1.5, 1.5, 9, -1], total: 18 },
+        { place: 21, team: "Ноль из 51", rounds: [3, 2, 2, 1, 1.5, 4, 3], total: 16.5 },
+        { place: 22, team: "Злобные Хомяки", rounds: [6, 1, 2, 1, 0, 2.5, 3], total: 15.5 },
+        { place: 23, team: "Екатерина Михайловна", rounds: [2, 1, 2, 1.5, 1.5, 6.5, -1], total: 13.5 },
+        { place: 24, team: "Выходи, я на качелях", rounds: [2, 1, 0, 2, 1.5, 5.5, 1], total: 13 }
+      ]
+    }
+  },
   /* ================= 2026: Квизиум (Ноябрь) ================= */
   {
     date: "2026-11-17", organizer: "Квизиум", title: "#924",
