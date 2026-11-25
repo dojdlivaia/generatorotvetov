@@ -924,7 +924,43 @@ const GAMES = [
   },
 
   /* ================= 2026 (март) ================= */
-
+  {
+    date: "2026-03-28", organizer: "Квизиум", title: "[Новички] #857",
+    venue: "Lion's Head Pub", place: 1, score: 54,
+    photoUrl: "https://findquiz.ru/quiz/quizium/photo/310524629",
+    photoThumb: "https://sun9-71.userapi.com/s/v1/ig2/uyExRa96Inc4o_Yq16SxCij_DhCTQXkXkyf1mu8gH3gsMZ0QVTepOfcn9FbvG-c8GyF1FMrQAG6JPdTP2YLjPW1I.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
+    results: {
+      note: "28.03.2026 — Lion's Head Pub • КВИЗИУМ [Новички] #857",
+      roundCount: 8,
+      roundLabels: ["Тур 1", "Тур 2", "Тур 3", "Тур 4", "Тур 5", "Тур 6", "Тур 7", "Тур 8"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Генератор неслучайных ответов", rounds: [6, 5, 5, 6, 4, 9, 4, 15], total: 54 },
+        { place: 2,  team: "Ржавый тромбон", rounds: [5, 5, 5, 5, 4, 7, 4, 18], total: 53 },
+        { place: 3,  team: "Мы просто проходили мимо", rounds: [6, 5, 4, 5, 4.5, 7, 6, 15], total: 52.5 },
+        { place: 4,  team: "Макет оказался сильней", rounds: [5, 5, 4, 5, 3.5, 5, 6, 18], total: 51.5 },
+        { place: 5,  team: "Сосок Павлиашвили", rounds: [5, 5, 5, 5, 4.5, 6, 4, 17], total: 51.5 },
+        { place: 6,  team: "Керамзит", rounds: [4, 5, 4, 5, 3, 10, 4, 15], total: 50 },
+        { place: 7,  team: "Красная икра", rounds: [5, 4, 4, 4, 3.5, 7, 6, 16], total: 49.5 },
+        { place: 8,  team: "Кто следующий?", rounds: [6, 5, 3, 4, 3.5, 8, 4, 16], total: 49.5 },
+        { place: 9,  team: "Естественный разум", rounds: [5, 5, 4, 3, 3, 7, 6, 15], total: 48 },
+        { place: 10, team: "О'Ник", rounds: [5, 4, 3, 4, 3, 8, 4, 15], total: 46 },
+        { place: 11, team: "Оптимисты", rounds: [5, 3, 3, 4, 3, 7, 4, 15], total: 44 },
+        { place: 12, team: "Скотовоз", rounds: [5, 5, 4, 5, 3, 5, 4, 12], total: 43 },
+        { place: 13, team: "Опять двадцать пять", rounds: [4, 5, 2, 5, 3, 5, 4, 14], total: 42 },
+        { place: 14, team: "Чикипибарум", rounds: [4, 3, 2, 6, 4, 6, 4, 10], total: 39 },
+        { place: 15, team: "Семейка Адамс", rounds: [4, 4, 4, 3, 3, 7, 4, 9], total: 38 },
+        { place: 16, team: "Остров Эпштейна", rounds: [5, 4, 2, 3, 2, 4, 6, 11], total: 37 },
+        { place: 17, team: "ПупкИ", rounds: [3, 3, 2, 3, 3, 4, 2, 14], total: 34 },
+        { place: 18, team: "А когда не мы", rounds: [4, 3, 2, 5, 2, 9, 2, 5], total: 32 },
+        { place: 19, team: "Внуки Холмса", rounds: [4, 3, 1, 2, 3, 4, 4, 5], total: 26 },
+        { place: 20, team: "Слоупоки", rounds: [5, 3, 1, 5, 3, 3, 2, 4], total: 26 },
+        { place: 21, team: "СССН", rounds: [3, 3, 2, 3, 2.5, 5, 4, 2], total: 24.5 },
+        { place: 22, team: "Весна", rounds: [3, 2, 2, 3, 2.5, 2, 4, 3], total: 21.5 },
+        { place: 23, team: "Штаб воспоминаний", rounds: [3, 2, 4, 3, 1, 0, 2, -3], total: 12 }
+      ]
+    }
+  },
   {
     date: "2026-03-14", organizer: "Квизиум", title: "Азартный [Новички] #46",
     venue: "Lions Head Pub", place: 4, photoUrl: "", photoThumb: ""
