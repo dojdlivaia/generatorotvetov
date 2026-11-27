@@ -719,7 +719,24 @@ const GAMES = [
     venue: "Summer Punch", place: 3,
     photoUrl: "https://squiz.ru/photos/260723-efy",
     photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/e7e6ad52-90a5-4aba-89d8-30091793273e/fb9d5b35-d80d-4b82-a0b7-212ecad70fe8_thumb.jpg"
-  },
+  results: {
+      note: "23 июля 2026, четверг • Москва • Squiz #996.3",
+      roundCount: 7,
+      roundLabels: ["Раунд 1", "Раунд 2", "Раунд 3", "Раунд 4", "Раунд 5", "Раунд 6", "Раунд 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Странные сны о Леониде Викторовиче Случком", rounds: [5, 12, 4, 3, 9, 9, 18], total: 60 },
+        { place: 2, team: "Ласковый отчим", rounds: [6, 10, 5, 4.5, 7.5, 7, 15], total: 55 },
+        { place: 3, team: "Генератор неслучайных ответов", rounds: [6, 10, 6, 3.5, 9, 8, 10], total: 52.5 },
+        { place: 4, team: "Всегда за", rounds: [6, 4, 6, 4, 9, 8, 11], total: 48 },
+        { place: 5, team: "Ракетологи", rounds: [5, 7, 4, 4, 7.5, 7, 12], total: 46.5 },
+        { place: 6, team: "Мал да Зой", rounds: [4, 7, 6, 4.5, 7.5, 8, 7], total: 44 },
+        { place: 7, team: "Ковбой по кличке «Скользкий Пол»", rounds: [7, 3, 4, 3.5, 7.5, 7, 10], total: 42 },
+        { place: 8, team: "*", rounds: [5, 7, 4, 4, 3, 6, 6], total: 35 },
+        { place: 9, team: "Нейлоновые пантеры", rounds: [4, 7, 5, 4, 1.5, 6, 6], total: 33.5 }
+      ]
+    }
+},
   {
     date: "2026-07-18", organizer: "Квизиум", title: "«Обо всём» #889",
     venue: "Lions Head Pub", place: 5,
