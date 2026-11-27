@@ -718,7 +718,7 @@ const GAMES = [
     date: "2026-07-23", organizer: "Squiz", title: "#996.3",
     venue: "Summer Punch", place: 3,
     photoUrl: "https://squiz.ru/photos/260723-efy",
-    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/e7e6ad52-90a5-4aba-89d8-30091793273e/fb9d5b35-d80d-4b82-a0b7-212ecad70fe8_thumb.jpg"
+    photoThumb: "https://squiz.ru/storage/v1/object/public/game-photos/e7e6ad52-90a5-4aba-89d8-30091793273e/fb9d5b35-d80d-4b82-a0b7-212ecad70fe8_thumb.jpg",
   results: {
       note: "23 июля 2026, четверг • Москва • Squiz #996.3",
       roundCount: 7,
