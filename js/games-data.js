@@ -6,7 +6,32 @@
  * host — хост альбома, заполняется автоматически из photoUrl в main.js.
  */
 const GAMES = [
-    /* ================= 2026: Squiz (Ноябрь) ================= */
+    /* ================= 2026 (Ноябрь) ================= */
+      {
+    date: "2026-11-26", organizer: "Квизиум", title: "#927",
+    venue: "O'Donoghue's", place: 2, score: 55.5,
+    photoUrl: "https://findquiz.ru/event/quizium/photo/357655-obo-vsem-927",
+    photoThumb: "https://sun9-63.userapi.com/s/v1/ig2/TREFfQGtm7L1kbtvrjhAyHvWqplZde1x-AgVu3DBa5nOVUjjQlxs9hSOqK9gyKRufbFLw_aUWDoAqL5dtLfD8hHJ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x854,1440x961,2400x1601&from=bu&cs=640x0",
+    results: {
+      note: "26.11.2026 — O'Donoghue's • КВИЗИУМ #927",
+      roundCount: 8,
+      roundLabels: ["Тур 1", "Тур 2", "Тур 3", "Тур 4", "Тур 5", "Тур 6", "Тур 7", "Тур 8"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "500 $", rounds: [5, 6, 6, 6, 4.5, 10, 6, 16], total: 59.5 },
+        { place: 2,  team: "Генератор неслучайных ответов", rounds: [5, 6, 5, 4, 4.5, 10, 6, 15], total: 55.5 },
+        { place: 3,  team: "Вот, во мху енот", rounds: [6, 5, 6, 5, 4.5, 7, 6, 15], total: 54.5 },
+        { place: 4,  team: "Булочки в животе", rounds: [4, 5, 6, 5, 4.5, 8, 8, 14], total: 54.5 },
+        { place: 5,  team: "Всей жизни", rounds: [5, 5, 6, 4, 5, 5, 6, 17], total: 53 },
+        { place: 6,  team: "Чпок", rounds: [3, 4, 4, 5, 3, 9, 6, 18], total: 52 },
+        { place: 7,  team: "Рум пель На Штиле", rounds: [6, 4, 5, 5, 4.5, 6, 4, 16], total: 50.5 },
+        { place: 8,  team: "Не айтишники", rounds: [4, 4, 3, 5, 3.5, 1, 6, 19], total: 45.5 },
+        { place: 9,  team: "Я и мои друзья", rounds: [6, 0, 3, 5, 4, 5, 4, 14], total: 41 },
+        { place: 10, team: "Estoy debil", rounds: [3, 3, 5, 4, 1.5, 6, 0, 16], total: 38.5 },
+        { place: 11, team: "Третий лишний", rounds: [2, 2, 3, 4, 1.5, 3, 2, 9], total: 26.5 }
+      ]
+    }
+  },
   {
     date: "2026-11-21", organizer: "Squiz", title: "Сезон 32. Финал",
     venue: "Москва", place: 14, score: 23,
@@ -45,7 +70,6 @@ const GAMES = [
       ]
     }
   },
-  /* ================= 2026: Квизиум (Ноябрь) ================= */
   {
     date: "2026-11-17", organizer: "Квизиум", title: "#924",
     venue: "The Tipsy Pub", place: 2, score: 57.5,
