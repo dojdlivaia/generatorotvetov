@@ -1177,10 +1177,7 @@ const GAMES = [
       ]
     }
   },
-  {
-    date: "2025-12-11", organizer: "BelkinQuiz", title: "БелкинКвиз #401",
-    venue: "Пражка", place: null, photoUrl: "", photoThumb: ""
-  },
+
 
   /* ================= 2025 (ноябрь) ================= */
   {
