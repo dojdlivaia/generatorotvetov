@@ -666,8 +666,22 @@ const GAMES = [
     date: "2026-08-27", organizer: "Квизиум", title: "Азартный #50",
     venue: "O'Donoghue's Pub", place: 3,
     photoUrl: "https://findquiz.ru/event/quizium/photo/343222-azartnyy-50",
-    photoThumb: "https://sun9-46.userapi.com/s/v1/ig2/IlrlW-RouGKI2buAIwzBgXV6KnPvK8UEZxQqkIH5AFCoev_DqOPW9dgCbTEV6oDc07lInPXcnRYQlkHWsizQFCtX.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2402x1802&from=bu&cs=640x0"
-  },
+    photoThumb: "https://sun9-46.userapi.com/s/v1/ig2/IlrlW-RouGKI2buAIwzBgXV6KnPvK8UEZxQqkIH5AFCoev_DqOPW9dgCbTEV6oDc07lInPXcnRYQlkHWsizQFCtX.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2402x1802&from=bu&cs=640x0",
+      results: {
+      note: "27.08.2026 — O'Donoghue's • АЗАРТНЫЙ #50",
+      roundCount: 8,
+      roundLabels: ["Тур 1", "Тур 2", "Тур 3", "Тур 4", "Тур 5", "Тур 6", "Тур 7", "Тур 8"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Antiguos camaradas", rounds: [2, 4.5, 9, 5, 3, 9, 2, 16], total: 50.5 },
+        { place: 2, team: "GameRepublic", rounds: [4, 5.5, 4, 5, 4, 9, 6, 9], total: 46.5 },
+        { place: 3, team: "Генератор неслучайных ответов", rounds: [4, 7.5, 7, 2, 2, 10, 1.5, 12], total: 46 },
+        { place: 4, team: "Пьер решал", rounds: [3, 4.5, 6.5, 2, 3, 7, 1, 11], total: 38 },
+        { place: 5, team: "Kuzzy riot", rounds: [4, 4, 5.5, 1, 0, 9, 1, 11], total: 35.5 },
+        { place: 6, team: "отп «быдло»", rounds: [2, 4, 3, 1, 3, 7, 2, 0], total: 22 }
+      ]
+    }
+},
   {
     date: "2026-08-22", organizer: "Squiz", title: "Игра 1004.1",
     venue: "Liberty", place: 6,
@@ -706,11 +720,26 @@ const GAMES = [
       ]
     }
   },
-  {
-    date: "2026-08-22", organizer: "GO!Квиз", title: "Назад в СССР (повтор от 12.08)",
-    venue: "Пражка", place: 3,
+    {
+    date: "2026-08-22", organizer: "GO!Квиз", title: "Назад в СССР_3",
+    venue: "Пражка", place: 3, score: 53,
     photoUrl: "https://findquiz.ru/event/go-quiz/photo/341498-nazad-v-sssr-povtor-ot-12-08",
-    photoThumb: "https://sun9-6.userapi.com/s/v1/ig2/H9BHevjkFcjl1eDW3AminBS_sDx7IsfuwipcmIYBpxLYm3MOMbn-FE0v-W1fOLwy8z2RwFsJVcJ5kqUxqT13rwZF.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0"
+    photoThumb: "https://sun9-6.userapi.com/s/v1/ig2/H9BHevjkFcjl1eDW3AminBS_sDx7IsfuwipcmIYBpxLYm3MOMbn-FE0v-W1fOLwy8z2RwFsJVcJ5kqUxqT13rwZF.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
+    results: {
+      note: "22.08.2026 • Пражка • GO!Квиз — Назад в СССР_3",
+      roundCount: 7,
+      roundLabels: ["РАУНД 1", "РАУНД 2", "РАУНД 3", "РАУНД 4", "РАУНД 5", "РАУНД 6", "РАУНД 7"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1, team: "Внуччаки Ильича", rounds: [8, 5, 5, 6, 12, 9, 17], total: 62 },
+        { place: 2, team: "Профи и чайники", rounds: [9, 6, 5, 5, 10, 9, 12], total: 56 },
+        { place: 3, team: "Генератор неслучайных ответов", rounds: [7, 6, 5, 6, 8, 7, 14], total: 53 },
+        { place: 4, team: "Чай с грибами", rounds: [8, 6, 5, 4, 10, 7, 10], total: 50 },
+        { place: 5, team: "Шляпы", rounds: [6, 3, 4, 5, 9, 4, 10], total: 41 },
+        { place: 6, team: "Связь поколений", rounds: [6, 1, 4, 5, 10, 5, 4], total: 35 },
+        { place: 7, team: "ЦыКотухи", rounds: [7, 3, 2, 4, 4, 4, 4], total: 28 }
+      ]
+    }
   },
 
   /* ================= 2026 (июль) ================= */
@@ -737,11 +766,31 @@ const GAMES = [
       ]
     }
 },
-  {
-    date: "2026-07-18", organizer: "Квизиум", title: "«Обо всём» #889",
-    venue: "Lions Head Pub", place: 5,
+    {
+    date: "2026-07-18", organizer: "Квизиум", title: "«Обо всём» #889.2",
+    venue: "Lion's Head Pub", place: 5, score: 51,
     photoUrl: "https://findquiz.ru/event/quizium/photo/337161-obo-vsem-889",
-    photoThumb: "https://sun9-49.userapi.com/s/v1/ig2/0PZ4MTux_453HSGhe6vbnUJpJifjF-kfU0NF24CA9ctHxLGpWaKH9Q8_yffzV0Trne3YgP8V_u8tJYaCids1g2-5.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920,1440x2160,1707x2560&from=bu&cs=640x0"
+    photoThumb: "https://sun9-49.userapi.com/s/v1/ig2/0PZ4MTux_453HSGhe6vbnUJpJifjF-kfU0NF24CA9ctHxLGpWaKH9Q8_yffzV0Trne3YgP8V_u8tJYaCids1g2-5.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1080x1620,1280x1920,1440x2160,1707x2560&from=bu&cs=640x0",
+    results: {
+      note: "18.07.2026 — Lion's Head Pub • КВИЗИУМ #889.2",
+      roundCount: 8,
+      roundLabels: ["Тур 1", "Тур 2", "Тур 3", "Тур 4", "Тур 5", "Тур 6", "Тур 7", "Тур 8"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "Запись дубля", rounds: [5, 6, 4, 6, 4.5, 12, 6, 20], total: 63.5 },
+        { place: 2,  team: "Badminton", rounds: [6, 6, 2, 6, 4.5, 12, 8, 15], total: 59.5 },
+        { place: 3,  team: "Оладушки интернешнл", rounds: [4, 6, 3, 6, 3.5, 11, 4, 17], total: 54.5 },
+        { place: 4,  team: "Рыси Уникальные", rounds: [3, 4, 5, 5, 4.5, 8, 4, 18], total: 51.5 },
+        { place: 5,  team: "Генератор неслучайных ответов", rounds: [3, 6, 3, 2, 4, 12, 4, 17], total: 51 },
+        { place: 6,  team: "Сыск по дружбе", rounds: [3, 6, 3, 3, 3.5, 10, 4, 14], total: 46.5 },
+        { place: 7,  team: "Сборная Рунды по настольному теннису", rounds: [1, 5, 3, 4, 3, 7, 4, 18], total: 45 },
+        { place: 8,  team: "Пухлая курица", rounds: [3, 4, 2, 5, 2.5, 8, 4, 15], total: 43.5 },
+        { place: 9,  team: "Гранёное стаккато", rounds: [3, 4, 3, 5, 3, 7, 6, 9], total: 40 },
+        { place: 10, team: "No fucking chance", rounds: [3, 4, 2, 2, 1, 4, 4, 14], total: 34 },
+        { place: 11, team: "1329", rounds: [4, 5, 0, 4, 3.5, 8, 0, 0], total: 24.5 },
+        { place: 12, team: "Дедушки+бабушки", rounds: [2, 2, 2, 1, 0.5, 3, 4, 7], total: 21.5 }
+      ]
+    }
   },
 
   /* ================= 2026 (июнь) ================= */
@@ -836,8 +885,32 @@ const GAMES = [
     date: "2026-05-23", organizer: "Квизиум", title: "«Обо всём» [Новички] #873",
     venue: "Lions Head Pub", place: 4,
     photoUrl: "https://findquiz.ru/event/quizium/photo/329374-obo-vsem-novichki-873",
-    photoThumb: ""
-  },
+    photoThumb: "https://sun9-56.userapi.com/s/v1/ig2/X5CK3OugvZRSoQh7Yt7lsvgCWFi79cdfZcGWTNmdXfHD4_A1DhRtHGyXXLnDnaYgduolIVm9XJBEliRMwhEZcD7b6fZrEQ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=640x0",
+  results: {
+      note: "23.05.2026 — Lion's Head Pub • КВИЗИУМ [Новички] #873",
+      roundCount: 8,
+      roundLabels: ["Тур 1", "Тур 2", "Тур 3", "Тур 4", "Тур 5", "Тур 6", "Тур 7", "Тур 8"],
+      team: "Генератор неслучайных ответов",
+      standings: [
+        { place: 1,  team: "КВСС", rounds: [6, 6, 5, 3, 3.5, 9, 6, 14], total: 52.5 },
+        { place: 2,  team: "Прости,Господи", rounds: [5, 4, 5, 2, 3, 8, 6, 17], total: 50 },
+        { place: 3,  team: "Паста бывает кусачей", rounds: [5, 4, 5, 3, 4, 5, 6, 13], total: 45 },
+        { place: 4,  team: "Генератор неслучайных ответов", rounds: [6, 3, 4, 3, 3, 8, 6, 8], total: 41 },
+        { place: 5,  team: "69 корочек от пиццы", rounds: [5, 3, 4, 2, 1.5, 4, 4, 15], total: 38.5 },
+        { place: 6,  team: "3% людей", rounds: [5, 5, 3, 2, 3, 3, 6, 11], total: 38 },
+        { place: 7,  team: "4 сезона", rounds: [5, 1, 4, 2, 2, 6, 4, 11], total: 35 },
+        { place: 8,  team: "РИЛ ТУПЫЕ", rounds: [4, 2, 4, 3, 3.5, 7, 4, 6], total: 33.5 },
+        { place: 9,  team: "Сет из 7", rounds: [4, 3, 3, 1, 3, 7, 4, 6], total: 31 },
+        { place: 10, team: "Наутилус", rounds: [4, 4, 2, 3, 1.5, 4, 4, 8], total: 30.5 },
+        { place: 11, team: "Барсики", rounds: [1, 2, 5, 1, 1.5, 4, 6, 6], total: 26.5 },
+        { place: 12, team: "Без Влада как без Google", rounds: [2, 0, 3, 3, 2, 2, 4, 9], total: 25 },
+        { place: 13, team: "Вот такой пердимонокль", rounds: [5, 2, 2, 1, 2, 2, 2, 8], total: 24 },
+        { place: 14, team: "АнтиМоль", rounds: [2, 2, 1, 2, 3, -1, 6, 7], total: 22 },
+        { place: 15, team: "Царицы", rounds: [3, 0, 2, 1, 1.5, 2, 4, 8], total: 21.5 },
+        { place: 16, team: "GG WP", rounds: [2, 1, 1, 1, 1.5, 1, 2, 1], total: 10.5 }
+      ]
+    }
+},
   {
     date: "2026-05-16", organizer: "GO!Квиз", title: "Классика_353.1",
     venue: "Пражка", place: 3,
